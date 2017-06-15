@@ -26,33 +26,27 @@ let pool = new pg.Pool ( config );
  * Send client the top-level index.html page.
  * @return index.html
  */
+
 router.get('/', function (req, res) {
-  res.sendFile(path.join(__dirname, '../public/views/index.html'));
+  pool.connect(function ( err, connection, done){
+    if (err) {
+      res.send( 400 );
+    } else {
+      //replace this with actualy query
+      let resultSet = connection.query("SELECT * FROM users WHERE homeroom_id =$1, [req.user.homeroom_id]");
+         var userArray = [];
+        resultSet.on('row', function(row){
+        userArray.push(row);
+      }); //end on row
+        resultSet.on('end', function(){
+        done();
+        console.log(userArray);
+        res.send(userArray);
+      });
+    }//end else
+  });// end pool connect
+  res.sendStatus(200);
+
 });
-
-
-// GET Teacher  ++++++ DO NOT RUN BEFORE REPLACE NONSENSE
-// router.get('/Teacher', function (req, res) {
-//   pool.connect(function ( err, connection, done){
-//     if (err) {
-//       res.send( 400 );
-//     } else {
-//       //replace this with actualy query
-//       // let resultSet = connection.query("SELECT * FROM users WHERE homeroom_id =$1, [req.user.homeroom_id]");
-         // var userArray = [];
-//         resultSet.on('row', function(row){
-//         // userArray.push(row);
-//       }); //end on row
-//         resultSet.on('end', function(){
-//         done();
-//         console.log(userArray);
-//         res.send( userArray);
-//       });
-//     }//end else
-//   });// end pool connect
-//
-//   res.sendStatus(200);
-//
-// });
 
 module.exports = router;
