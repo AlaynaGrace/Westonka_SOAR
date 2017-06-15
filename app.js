@@ -6,7 +6,8 @@ var session = require('express-session');
 var passport = require('./auth/passport');
 var configs = require('./config/auth');
 var index = require('./routes/index');
-var teacher = require('./routes/teacher');
+var teacher = require('./private/routes/teacher');
+var student = require('./private/routes/student');
 var auth = require('./routes/auth');
 var isLoggedIn = require('./utils/auth');
 var private = require('./routes/private/index');
@@ -44,6 +45,7 @@ app.use(passport.session());
 app.use('/auth', auth);
 app.use('/private', isLoggedIn, private);
 app.use('/teacher', teacher);
+app.use('/student', student);
 app.use('/', index);
 
 
