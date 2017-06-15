@@ -2,7 +2,6 @@ var myApp = angular.module('myApp', ['ngRoute', 'ngMaterial']);
 console.log("line2");
 /// Routes ///
 myApp.config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
-  // get rid of 1.6.4 #!
   $locationProvider.hashPrefix('');
 
   $routeProvider
