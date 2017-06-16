@@ -5,10 +5,6 @@ myApp.config(['$routeProvider', '$locationProvider', function($routeProvider, $l
   $locationProvider.hashPrefix('');
 
   $routeProvider
-    .when('/login', {
-      templateUrl: '/views/login.html',
-      controller: "loginController as lc"
-    })
     .when('/register', {
       templateUrl: '/views/register.html',
       controller: "registerController as rc"
