@@ -8,7 +8,6 @@ var express = require('express');
 var router = express.Router();
 var path = require('path');
 var app = express();
-// const db = require('');
 const pg = require('pg');
 let port = 3000;
 
@@ -27,24 +26,28 @@ let pool = new pg.Pool ( config );
  * @return index.html
  */
 
+
+
+// GET Admin
 router.get('/', function (req, res) {
   pool.connect(function ( err, connection, done){
     if (err) {
       res.send( 400 );
     } else {
       //replace this with actualy query
-      let resultSet = connection.query("SELECT * FROM users WHERE homeroom_id =$1, [req.user.homeroom_id]");
+      let resultSet = connection.query("SELECT * FROM slips WHERE student_id IS NOT NULL");
          var userArray = [];
         resultSet.on('row', function(row){
-        userArray.push(row);
+        // userArray.push(row);
       }); //end on row
         resultSet.on('end', function(){
         done();
         console.log(userArray);
-        res.send(userArray);
+        res.send( userArray);
       });
     }//end else
   });// end pool connect
+
   res.sendStatus(200);
 
 });
