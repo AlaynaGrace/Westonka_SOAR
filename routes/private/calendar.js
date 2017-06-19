@@ -14,6 +14,7 @@ var router = express.Router();
  *
  */
 router.get('/', function (req, res) {
+  console.log('hit cal route server');
   res.send({ message: 'hi' });
 });
 

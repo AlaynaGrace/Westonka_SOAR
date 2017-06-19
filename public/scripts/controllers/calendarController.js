@@ -3,7 +3,7 @@ googleAuthApp.controller('CalendarController', function ($http) {
   var _this = this;
   _this.data = '';
 
-  $http.get('/private/calendar')
+  $http.get('/private/teacher')
     .then(function (response) {
       if (response.data.err) {
         _this.data = 'Sorry, you are not logged in!';
