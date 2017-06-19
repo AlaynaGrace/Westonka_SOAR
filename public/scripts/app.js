@@ -12,6 +12,8 @@ googleAuthApp.config(['$routeProvider', function ($routeProvider) {
       templateUrl: '/public/views/templates/login.html',
       controller: 'AuthController',
       controllerAs: 'auth',
+    }).when('/home',{
+      templateUrl: '/public/views/templates/home.html'
     })
     .otherwise({
       redirectTo: 'login',

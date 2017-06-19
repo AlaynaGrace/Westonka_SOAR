@@ -14,6 +14,9 @@ router.use('/calendar', calendar);
  * GET private/index
  */
 router.get('/', function (req, res) {
+  console.log('I am in a random route in private index.js');
+  console.log('I have a user I think', req.user);
+  // res.send(req.user);
   res.redirect('/'); // they made it!
 });
 

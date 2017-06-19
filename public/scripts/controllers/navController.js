@@ -9,11 +9,13 @@ googleAuthApp.controller('NavController', function (AuthFactory, $window) {
 
   authFactory.isLoggedIn()
   .then(function (response) {
+    console.log('this is the response',response);
     if (response.data.status) {
       _this.displayLogout = true;
       authFactory.setLoggedIn(true);
       console.log(response.data);
       _this.username = response.data.name;
+      
     } else { // is not logged in on server
       _this.displayLogout = false;
       authFactory.setLoggedIn(false);

@@ -23,8 +23,8 @@ var passport = require('../auth/passport');
  */
 router.get('/google', passport.authenticate('google',
   {
-    scope: ['openid', 'email', 'https://www.googleapis.com/auth/calendar'],
-    prompt: 'select_account',
+    scope: ['openid', 'email','profile'],
+    prompt: 'select_account'
   })
 );
 /**
@@ -50,10 +50,12 @@ router.get('/google/callback', passport.authenticate('google',
  * @return JSON object with status (true or false) and, if true, user's name
  */
 router.get('/', function (req, res) {
+  console.log('in get /auth');
   if (req.isAuthenticated()) {
-    console.log(req.user);
-    res.json({ status: true, name: req.user.googleName, email: req.user.googleEmail });
+    console.log('in router get / with:',req.user);
+    res.json({ status: true, name: req.user.name, email: req.user.email });
   } else {
+    console.log('something went wrong so the user is not authenticated');
     res.json({ status: false });
   }
 

@@ -8,16 +8,19 @@ var configs = require('./config/auth');
 var index = require('./routes/index');
 var auth = require('./routes/auth');
 var isLoggedIn = require('./utils/auth');
-var private = require('./routes/private/index');
-var database = require('./utils/database');
+var privateIndex = require('./routes/private/index');
+var home = require('./routes/home');
+// var database = require('./utils/database');
 /** ---------- EXPRESS APP CONFIG ---------- **/
 var app = express();
 app.use('/public', express.static('public'));  // serve files from public
 
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({ extended: true }));
+// app.use(express.logger('dev'));
+// app.use(express.cookieParser());
 /** ---------- DATABASE CONNECTION HANDLING ---------- **/
-database();
+// database();
 /** ---------- SESSION CREATION AND STORAGE ---------- **/
 /**
  * Creates session that will be stored in memory.
@@ -30,7 +33,7 @@ app.use(session({
   key: 'user',
   resave: 'true',
   saveUninitialized: false,
-  cookie: { maxage: 60000, secure: false },
+  cookie: { maxage: 600000, secure: false },
 }));
 /** ---------- PASSPORT ---------- **/
 app.use(passport.initialize()); // kickstart passport
@@ -41,7 +44,8 @@ app.use(passport.initialize()); // kickstart passport
 app.use(passport.session());
 /** ---------- ROUTES ---------- **/
 app.use('/auth', auth);
-app.use('/private', isLoggedIn, private);
+app.use('/private', isLoggedIn, privateIndex);
+app.use('/home',home);
 app.use('/', index);
 /** ---------- SERVER START ---------- **/
 app.listen(3000, function () {

@@ -13,6 +13,7 @@
  /** ---------- REQUIRE NODE MODULES ---------- **/
 var passport = require('passport');
 var GoogleStrategy = require('passport-google-oauth2').Strategy;
+// var gooogleStrategy = require('passport-google-oauth').OAuth2Strategy;
 /** ---------- REQUIRE CUSTOM APP MODULES ---------- **/
 var config = require('../config/auth.js');
 
@@ -22,17 +23,25 @@ var UserService = require('../services/user');
 
 // serialize the user onto the session
 passport.serializeUser(function (user, done) {
+  console.log('this is the user in passport.serializeUser', user);
   done(null, user.id);
 });
 
 // deserialize the user from the session and provide user object
 passport.deserializeUser(function (id, done) {
+  console.log("I am in the deserializeUser function, with this id", id);
   UserService.findUserById(id, function (err, user) {
+    // console.log('this is the user',user);
     if (err) {
-      return done(err);
+      // console.log('there was an error but hopefully i will be done');
+      console.log(err);
+      return done(err); //getting rid of "return"
     }
-
-    return done(null, user);
+    else{ //added an else
+      // console.log('actually there were no errors so I am here');
+      console.log('im deserialzing this id',user.id);
+      return done(null, user); //getting rid of "return"
+    }
   });
 });
 /** ---------- PASSPORT STRATEGY DEFINITION ---------- **/
@@ -43,27 +52,31 @@ passport.use('google', new GoogleStrategy({
   callbackURL: config.googleAuth.callbackUrl,
 }, function (token, refreshToken, profile, done) {
   // Google has responded
-
+  console.log('google responded');
   // does this user exist in our database already?
   UserService.findUserByGoogleId(profile.id, function (err, user) {
       if (err) {
+        console.log('there was an error finding the user by google id',err);
         return done(err);
       }
 
-      if (user) { // user does exist!
+      else if (user) { // user does exist!
+        console.log('this is the user',user);
         return done(null, user);
       }
+      else{
+        // user does not exist in our database, let's create one!
+        UserService.createGoogleUser(profile.id, token, profile.displayName,
+          profile.emails[0].value, /* we take first email address */
+          function (err, user) {
+            if (err) {
+              return done(err);
+            }
 
-      // user does not exist in our database, let's create one!
-      UserService.createGoogleUser(profile.id, token, profile.displayName,
-        profile.emails[0].value, /* we take first email address */
-        function (err, user) {
-          if (err) {
-            return done(err);
-          }
+            return done(null, user);
+          });
+      }
 
-          return done(null, user);
-        });
     });
 
 }));
