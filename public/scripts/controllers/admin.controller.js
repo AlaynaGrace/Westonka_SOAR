@@ -1,5 +1,5 @@
-myApp.controller('userController', ['$http','$scope','$timeout', '$mdSidenav', 'getService', function($http, $scope, $timeout, $mdSidenav, getService){
-
+googleAuthApp.controller('adminController', ['$http','$scope','$timeout', function($http, $scope, $timeout){
+console.log('');
   var vm = this;
 //start get slips for grades one and two
   vm.gradesOneAndTwo = function() {
@@ -32,6 +32,18 @@ myApp.controller('userController', ['$http','$scope','$timeout', '$mdSidenav', '
       vm.allSlips = response.data;
     });
   };//end of get all slips for all grades
+
+  var vm = this;
+  //start post incentive
+  vm.postIncentive = function() {
+    $http({
+      method: 'POST',
+      url:'/admin'
+    }).then(function(response){
+      vm.incentive = response.data;
+    });
+  };//end post incentive
+
 
   var vm = this;
   //start get incentive

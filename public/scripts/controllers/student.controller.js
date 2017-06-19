@@ -1,5 +1,5 @@
-myApp.controller('userController', ['$http','$scope','$timeout', '$mdSidenav', 'getService', function($http, $scope, $timeout, $mdSidenav, getService){
-
+googleAuthApp.controller('studentController', ['$http','$scope','$timeout', function($http, $scope, $timeout){
+console.log('this is the studentController');
   var vm = this;
 //start get student slips
   vm.getStudentSlips = function() {

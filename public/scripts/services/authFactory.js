@@ -1,4 +1,5 @@
 googleAuthApp.factory('AuthFactory', function ($http) {
+  console.log('this is that auth');
   var Status = {
     loggedIn: false,
   };
