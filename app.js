@@ -12,6 +12,7 @@ var student = require('./routes/private/student');
 var auth = require('./routes/auth');
 var isLoggedIn = require('./utils/auth');
 var private = require('./routes/private/index');
+var slipnumbers = require('./routes/slipnumbers');
 // var database = require('./utils/database');
 /** ---------- EXPRESS APP CONFIG ---------- **/
 var app = express();
@@ -48,6 +49,7 @@ app.use('/private', isLoggedIn, private);
 app.use('/teacher', teacher);
 app.use('/student', student);
 app.use('/admin', admin);
+app.use('/slipnumbers',slipnumbers);
 app.use('/*', index);
 
 
