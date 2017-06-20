@@ -16,24 +16,25 @@ var config = {
 
 router.get('/', function (req, res) {
   console.log('hit teacher route on server');
-  // pool.connect(function ( err, connection, done){
-  //   if (err) {
-  //     res.send( 400 );
-  //   } else {
-  //     //replace this with actualy query
-  //     let resultSet = connection.query("SELECT * FROM users WHERE homeroom_id =$1, [req.user.homeroom_id]");
-  //        var userArray = [];
-  //       resultSet.on('row', function(row){
-  //       userArray.push(row);
-  //     }); //end on row
-  //       resultSet.on('end', function(){
-  //       done();
-  //       console.log(userArray);
-  //       res.send(userArray);
-  //     });
-  //   }//end else
-  // });// end pool connect
-  res.sendStatus(200);
+  pool.connect(function ( err, connection, done){
+    if (err) {
+      res.send( 'NO!!!' );
+    } else {
+      //replace this with actualy query
+      let homeRoom = connection.query("SELECT * FROM homerooms WHERE id =$1, [123456]");
+        console.log(homeRoom);
+        //  var userArray = [];
+        // homeRoom.on('row', function(row){
+        // userArray.push(row);
+      // }); //end on row
+        // resultSet.on('end', function(){
+        // done();
+        // console.log(userArray);
+        res.send("YES!");
+      // });
+    }//end else
+  });// end pool connect
+  // res.sendStatus(200);
 
 });
 

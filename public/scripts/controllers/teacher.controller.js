@@ -1,13 +1,15 @@
-googleAuthApp.controller('teacherController', function(){
+googleAuthApp.controller('teacherController',  function($http){
 console.log('teacher');
 var vm = this;
 //start getStudentList
 vm.getStudentList = function() {
+  console.log('in getStudentList');
   $http({
     method: 'GET',
     url:'/teacher'
   }).then(function(response){
-    vm.studentArray = response.data;
+    console.log(response);
+    // vm.studentArray = response.data;
   });
 };//end of getStudentList
 
