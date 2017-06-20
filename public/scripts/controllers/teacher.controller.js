@@ -10,4 +10,5 @@ vm.getStudentList = function() {
     vm.studentArray = response.data;
   });
 };//end of getStudentList
+
 });//end myApp
