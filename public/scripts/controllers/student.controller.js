@@ -9,8 +9,9 @@ console.log('this is the studentController');
       url:'/student'
     }).then(function(response){
       vm.studentSlips = response.data;
+      // console.log(response.data);
     });
   };//end of getStudentList
 
-
+ vm.getStudentSlips();
 }]);
