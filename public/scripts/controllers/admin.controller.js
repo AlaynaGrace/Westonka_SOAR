@@ -11,7 +11,7 @@ console.log('');
     });
   };//end get slips for grades one and two
 
-  var vm = this;
+  // var vm = this;
 //start get slips for three and four
   vm.gradesThreeAndFour = function() {
     $http({
@@ -22,7 +22,7 @@ console.log('');
     });
   };//end get slips for three and four
 
-  var vm = this;
+  // var vm = this;
   //start get all slips for all grades
   vm.getAllSlipsForAllGrades = function() {
     $http({
@@ -33,7 +33,7 @@ console.log('');
     });
   };//end of get all slips for all grades
 
-  var vm = this;
+  // var vm = this;
   //start post incentive
   vm.postIncentive = function() {
     $http({
@@ -45,7 +45,7 @@ console.log('');
   };//end post incentive
 
 
-  var vm = this;
+  // var vm = this;
   //start get incentive
   vm.getIncentive = function() {
     $http({
