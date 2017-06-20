@@ -1,4 +1,4 @@
-googleAuthApp.controller('adminController', ['$http','$scope','$timeout', function($http, $scope, $timeout){
+googleAuthApp.controller('adminController', ['$http','$scope','$timeout', 'PDFService', function($http, $scope, $timeout, PDFService){
 console.log('');
   var vm = this;
 //start get slips for grades one and two
@@ -56,7 +56,9 @@ console.log('');
     });
   };//end get incentive
 
-
+  vm.makePDF = function(){
+    PDFService.makeNewPDF();
+  };
 
 
 
