@@ -36,43 +36,56 @@
 
 
 
-<div style = 'text-align: center;' class="jumbrotron">
+<!-- <div style = 'text-align: center;' class="jumbrotron"> -->
 
   <main class="container">
     <div class="align">
 <a href="/" class="logo"><span></span></a>
-    <img name= "whitehawk" id = "whiteHawk" style = 'box-shadow: 3px 3px 3px red; margin-bottom: 30px;width: 200px; height: 200px; background-color: grey; border-radius: 70px 70px 70px 70px; box-shadow: 3px 1px red;' src="http://cdn1.sportngin.com/attachments/call_to_action/6516/5224/WH_Logo_RGB._full_size_large.jpg" alt=""></img>
 </div>
-    <ul style= 'list-style: none;'>
-      <li><a href="#!teachers">Teacher Page</a></li>
-      <li><a href="#!admins">Admin Page</a></li>
-      <li><a href="#!students">Student Page</a></li>
-    </ul>
 </div>
+    <!-- <ul style= 'list-style: none;'>
+      <li><a class = 'listEm' href="#!teachers">Teacher Page</a></li>
+      <li><a class = 'listEm' href="#!admins">Admin Page</a></li>
+      <li><a class = 'listEm' href="#!students">Student Page</a></li>
+    </ul> -->
+<!-- All navs will not be included for mvp -->
+
+
+<header role="banner">
+<nav id="navbar-primary" class="navbar" role="navigation">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-primary-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <div class="collapse navbar-collapse" id="navbar-primary-collapse">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#!login">Login</a></li>
+        <li><a class = 'listEm' href="#!teachers">Teacher Page</a></li>
+        <li><a><img id= 'whiteHawk' style = 'width: 200px; height: 200px;' src='public/assets/styles/wHawk.png'></a></li>
+        <li><a class = 'listEm' href="#!admins">Admin Page</a></li>
+        <li><a class = 'listEm' href="#!students">Student Page</a></li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+</header><!-- header role="banner" -->
 
 
 
 
-       <div class="grid">
+
+
+
 <ng-view></ng-view>
-         <!-- <form action="https://httpbin.org/post" method="POST" class="form login"> -->
 
-           <!-- <div class="form__field">
-             <label for="login__username"><svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#user"></use></svg><span class="hidden">Username</span></label>
-             <input id="login__username" type="text" name="username" class="form__input" placeholder="Username" required>
-           </div>
-           <div class="form__field">
-             <label for="login__password"><svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#lock"></use></svg><span class="hidden">Password</span></label>
-             <input id="login__password" type="password" name="password" class="form__input" placeholder="Password" required>
-           </div> -->
 
-           <!-- <div class="form__field">
-             <input type="submit" value="Sign In">
-           </div> -->
 
-         <!-- </form> -->
-
-       </div>
 
 
       <nav>

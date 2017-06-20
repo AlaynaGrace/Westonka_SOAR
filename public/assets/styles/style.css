@@ -7,38 +7,43 @@
 }
 
 #whiteHawk {
-    background: red;
     position: relative;
-    -webkit-animation: myfirst 5s infinite; /* Safari 4.0 - 8.0 */
+    -webkit-animation: myfirst 5s; /* Safari 4.0 - 8.0 */
     -webkit-animation-direction: alternate; /* Safari 4.0 - 8.0 */
-    animation: myfirst 5s infinite;
+    animation: myfirst 5s;
     animation-direction: alternate;
 }
 
+.studentHone{
+  font-size: 20px!important;
+  color: white;
+  text-shadow: 2px 2px 2px red;
+  text-align: center;
+}
 /* Safari 4.0 - 8.0 */
 @-webkit-keyframes myfirst {
-    0%   {background: red; left: 0px; top: 0px;}
-    25%  {background: yellow; left: 200px; top: 0px;}
-    50%  {background: blue; left: 200px; top: 0px;}
-    75%  {background: green; left: 0px; top: 0px;}
-    100% {background: red; left: 0px; top: 0px;}
+    0%   { left: -500px; top: 0px;}
+    25%  { left: 0px; top: 0px;}
+    50%  { left: 0px; top: 0px;}
+    75%  { left: 0px; top: 0px;}
+    100% { left: 0px; top: 0px;}
 }
 
 @keyframes myfirst {
-    0%   {background: red; left: 0px; top: 0px;}
-    25%  {background: yellow; left: 200px; top: 0px;}
-    50%  {background: blue; left: 200px; top: 0px;}
-    75%  {background: green; left: 0px; top: 0px;}
-    100% {background: red; left: 0px; top: 0px;}
+    0%   { left: -500px; top: 0px;}
+    25%  { left: 0px; top: 0px;}
+    50%  { left: 0px; top: 0px;}
+    75%  { left: 0px; top: 0px;}
+    100% { left: 0px; top: 0px;}
 }
 /* helpers/align.css */
 
-.align {
+/*.align {
   align-items: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
-}
+}*/
 
 /* helpers/grid.css */
 
@@ -366,3 +371,791 @@ h1, h2, h3, h4 {
   content: "\f013";
   color: black;
 }
+
+body {
+
+  margin: 0;
+  padding: 0;
+}
+
+.wrapp {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+  background: #7ae298;
+  /* Old browsers */
+  background: -moz-linear-gradient(45deg, #7ae298 0%, #9af282 100%);
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(45deg, #7ae298 0%, #9af282 100%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(45deg, #7ae298 0%, #9af282 100%);
+}
+
+.cube {
+  position: relative;
+  font-family: 'Oswald', sans-serif;
+  width: 250px;
+  height: 250px;
+  box-shadow: 30px 30px 20px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px 20px 20px 20px;
+}
+
+.ants {
+  fill: black;
+  width: 15px;
+  height: 25px;
+  position: absolute;
+}
+
+#ant1 {
+  left: 50%;
+  bottom: -60%;
+  animation: ant-1-animation 8s infinite;
+}
+
+#ant2 {
+  left: 0;
+  bottom: -50%;
+  animation: ant-2-animation 9s infinite;
+}
+
+#ant3 {
+  left: 100%;
+  bottom: -70%;
+  animation: ant-3-animation 12s infinite;
+  animation-delay: 1s;
+}
+
+#ant4 {
+  left: 0;
+  bottom: -50%;
+  animation: ant-2-animation 12s infinite;
+  animation-delay: 3s;
+}
+
+@keyframes ant-1-animation {
+  0% {
+    left: 50%;
+    bottom: -60%;
+  }
+  10% {
+    left: 50%;
+    bottom: 5%;
+    transform: rotate(0deg);
+  }
+  12% {
+    left: 50%;
+    bottom: 5%;
+    transform: rotate(-90deg);
+  }
+  18% {
+    transform: rotate(-90deg);
+  }
+  20% {
+    left: 5%;
+    bottom: 5%;
+    transform: rotate(-90deg);
+  }
+  22% {
+    transform: rotate(0);
+  }
+  32% {
+    transform: rotate(0);
+  }
+  38% {
+    left: 5%;
+    bottom: 87%;
+    transform: rotate(90deg);
+  }
+  50% {
+    left: 90%;
+    bottom: 87%;
+    transform: rotate(90deg);
+  }
+  55% {
+    left: 90%;
+    bottom: 87%;
+    transform: rotate(230deg);
+  }
+  72% {
+    left: 5%;
+    bottom: 5%;
+    transform: rotate(230deg);
+  }
+  78% {
+    left: 5%;
+    bottom: 5%;
+    transform: rotate(90deg);
+  }
+  85% {
+    left: 50%;
+    bottom: 5%;
+    transform: rotate(90deg);
+  }
+  90% {
+    left: 50%;
+    bottom: 5%;
+    transform: rotate(180deg);
+  }
+  100% {
+    left: 50%;
+    bottom: -60%;
+    transform: rotate(180deg);
+  }
+}
+@keyframes ant-2-animation {
+  0% {
+    left: 0;
+    bottom: -50%;
+    transform: rotate(45deg);
+  }
+  15% {
+    left: 50%;
+    bottom: 5%;
+    transform: rotate(45deg);
+  }
+  18% {
+    left: 50%;
+    bottom: 5%;
+    transform: rotate(90deg);
+  }
+  28% {
+    left: 85%;
+    bottom: 5%;
+    transform: rotate(90deg);
+  }
+  30% {
+    left: 85%;
+    bottom: 5%;
+    transform: rotate(0deg);
+  }
+  40% {
+    left: 85%;
+    bottom: 85%;
+    transform: rotate(0deg);
+  }
+  48% {
+    left: 85%;
+    bottom: 85%;
+    transform: rotate(-90deg);
+  }
+  58% {
+    left: 5%;
+    bottom: 85%;
+    transform: rotate(-90deg);
+  }
+  68% {
+    left: 5%;
+    bottom: 85%;
+    transform: rotate(-180deg);
+  }
+  79% {
+    left: 5%;
+    bottom: 5%;
+    transform: rotate(-180deg);
+  }
+  81% {
+    left: 5%;
+    bottom: 5%;
+    transform: rotate(-270deg);
+  }
+  88% {
+    left: 50%;
+    bottom: 5%;
+    transform: rotate(-270deg);
+  }
+  90% {
+    left: 50%;
+    bottom: 5%;
+    transform: rotate(-140deg);
+  }
+  100% {
+    left: 0%;
+    bottom: -50%;
+    transform: rotate(-140deg);
+  }
+}
+@keyframes ant-3-animation {
+  0% {
+    left: 100%;
+    bottom: -70%;
+    transform: rotate(-45deg);
+  }
+  15% {
+    left: 50%;
+    bottom: -15%;
+    transform: rotate(-45deg);
+  }
+  18% {
+    left: 50%;
+    bottom: -15%;
+    transform: rotate(-90deg);
+  }
+  28% {
+    left: -10%;
+    bottom: -15%;
+    transform: rotate(-90deg);
+  }
+  30% {
+    left: -10%;
+    bottom: -15%;
+    transform: rotate(0deg);
+  }
+  45% {
+    left: -10%;
+    bottom: 105%;
+    transform: rotate(0deg);
+  }
+  48% {
+    left: -10%;
+    bottom: 105%;
+    transform: rotate(90deg);
+  }
+  58% {
+    left: 105%;
+    bottom: 105%;
+    transform: rotate(90deg);
+  }
+  60% {
+    left: 105%;
+    bottom: 105%;
+    transform: rotate(180deg);
+  }
+  75% {
+    left: 105%;
+    bottom: -15%;
+    transform: rotate(180deg);
+  }
+  81% {
+    left: 105%;
+    bottom: -15%;
+    transform: rotate(270deg);
+  }
+  88% {
+    left: 50%;
+    bottom: -15%;
+    transform: rotate(270deg);
+  }
+  90% {
+    left: 50%;
+    bottom: -15%;
+    transform: rotate(180deg);
+  }
+  92% {
+    left: 50%;
+    bottom: -15%;
+    transform: rotate(130deg);
+  }
+  100% {
+    left: 100%;
+    bottom: -70%;
+    transform: rotate(130deg);
+  }
+}
+
+
+
+/*start teacher page css*/
+
+.jumbotron{
+  background-color: black;
+  padding-top:20px;
+  padding-bottom: 10px;
+  text-align: center;
+}
+
+
+.position {
+  margin-left: 80%;
+
+  text-align: center;
+  margin-top: 15%;
+}
+
+#workarea {
+  float: right;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  font-family: Raleway;
+}
+
+#text{
+  margin-top:20px;
+}
+
+#personal {
+  color:white;
+  text-decoration:none;
+  position:absolute;
+  bottom:15px;
+  right:2%;
+}
+/*    start code for the actual button:         */
+
+
+/*
+    Spot is the span on the inside of the href that
+    fills the parent and makes the hover and link work
+    for the entire div
+*/
+
+.spot {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+/*
+    This is the outer svg wrapper that the SVG itself will
+    fill. Multiple svg-wrapper classes can be put side by side.
+*/
+
+.svg-wrapper {
+  margin-top: 0;
+  position: relative;
+  width: 150px;
+  /*make sure to use same height/width as in the html*/
+  height: 40px;
+  display: inline-block;
+  border-radius: 3px;
+  margin-left: 5px;
+  margin-right: 5px
+}
+/*
+  This is where we define the fill, color, thickness,
+  and stroke pattern of the SVG when there is no hover.
+  The dasharray and offset together define the line position
+  under the words. Here's also where the transition speed is set.
+*/
+
+#shape {
+  stroke-width: 6px;
+  fill: transparent;
+  stroke: #009FFD;
+  stroke-dasharray: 85 400;
+  stroke-dashoffset: -220;
+  transition: 1s all ease;
+}
+/*
+    Pushing the text up into the SVG. Without this the
+    text would be below the div's.
+*/
+
+#text {
+  margin-top: -35px;
+  text-align: center;
+}
+
+#text a {
+  color: white;
+  text-decoration: none;
+  font-weight: 100;
+  font-size: 1.1em;
+}
+/*
+    Changing the shape on hover. I change the color of the stroke,
+make it thinner, then set it to again wrap around the entire parent element.
+*/
+
+.svg-wrapper:hover #shape {
+  stroke-dasharray: 50 0;
+  stroke-width: 3px;
+  stroke-dashoffset: 0;
+  stroke: #06D6A0;
+}
+
+// Fonts
+
+@import url(https://fonts.googleapis.com/css?family=Indie+Flower);
+
+h1{
+  text-shadow: 2px 2px 2px silver;
+  margin: 50px 0;
+  color: #fff;
+  font-family: 'Indie Flower', cursive;
+  font-size: 48px;
+  font-weight: normal;
+  text-align: center;
+}
+
+.btn-container{
+
+}
+
+.btn{
+	width: 300px;
+	height: 50px;
+	line-height: 50px;
+	background-color: red;
+  border-radius: 8px;
+	color: #fff;
+  font-family: 'Indie Flower', cursive;
+  font-size: 22px;
+  font-weight: normal;
+	text-decoration: none;
+	text-align: center;
+	display: inline-block;
+  position: relative;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: -webkit-transform;
+  transition-property: transform;
+  -webkit-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  transform: translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  -webkit-transform: translateY(-6px);
+  -ms-transform: translateY(-6px);
+  transform: translateY(-6px);
+  -webkit-animation-name: hover;
+  animation-name: hover;
+  -webkit-animation-duration: 1.5s;
+  animation-duration: 1.5s;
+  -webkit-animation-delay: 0.3s;
+  animation-delay: 0.3s;
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  -webkit-animation-direction: alternate;
+  animation-direction: alternate;
+  &:before{
+  	pointer-events: none;
+	  position: absolute;
+	  z-index: -1;
+	  content: '';
+
+	  height: 10px;
+	  width: 90%;
+	  opacity: 0;
+	  background: -webkit-radial-gradient(center, ellipse, rgba(0, 0, 0, 0.35) 0%, rgba(0, 0, 0, 0) 80%);
+	  background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.35) 0%, rgba(0, 0, 0, 0) 80%);
+	  -webkit-transition-duration: 0.3s;
+	  transition-duration: 0.3s;
+	  -webkit-transition-property: -webkit-transform, opacity;
+	  transition-property: transform, opacity;
+	  opacity: .4;
+	  -webkit-transform: translateY(6px);
+	  -ms-transform: translateY(6px);
+	  transform: translateY(6px);
+	  -webkit-animation-name: hover-shadow;
+	  animation-name: hover-shadow;
+	  -webkit-animation-duration: 1.5s;
+	  animation-duration: 1.5s;
+	  -webkit-animation-delay: .3s;
+	  animation-delay: .3s;
+	  -webkit-animation-timing-function: linear;
+	  animation-timing-function: linear;
+	  -webkit-animation-iteration-count: infinite;
+	  animation-iteration-count: infinite;
+	  -webkit-animation-direction: alternate;
+	  animation-direction: alternate;
+  }
+	&:hover{
+		background-color: #e16e50;
+	}
+}
+
+@keyframes hover {
+  50% {
+    -webkit-transform: translateY(-3px);
+    -ms-transform: translateY(-3px);
+    transform: translateY(-3px);
+  }
+
+  100% {
+    -webkit-transform: translateY(-6px);
+    -ms-transform: translateY(-6px);
+    transform: translateY(-6px);
+  }
+}
+
+@-webkit-keyframes hover-shadow {
+  0% {
+    -webkit-transform: translateY(6px);
+    transform: translateY(6px);
+    opacity: .4;
+  }
+
+  50% {
+    -webkit-transform: translateY(3px);
+    transform: translateY(3px);
+    opacity: 1;
+  }
+
+  100% {
+    -webkit-transform: translateY(6px);
+    transform: translateY(6px);
+    opacity: .4;
+  }
+}
+
+@keyframes hover-shadow {
+  0% {
+    -webkit-transform: translateY(6px);
+    -ms-transform: translateY(6px);
+    transform: translateY(6px);
+    opacity: .4;
+  }
+
+  50% {
+    -webkit-transform: translateY(3px);
+    -ms-transform: translateY(3px);
+    transform: translateY(3px);
+    opacity: 1;
+  }
+
+  100% {
+    -webkit-transform: translateY(6px);
+    -ms-transform: translateY(6px);
+    transform: translateY(6px);
+    opacity: .4;
+  }
+}
+
+@-webkit-keyframes hover {
+  50% {
+    -webkit-transform: translateY(-3px);
+    transform: translateY(-3px);
+  }
+
+  100% {
+    -webkit-transform: translateY(-6px);
+    transform: translateY(-6px);
+  }
+}
+
+@keyframes hover {
+  50% {
+    -webkit-transform: translateY(-3px);
+    -ms-transform: translateY(-3px);
+    transform: translateY(-3px);
+  }
+
+  100% {
+    -webkit-transform: translateY(-6px);
+    -ms-transform: translateY(-6px);
+    transform: translateY(-6px);
+  }
+}
+
+
+
+html, body {
+  height: 100%;
+}
+
+body {
+  font-family: helvetica;
+  font-weight: 100;
+  font-size: 14px;
+  margin: 0 auto;
+  background: grey;
+}
+
+.right {
+  float: right;
+  position: relative;
+  top: 6px;
+}
+
+.top {
+  margin-top: -30px;
+}
+
+#notebooks {
+  background: whitesmoke;
+  position: absolute;
+  left: 25%;
+  margin-left: -175px;
+  margin-top: 35px;
+  width: 350px;
+  padding: 15px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  box-shadow: inset 1px 1px 0 white;
+  max-height: 450px;
+}
+
+/*ul {
+  margin: 0 auto!important;
+  padding: 0!important;
+  max-height: 390px!important;
+  overflow-y: auto!important;
+  border: 1px solid rgba(0, 0, 0, 0.1)!important;
+  padding: 5px 5px 0 5px!important;
+  border-left: none!important;
+  border-right: none!important;
+}
+
+li {
+  list-style: none!important;
+  background-color: rgba(0, 0, 0, 0.05)!important;
+  background-image:
+    linear-gradient(
+      90deg,
+      red 10px,
+      #EEE 10px,
+      #EEE 11px,
+      transparent 11px)!important;
+  padding: 10px 15px 10px 25px!important;
+  border: 1px solid #CCC!important;
+  box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.5)!important;
+  margin-bottom: 5px!important;
+  width: 100%!important;
+  box-sizing: border-box!important;
+  cursor: pointer!important;
+  border-radius: 3px!important;
+}*/
+
+#query {
+  width: 100%;
+  box-sizing: border-box;
+  font-size: 19px;
+  padding: 5px;
+  font-family: calibri light;
+  margin-bottom: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 3px;
+  box-shadow: inset 1px 1px 0 rgba(0, 0, 0, 0.1);
+}
+
+#notebooks span {
+  width: 350px!important;
+  display: block;
+  position: absolute;
+  background: red;
+  bottom: -35px;
+  left: -1px;
+  width: 360px;
+  border-radius: 0 0 5px 5px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: inset 1px 1px rgba(255, 255, 255, 0.5);
+}
+
+#notebooks select {
+  width: 120px;
+  margin-left: 230px;
+  margin-top: -45px;
+  border-radius: 0 3px 3px 0;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-left: 1px solid rgba(0, 0, 0, 0.1);
+  position: absolute;
+  padding: 7.5px;
+  box-shadow: inset 0 1px 0 rgba(0, 0, 0, 0.1);
+}
+
+#notebooks select:focus, #query:focus {
+  border: 1px solid #FFD32E;
+  box-shadow: 0 0 10px rgba(255, 255, 0, 0.1);
+  outline: none;
+}
+
+svg{
+  padding-top: 10px;
+}
+
+/*end teacher page css*/
+
+
+/*student page start css*/
+body {
+  background: #000;
+}
+.shimmer {
+  font-family: "Lato";
+  text-align: center;
+  font-size: 60px!important;
+  margin: 0 auto;
+  display: inline;
+  margin-bottom: 0;
+}
+
+.shimmer {
+  text-align: center!important;
+  color: rgba(255, 0, 0, 0.4);
+  background: -webkit-gradient(linear, left top, right top, from(#222), to(#222), color-stop(0.5, #fff));
+  background: -moz-gradient(linear, left top, right top, from(#222), to(#222), color-stop(0.5, #fff));
+  background: gradient(linear, left top, right top, from(#222), to(#222), color-stop(0.5, #fff));
+  -webkit-background-size: 125px 100%;
+  -moz-background-size: 125px 100%;
+  background-size: 125px 100%;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  background-clip: text;
+  -webkit-animation-name: shimmer;
+  -moz-animation-name: shimmer;
+  animation-name: shimmer;
+  -webkit-animation-duration: 3s;
+  -moz-animation-duration: 3s;
+  animation-duration: 3s;
+  /*-webkit-animation-iteration-count: infinite;*/
+  /*-moz-animation-iteration-count: infinite;*/
+  /*animation-iteration-count: infinite;*/
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  background-color: grey;
+}
+@-moz-keyframes shimmer {
+  0% {
+    background-position: top left;
+  }
+  100% {
+    background-position: top right;
+  }
+}
+@-webkit-keyframes shimmer {
+  0% {
+    background-position: top left;
+  }
+  100% {
+    background-position: top right;
+  }
+}
+@-o-keyframes shimmer {
+  0% {
+    background-position: top left;
+  }
+  100% {
+    background-position: top right;
+  }
+}
+@keyframes shimmer {
+  0% {
+    background-position: top left;
+  }
+  100% {
+    background-position: top right;
+  }
+}
+/*student page end css*/
+
+
+/*start nav bar*/
+
+#navbar-primary .navbar-nav {
+  width: 100%;
+  text-align: center;
+  text-decoration: overline;
+  /*background-color: silver;*/
+}
+#navbar-primary .navbar-nav > li {
+  display: inline-block;
+  float: none;
+}
+#navbar-primary .navbar-nav > li > a {
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+/*end nav bar*/

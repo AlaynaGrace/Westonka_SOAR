@@ -1,9 +1,15 @@
-<div class="container">
-<h1 class="subheader">Homeroom and Student Slips {insert #}</h1>
-<!-- <div class="homeroom_list" ng-repeat="studentArray">
+<div id="notebooks" ng-app="notebooks" ng-controller="teacherController">
+  <input type="text" id="query" ng-model="query"/>
+  <ul id="notebook_ul">
+    <li style = 'height: 30px; width: 150px;' ng-repeat="notebook in notebooks | filter:query | orderBy: orderList">
+      name: {{notebook.name}}<br/>
+      Total Slips:
+      <div class="right top">{{notebook.slips}}</div>
+    </li>
+  </ul>
+  <span>Total slips: {{notebooks.length}}</span>
+</div>
 
-</div> -->
-
-<button>Randomize a Winner</button>
-
+<div style=' width: 300px; margin-left:50%; margin-top: 60px;' class="btn-container">
+  <div style='font-size: 27px; margin-top: 3px;'class= 'btn btn-succes'>Spin To Win</a>
 </div>
