@@ -11,6 +11,7 @@ var router = express.Router();
 var path = require('path');
 var bodyParser = require('body-parser');
 var pg = require('pg');
+var pool = require('../../modules/pool.js');
 var port = 3000;
  //PG
  var config = {
@@ -19,7 +20,7 @@ var port = 3000;
   port: port,
   max: 20
 };// end config
-var pool = new pg.Pool ( config );
+
 
 
 router.get('/',function(req,res){
