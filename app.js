@@ -48,7 +48,7 @@ app.use('/private', isLoggedIn, private);
 app.use('/teacher', teacher);
 app.use('/student', student);
 app.use('/admin', admin);
-app.use('/', index);
+app.use('/*', index);
 
 
 /** ---------- SERVER START ---------- **/

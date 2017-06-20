@@ -1,3 +1,3 @@
-myApp.controller('loginController', ['$http', '$location', function($http, $location) {
-
-}]);
+// myApp.controller('loginController', ['$http', '$location', function($http, $location) {
+//
+// }]);

@@ -1,4 +1,5 @@
 googleAuthApp.controller('NavController', function (AuthFactory, $window) {
+console.log('this is the NavController');
   var _this = this;
   var authFactory = AuthFactory;
   _this.displayLogout = false; // should we display the logout option on the DOM?
@@ -30,6 +31,7 @@ googleAuthApp.controller('NavController', function (AuthFactory, $window) {
       .then(function (response) { // success
         authFactory.setLoggedIn(false);
         _this.username = '';
+        console.log('redirecting to reload home');
         $window.location.href = '/'; // forces a page reload which will update our NavController
       },
 
