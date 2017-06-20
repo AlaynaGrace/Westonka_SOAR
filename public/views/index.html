@@ -1,10 +1,17 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" class="no-js">
 <head>
+  <meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
   <title>West Tonka</title>
   <script src="public/vendors/angular.min.js"></script>
   <script src="public/vendors/angular-route.min.js"></script>
   <script src="public/scripts/app.js"></script>
+  <link rel="stylesheet" href="public/assets/styles/style.css"></link>
+  <link rel="stylesheet" href="public/assets/styles/menu.css"></link>
+  <script src='public/vendors/font-awesome.css'></script>
+
   <script src="public/scripts/services/authFactory.js"></script>
   <script src="public/scripts/controllers/navController.js"></script>
   <script src="public/scripts/controllers/authController.js"></script>
@@ -14,7 +21,7 @@
   <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
 
 
-
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
   <script type="text/javascript" src="public/scripts/controllers/student.controller.js"></script>
   <script type="text/javascript" src="public/scripts/controllers/teacher.controller.js"></script>
   <script type="text/javascript" src="public/scripts/controllers/admin.controller.js"></script>
@@ -26,35 +33,47 @@
 
 <!-- body start -->
 <body ng-app="theGoogles">
-  <ul>
-    <li><a href="#!teachers">Teacher Page</a></li>
-    <li><a href="#!admins">Admin Page</a></li>
-    <li><a href="#!students">Student Page</a></li>
-  </ul>
+
+
+
+<div style = 'text-align: center;' class="jumbrotron">
+
   <main class="container">
     <div class="align">
-    <img style = 'box-shadow: 3px 3px 3px black; margin-bottom: 30px;width: 300px; height: 300px; background-color: grey; border-radius: 100px 100px 100px 100px; box-shadow: 3px 1px black;' src="http://cdn1.sportngin.com/attachments/call_to_action/6516/5224/WH_Logo_RGB._full_size_large.jpg" alt=""></img>
+<a href="/" class="logo"><span></span></a>
+    <img name= "whitehawk" id = "whiteHawk" style = 'box-shadow: 3px 3px 3px red; margin-bottom: 30px;width: 200px; height: 200px; background-color: grey; border-radius: 70px 70px 70px 70px; box-shadow: 3px 1px red;' src="http://cdn1.sportngin.com/attachments/call_to_action/6516/5224/WH_Logo_RGB._full_size_large.jpg" alt=""></img>
+</div>
+    <ul style= 'list-style: none;'>
+      <li><a href="#!teachers">Teacher Page</a></li>
+      <li><a href="#!admins">Admin Page</a></li>
+      <li><a href="#!students">Student Page</a></li>
+    </ul>
+</div>
+
+
+
+
        <div class="grid">
+<ng-view></ng-view>
+         <!-- <form action="https://httpbin.org/post" method="POST" class="form login"> -->
 
-         <form action="https://httpbin.org/post" method="POST" class="form login">
-
-           <div class="form__field">
+           <!-- <div class="form__field">
              <label for="login__username"><svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#user"></use></svg><span class="hidden">Username</span></label>
              <input id="login__username" type="text" name="username" class="form__input" placeholder="Username" required>
            </div>
            <div class="form__field">
              <label for="login__password"><svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#lock"></use></svg><span class="hidden">Password</span></label>
              <input id="login__password" type="password" name="password" class="form__input" placeholder="Password" required>
-           </div>
+           </div> -->
 
-           <div class="form__field">
+           <!-- <div class="form__field">
              <input type="submit" value="Sign In">
-           </div>
+           </div> -->
 
-         </form>
+         <!-- </form> -->
 
        </div>
-     </div>
+
 
       <nav>
         <ul class="row">
@@ -63,7 +82,7 @@
         </ul>
       </nav>
     <!-- Pull in views via ngRoutes here -->
-    <ng-view></ng-view>
+
   </main>
 </body>
 </html>
