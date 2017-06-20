@@ -1,13 +1,13 @@
-<div id="notebooks" ng-app="notebooks" ng-controller="teacherController">
+<div id="notebooks" ng-app="notebooks">
   <input type="text" id="query" ng-model="query"/>
   <ul id="notebook_ul">
     <li style = 'height: 30px; width: 150px;' ng-repeat="notebook in notebooks | filter:query | orderBy: orderList">
-      name: {{notebook.name}}<br/>
-      Total Slips:
-      <div class="right top">{{notebook.slips}}</div>
+      <!-- name: {{notebook.name}}<br/> -->
+      <!-- Total Slips: -->
+      <!-- <div class="right top">{{notebook.slips}}</div> -->
     </li>
   </ul>
-  <span>Total slips: {{notebooks.length}}</span>
+  <!-- <span>Total slips: {{notebooks.length}}</span> -->
 </div>
 
 <div style=' width: 300px; margin-left:50%; margin-top: 60px;' class="btn-container">
