@@ -5,10 +5,16 @@
  */
 var express = require('express');
 var router  = express.Router();
-// var calendar = require('./calendar');
+
+var teacher = require('./teacher');
+var admin = require ('./admin');
+var student = require ('./student');
 
 /** ---------- SUBROUTES ---------- **/
-// router.use('/calendar', calendar);
+router.use('/teacher', teacher);
+router.use('/admin', admin);
+router.use('/student', student);
+
 
 /**
  * GET private/index

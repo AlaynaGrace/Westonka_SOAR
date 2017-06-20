@@ -1,8 +1,7 @@
 /**
- * Provides basic route for providing initial package
- * to client.
+ * Provides basic route for admin view
  *
- * @module routes/index
+ * @module routes/private admin
  */
 var express = require('express');
 var router = express.Router();
@@ -19,34 +18,28 @@ let config = {
   max: 20
 };// end config
 let pool = new pg.Pool ( config );
-/**
- * GET /
- *
- * Send client the top-level index.html page.
- * @return index.html
- */
-
-
 
 // GET Admin
 router.get('/', function (req, res) {
-  pool.connect(function ( err, connection, done){
-    if (err) {
-      res.send( 400 );
-    } else {
-      //replace this with actualy query
-      let resultSet = connection.query("SELECT * FROM slips WHERE student_id IS NOT NULL");
-         var userArray = [];
-        resultSet.on('row', function(row){
-        // userArray.push(row);
-      }); //end on row
-        resultSet.on('end', function(){
-        done();
-        console.log(userArray);
-        res.send( userArray);
-      });
-    }//end else
-  });// end pool connect
+  console.log('in admin server route');
+  // pool.connect(function ( err, connection, done){
+
+  //   if (err) {
+  //     res.send( 400 );
+  //   } else {
+  //     //replace this with actualy query
+  //     let resultSet = connection.query("SELECT * FROM slips WHERE student_id IS NOT NULL");
+  //        var userArray = [];
+  //       resultSet.on('row', function(row){
+  //       // userArray.push(row);
+  //     }); //end on row
+  //       resultSet.on('end', function(){
+  //       done();
+  //       console.log(userArray);
+  //       res.send( userArray);
+  //     });
+  //   }//end else
+  // });// end pool connect
 
   res.sendStatus(200);
 
