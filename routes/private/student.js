@@ -13,29 +13,35 @@ var bodyParser = require('body-parser');
 var pool = require('../../modules/pool');
 
 
+
+
 router.get('/',function(req,res){
   console.log('in student slips');
-  // var studentSlips = [];
-  //
-  // pool.connect(function(err, connection, done){
-  //   if(err){
-  //     console.log(err);
-  //     res.send(400);
-  //   }
-  //   else{
-  //     var resultSet = connection.query('SELECT * FROM users JOIN slips ON user.id=slips.student_id');
-  //
-  //     resultSet.on('row', function(row){
-  //       studentSlips.push(row);
-  //     });
-  //     resultSet.on('end', function(){
-  //       done();
-  //       console.log(studentSlips);
-  //       res.send(studentSlips);
-  //     });
-  //   }
-  // });
-  res.send(200);
+  var studentSlips = [];
+
+  pool.connect(function (err, connection, done){
+    if(err){
+      console.log(err);
+      res.send(400);
+    }
+    else{
+      console.log('connected to db');
+      // var resultSet = connection.query('SELECT * FROM users JOIN slips ON user.id=slips.student_id');
+        var resultSet = connection.query('SELECT * FROM slips WHERE id = 1');
+      resultSet.on('row', function(row){
+        console.log('are you running', row);
+        studentSlips.push(row);
+      });
+      resultSet.on('end', function(){
+
+        console.log('student slips', studentSlips);
+        res.send(studentSlips);
+
+        done();
+      });
+    }
+  });
+  // res.send(200);
 }); // end router.get
 
 
