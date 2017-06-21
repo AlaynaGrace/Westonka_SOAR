@@ -14,6 +14,32 @@
     animation-direction: alternate;
 }
 
+
+body{
+background: linear-gradient(270deg, #0a0b0b, #e11616)!important;
+background-size: 400% 400%!important;
+
+-webkit-animation: AnimationName 22s ease infinite;
+-moz-animation: AnimationName 22s ease infinite;
+animation: AnimationName 22s ease infinite;
+}
+
+@-webkit-keyframes AnimationName {
+    0%{background-position:0% 94%}
+    50%{background-position:100% 7%}
+    100%{background-position:0% 94%}
+}
+@-moz-keyframes AnimationName {
+    0%{background-position:0% 94%}
+    50%{background-position:100% 7%}
+    100%{background-position:0% 94%}
+}
+@keyframes AnimationName {
+    0%{background-position:0% 94%}
+    50%{background-position:100% 7%}
+    100%{background-position:0% 94%}
+}
+
 .studentHone{
   font-size: 20px!important;
   color: white;
@@ -985,36 +1011,7 @@ body {
   max-height: 450px;
 }
 
-/*ul {
-  margin: 0 auto!important;
-  padding: 0!important;
-  max-height: 390px!important;
-  overflow-y: auto!important;
-  border: 1px solid rgba(0, 0, 0, 0.1)!important;
-  padding: 5px 5px 0 5px!important;
-  border-left: none!important;
-  border-right: none!important;
-}
 
-li {
-  list-style: none!important;
-  background-color: rgba(0, 0, 0, 0.05)!important;
-  background-image:
-    linear-gradient(
-      90deg,
-      red 10px,
-      #EEE 10px,
-      #EEE 11px,
-      transparent 11px)!important;
-  padding: 10px 15px 10px 25px!important;
-  border: 1px solid #CCC!important;
-  box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.5)!important;
-  margin-bottom: 5px!important;
-  width: 100%!important;
-  box-sizing: border-box!important;
-  cursor: pointer!important;
-  border-radius: 3px!important;
-}*/
 
 #query {
   width: 100%;
@@ -1159,3 +1156,8 @@ body {
 }
 
 /*end nav bar*/
+
+/*start logo shimmer*/
+
+
+/*end logo shimmer*/

@@ -13,5 +13,17 @@ console.log('this is the studentController');
     });
   };//end of getStudentList
 
+ststudentslips
  vm.getStudentSlips();
+  //start post student slips
+    vm.postStudentSlip = function() {
+      $http({
+        method: 'POST',
+        url:'/student'
+      }).then(function(response){
+        vm.studentSlip = response.data;
+      });
+    };//end of postStudentSlip
+   vm.getStudentSlips();
+master
 }]);
