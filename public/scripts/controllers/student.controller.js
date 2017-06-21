@@ -30,7 +30,7 @@ console.log('this is the studentController');
       method: 'GET',
       url:'/student'
     }).then(function(response){
-      vm.studentSlips = response.data;
+      vm.studentSlips = response.data.length;
       // console.log(response.data);
     });
   };//end of getStudentList
