@@ -1,14 +1,28 @@
 <h1 class="shimmer">Welcome To The Student Page</h1>
 
+<!-- <div>All Student Slips: {{sc.studentSlips}}</div> -->
+<!-- <div ng-repeat= "slips in vm.studentSlips"class=""></div> -->
 
 
 
 
 <div class="form-group">
   <label style = 'color: white;' for="usr">Slip Key</label>
-  <input type="text" class="form-control" id="usr" placeholder="Enter your key here.....">
-  <button style = 'margin-top: 20px;' type="button" class="btn btn-info btn-lg">Large button</button>
+  <input type="text" class="form-control" id="usr" ng-model="sc.slipKey" placeholder="Enter your key here.....">
+  <label style = 'color: white;'>S</label>
+  <input type="checkbox" name="" ng-model="sc.s" value="">
+  <label style = 'color: white;'>O</label>
+  <input type="checkbox" name="" ng-model="sc.o" value="">
+  <label style = 'color: white;'>A</label>
+  <input type="checkbox" name="" ng-model="sc.a" value="">
+  <label style = 'color: white;'>R</label>
+  <input type="checkbox" name="" ng-model="sc.r" value="">
+  <br>
+  <button style = 'margin-top: 20px;' type="button" ng-click="sc.postStudentSlip()" class="btn btn-info btn-lg">Large button</button>
 </div>
+
+
+<div>All Student Slips: {{sc.studentSlips}}</div>
 
 
 
