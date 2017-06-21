@@ -9,9 +9,12 @@ console.log('this is the studentController');
       url:'/student'
     }).then(function(response){
       vm.studentSlips = response.data;
+      // console.log(response.data);
     });
   };//end of getStudentList
 
+ststudentslips
+ vm.getStudentSlips();
   //start post student slips
     vm.postStudentSlip = function() {
       $http({
@@ -21,4 +24,6 @@ console.log('this is the studentController');
         vm.studentSlip = response.data;
       });
     };//end of postStudentSlip
+   vm.getStudentSlips();
+master
 }]);
