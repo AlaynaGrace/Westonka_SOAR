@@ -17,7 +17,8 @@ CREATE TABLE users(
   teacher BOOLEAN,
   homeroom_id INT REFERENCES homerooms(id),
   google_id VARCHAR(120),
-  token VARCHAR(120)
+  token VARCHAR(1200),
+  status BOOLEAN
 );
 
 CREATE TABLE homerooms(
