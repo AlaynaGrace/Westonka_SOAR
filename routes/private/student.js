@@ -29,7 +29,7 @@ router.get('/',function(req,res){
       // var resultSet = connection.query('SELECT * FROM users JOIN slips ON user.id=slips.student_id');
         var resultSet = connection.query('SELECT * FROM slips WHERE id = 1');
       resultSet.on('row', function(row){
-        console.log('are you running', row);
+        // console.log('are you running', row);
         studentSlips.push(row);
       });
       resultSet.on('end', function(){
