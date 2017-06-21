@@ -46,20 +46,17 @@
 <!-- testing view -->
 
 <br /><br /><br /><br /><br /><br /><br />
-<button class="btn-default btn" ng-click="clickKTwo()" type="button" name="button">K - 2</button>
-<button class="btn-default btn" ng-click="clickThreeFour()" type="button" name="button">3 -4</button>
+<button class="btn-default btn" ng-click="ac.clickKTwo()" type="button" name="button">K - 2</button>
+<button class="btn-default btn" ng-click="ac.clickThreeFour()" type="button" name="button">3 -4</button>
 
-ac.kThroughTwo: {{ac.kThroughTwo}}
 
-<!-- <div ng-repeat="thing in ac.gradesKThroughTwo"> -->
-  <p>
-    K though Two List
-    {{thing.student_id}}
-  </p>
+<div ng-repeat="thing in ac.kThroughTwo">{{thing.id}} </div>
+<div ng-repeat="thing in ac.threeAndFour">{{thing.id}}</div>
 
-<!-- </div> -->
-<!-- end testing view -->
 
+
+
+<!-- end of main div -->
  </div>
 <!--<div class="wrapper">
   <p class="holder">
