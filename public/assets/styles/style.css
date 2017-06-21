@@ -16,7 +16,7 @@
 
 
 body{
-background: linear-gradient(270deg, #0a0b0b, #e11616)!important;
+background: linear-gradient(270deg, #0a0b0b, #800000)!important;
 background-size: 400% 400%!important;
 
 -webkit-animation: AnimationName 22s ease infinite;
@@ -62,14 +62,7 @@ animation: AnimationName 22s ease infinite;
     75%  { left: 0px; top: 0px;}
     100% { left: 0px; top: 0px;}
 }
-/* helpers/align.css */
 
-/*.align {
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}*/
 
 /* helpers/grid.css */
 
@@ -343,32 +336,32 @@ h1, h2, h3, h4 {
           transition-timing-function: cubic-bezier(0.935, 0, 0.34, 1.33);
 }
 .menu-open:checked ~ .menu-item:nth-child(3) {
-  -webkit-transition-duration: 200ms;
-          transition-duration: 200ms;
+  -webkit-transition-duration: 300ms;
+          transition-duration: 300ms;
   -webkit-transform: translate3d(114.42548px, 11.48084px, 0);
           transform: translate3d(114.42548px, 11.48084px, 0);
 }
 .menu-open:checked ~ .menu-item:nth-child(4) {
-  -webkit-transition-duration: 300ms;
-          transition-duration: 300ms;
+  -webkit-transition-duration: 400ms;
+          transition-duration: 400ms;
   -webkit-transform: translate3d(77.18543px, 85.2491px, 0);
           transform: translate3d(77.18543px, 85.2491px, 0);
 }
 .menu-open:checked ~ .menu-item:nth-child(5) {
-  -webkit-transition-duration: 400ms;
-          transition-duration: 400ms;
+  -webkit-transition-duration: 500ms;
+          transition-duration: 500ms;
   -webkit-transform: translate3d(0.09158px, 114.99996px, 0);
           transform: translate3d(0.09158px, 114.99996px, 0);
 }
 .menu-open:checked ~ .menu-item:nth-child(6) {
-  -webkit-transition-duration: 500ms;
-          transition-duration: 500ms;
+  -webkit-transition-duration: 600ms;
+          transition-duration: 600ms;
   -webkit-transform: translate3d(-77.04956px, 85.37192px, 0);
           transform: translate3d(-77.04956px, 85.37192px, 0);
 }
 .menu-open:checked ~ .menu-item:nth-child(7) {
-  -webkit-transition-duration: 600ms;
-          transition-duration: 600ms;
+  -webkit-transition-duration: 700ms;
+          transition-duration: 700ms;
   -webkit-transform: translate3d(-114.40705px, 11.66307px, 0);
           transform: translate3d(-114.40705px, 11.66307px, 0);
 }
@@ -378,12 +371,12 @@ h1, h2, h3, h4 {
   color: black;
 }
 
-.fa-plus:before {
+.fa-print:before {
   content: "\f067";
   color: black;
 }
 
-.fa-heart:before {
+.fa-star:before {
   content: "\f004";
   color: black;
 }
@@ -393,18 +386,18 @@ h1, h2, h3, h4 {
   color: black;
 }
 
-.fa-gear:before, .fa-cog:before {
+.fa-child:before, .fa-child:before {
   content: "\f013";
   color: black;
 }
-
+/*
 body {
 
   margin: 0;
   padding: 0;
-}
+}*/
 
-.wrapp {
+/*.wrapp {
   display: flex;
   width: 100vw;
   height: 100vh;
@@ -412,14 +405,14 @@ body {
   justify-content: center;
   background: #7ae298;
   /* Old browsers */
-  background: -moz-linear-gradient(45deg, #7ae298 0%, #9af282 100%);
+  /*background: -moz-linear-gradient(45deg, #7ae298 0%, #9af282 100%);*/
   /* FF3.6-15 */
-  background: -webkit-linear-gradient(45deg, #7ae298 0%, #9af282 100%);
+  /*background: -webkit-linear-gradient(45deg, #7ae298 0%, #9af282 100%);*/
   /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(45deg, #7ae298 0%, #9af282 100%);
-}
+  /*background: linear-gradient(45deg, #7ae298 0%, #9af282 100%);*/
+/*}*/
 
-.cube {
+/*.cube {
   position: relative;
   font-family: 'Oswald', sans-serif;
   width: 250px;
@@ -683,7 +676,7 @@ body {
     bottom: -70%;
     transform: rotate(130deg);
   }
-}
+}*/
 
 
 
@@ -1161,3 +1154,188 @@ body {
 
 
 /*end logo shimmer*/
+
+@import url(https://fonts.googleapis.com/css?family=Quantico);
+html, body {
+  background: #111;
+}
+
+#container {
+  position: absolute;
+}
+
+.cont {
+  width: 500px;
+  height:300px;
+  padding-top: 50%;
+  display: inline;
+  padding-left: 50%;
+}
+
+/* Info */
+@keyframes show-info {
+  0% {
+    transform: rotateY(120deg);
+  }
+  100% {
+    transform: rotateY(0deg);
+  }
+}
+
+
+
+
+
+/*teacher page*/
+/* List styles */
+
+.list {
+
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-stle: preserve-3d;
+    -ms-transform-style: preserve-3d;
+    -o-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+
+    text-transform: uppercase;
+    position: absolute;
+    margin-left: -140px;
+    top: 30%;
+}
+
+.list a {
+
+    display: block;
+    color: white;
+    font-weight: bolder;
+}
+
+.list a:hover {
+    text-indent: 20px;
+}
+
+.list dt, .list dd {
+
+    text-indent: 10px;
+    line-height: 55px;
+    background: #E0FBAC;
+    margin: 0;
+    height: 55px;
+    width: 270px;
+    color: #fff;
+}
+
+.list dt {
+
+    /* Since we're hiding elements behind here, we need it in 3d */
+    -webkit-transform: translateZ(0.3px);
+    -moz-transform: translateZ(0.3px);
+    -ms-transform: translateZ(0.3px);
+    -o-transform: translateZ(0.3px);
+    transform: translateZ(0.3px);
+
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+    font-size: 15px;
+}
+
+.list dd {
+    color: white !important;
+    border-top: 1px dashed rgba(255,255,255,0.3);
+    line-height: 35px;
+    font-size: 11px;
+    height: 35px;
+    margin: 0;
+}
+
+/* UI */
+
+.toggle {
+    font-weight: bolder;
+
+    -webkit-transform: translateZ(100px)!important;
+    -moz-transform: translateZ(100px)!important;
+    -ms-transform: translateZ(100px)!important;
+    -o-transform: translateZ(100px)!important;
+    transform: translateZ(100px)!important;
+
+    /*box-shadow: 0 1px 4px rgba(0,0,0,0.15)!important;*/
+    border-radius: 3px!important;
+
+    text-transform: uppercase!important;
+    letter-spacing: -1px!important;
+    line-height: 50px!important;
+    margin-left: -70px!important;
+    margin-top: -20px!important;
+    /*background: #2b2b2b!important;*/
+    text-align: center!important;
+    font-size: 20px!important;
+    position: absolute!important;
+    z-index: 1!important;
+    height: 50px!important;
+    bottom: 10%!important;
+    width: 140px!important;
+    /*color: #fff!important;*/
+    left: 50%!important;
+}
+
+.toggle:hover {
+
+    background: #66ff33!important;
+}
+
+
+/* Individual styles */
+
+.sashimi dt, .sashimi dd, .sashimi a { background: #73C8A9!important; }
+.nigiri dt, .nigiri dd, .nigiri a { background: #E32551!important; }
+.maki dt, .maki dd, .maki a { background: #FFC219!important; }
+
+.sashimi a:hover { background: #61c19e!important; }
+.nigiri a:hover { background: #d31b46!important; }
+.maki a:hover { background: #ffbb00!important; }
+
+.nigiri {
+
+    -webkit-transform: perspective(1200px) rotateY(40deg) !important;
+    -moz-transform: perspective(1200px) rotateY(40deg) !important;
+    -ms-transform: perspective(1200px) rotateY(40deg) !important;
+    -o-transform: perspective(1200px) rotateY(40deg) !important;
+    transform: perspective(1200px) rotateY(40deg) !important;
+
+    -webkit-transform-origin: 110% 25%;
+    -moz-transform-origin: 110% 25%;
+    -ms-transform-origin: 110% 25%;
+    -o-transform-origin: 110% 25%;
+    transform-origin: 110% 25%;
+
+    left: 20%;
+}
+
+.maki {
+
+    -webkit-transform: perspective(600px) translateZ(1px) !important;
+    -moz-transform: perspective(600px) translateZ(1px) !important;
+    -ms-transform: perspective(600px) translateZ(1px) !important;
+    -o-transform: perspective(600px) translateZ(1px) !important;
+    transform: perspective(600px) translateZ(1px) !important;
+
+    left: 50%;
+}
+
+.sashimi {
+
+    -webkit-transform: perspective(1200px) rotateY(-40deg) !important;
+    -moz-transform: perspective(1200px) rotateY(-40deg) !important;
+    -ms-transform: perspective(1200px) rotateY(-40deg) !important;
+    -o-transform: perspective(1200px) rotateY(-40deg) !important;
+    transform: perspective(1200px) rotateY(-40deg) !important;
+
+    -webkit-transform-origin: -10% 25%;
+    -moz-transform-origin: -10% 25%;
+    -ms-transform-origin: -10% 25%;
+    -o-transform-origin: -10% 25%;
+    transform-origin: -10% 25%;
+
+    left: 80%;
+}
+/*end teacher page*/

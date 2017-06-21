@@ -21,4 +21,5 @@ console.log('this is the studentController');
         vm.studentSlip = response.data;
       });
     };//end of postStudentSlip
+    
 }]);

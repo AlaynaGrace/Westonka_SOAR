@@ -1,15 +1,42 @@
-<div id="notebooks" ng-app="notebooks">
-  <input type="text" id="query" ng-model="query"/>
-  <ul id="notebook_ul">
-    <li style = 'height: 30px; width: 150px;' ng-repeat="notebook in notebooks | filter:query | orderBy: orderList">
-      <!-- name: {{notebook.name}}<br/> -->
-      <!-- Total Slips: -->
-      <!-- <div class="right top">{{notebook.slips}}</div> -->
-    </li>
-  </ul>
-  <!-- <span>Total slips: {{notebooks.length}}</span> -->
-</div>
 
-<div style=' width: 300px; margin-left:50%; margin-top: 60px;' class="btn-container">
-  <div style='font-size: 27px; margin-top: 3px;'class= 'btn btn-succes'>Spin To Win</a>
-</div>
+
+<section class="demo">
+
+    <dl class="list nigiri">
+        <dt>Very Naughty</dt>
+        <dd><a href="#">sammy</a></dd>
+        <dd><a href="#">tommy</a></dd>
+        <dd><a href="#">jimmy</a></dd>
+        <dd><a href="#">sally</a></dd>
+        <dd><a href="#">Droo</a></dd>
+        <dd><a href="#">Tiff</a></dd>
+        <dd><a href="#">charlie</a></dd>
+        <dd><a href="#">alayna</a></dd>
+        <dd><a href="#">abby</a></dd>
+        <dd><a href="#">yoda</a></dd>
+    </dl>
+
+    <!-- <dl class="list maki">
+        <dt>Naughty</dt>
+        <dd><a href="#">sammy</a></dd>
+        <dd><a href="#">tommy</a></dd>
+        <dd><a href="#">jimmy</a></dd>
+        <dd><a href="#">sally</a></dd>
+        <dd><a href="#">Droo</a></dd>
+        <dd><a href="#">Tiff</a></dd>
+        <dd><a href="#">charlie</a></dd>
+        <dd><a href="#">alayna</a></dd>
+        <dd><a href="#">abby</a></dd>
+        <dd><a href="#">yoda</a></dd>
+    </dl>-->
+
+    <dl class="list sashimi">
+        <dt>Prize Winners</dt>
+        <dd><a href="#">fahza</a></dd>
+        <dd><a href="#">ronald</a></dd>
+
+    </dl>
+
+    <button class="toggle btn-success">Hide/Show</button><div style='font-size: 27px; margin-top: 3px;'class= 'btn btn-succes'>Spin To Win</div>
+
+</section>
