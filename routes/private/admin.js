@@ -19,21 +19,25 @@ router.get('/', function (req, res) {
     if (err) {
       res.send( 400 );
     } else {
+      console.log('inside else adminjs');
       //replace this with actualy query
-      var resultSet = connection.query("SELECT * FROM slips WHERE student_id IS NOT NULL");
+      var resultSet = connection.query("SELECT * FROM slips");
          var userArray = [];
         resultSet.on('row', function(row){
-        // userArray.push(row);
+          // console.log('this is the row: ', row);
+        userArray.push(row);
+
       }); //end on row
         resultSet.on('end', function(){
-        done();
-        console.log(userArray);
+
+        console.log('user array: ', userArray);
         res.send( userArray);
+            done();
       });
     }//end else
   });// end pool connect
 
-  res.sendStatus(200);
+  // res.sendStatus(200);
 
 });
 

@@ -11,9 +11,4 @@ vm.getStudentList = function() {
   });
 };//end of getStudentList
 
-
-
-
-
-
 });//end myApp

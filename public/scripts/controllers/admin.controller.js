@@ -1,5 +1,5 @@
-googleAuthApp.controller('adminController', ['$http','$scope','$timeout', function($http, $scope, $timeout){
-console.log('inside admin controller');
+googleAuthApp.controller('adminController', ['$http','$scope','$timeout', 'PDFService', function($http, $scope, $timeout, PDFService){
+console.log('');
   var vm = this;
 //start get slips for grades one and two
   vm.gradesKThoughTwo = function() {
@@ -8,11 +8,16 @@ console.log('inside admin controller');
       method: 'GET',
       url:'/admin'
     }).then(function(response){
-      vm.kThroughTwo = response.data;
+      vm.kThroughTwo = response;
+      console.log('inside the then k-2');
+      console.log('response: ', response);
     });
-    console.log(response.data);
+    // console.log(response.data);
   };//end get slips for grades one and two
+  vm.gradesKThoughTwo();
+  
 
+  // var vm = this;
 //start get slips for three and four
   vm.gradesThreeAndFour = function() {
     console.log('hitting three and four');
@@ -24,6 +29,7 @@ console.log('inside admin controller');
     });
   };//end get slips for three and four
 
+  // var vm = this;
   //start get all slips for all grades
   vm.getAllSlipsForAllGrades = function() {
     console.log('hitting all slips for all grades');
@@ -35,6 +41,7 @@ console.log('inside admin controller');
     });
   };//end of get all slips for all grades
 
+  // var vm = this;
   //start post incentive
   vm.postIncentive = function() {
     console.log('hitting post inscentive');
@@ -46,6 +53,8 @@ console.log('inside admin controller');
     });
   };//end post incentive
 
+
+  // var vm = this;
   //start get incentive
   vm.getIncentive = function() {
     console.log('hitting get incentive');
@@ -60,15 +69,17 @@ console.log('inside admin controller');
 vm.clickKTwo = function() {
   console.log('hitting for loop');
   for (var i=0; i<gradesKThoughTwo.length; i++) {
-  append+= "<div> {{thing.name}} </div>";
+  append+= "<div> {{thing.student_id}} </div>";
 }
 };
 
 vm.clickThreeFour = function(gradesThreeAndFour) {
-  append+= "<div> {{thing.name}} <div>";
+  append+= "<div> {{thing.student_id}} <div>";
 };
 
-
+vm.makePDF = function(){
+  PDFService.makeNewPDF();
+};
 
 
 
