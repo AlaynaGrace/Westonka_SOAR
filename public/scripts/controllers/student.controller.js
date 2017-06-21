@@ -34,6 +34,7 @@ console.log('this is the studentController');
       // console.log(response.data);
     });
   };//end of getStudentList
+
  vm.getStudentSlips();
 
 
