@@ -20,7 +20,15 @@ router.use('/student', student);
  * GET private/index
  */
 router.get('/', function (req, res) {
-  res.redirect('/'); // they made it!
+  if(req.user.admin && !req.user.teacher){
+    res.redirect('/#!/admins'); // they made it!
+  }
+  else if(!req.user.admin && req.user.teacher){
+    res.redirect('/#!/teachers'); // they made it!
+  }
+  else{
+    res.redirect('/#!/students'); // they made it!
+  }
 });
 
 module.exports = router;
