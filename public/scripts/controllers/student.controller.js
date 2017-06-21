@@ -36,6 +36,9 @@ console.log('this is the studentController');
   };//end of getStudentList
 
  vm.getStudentSlips();
+
+
+
   //start post student slips
     vm.postStudentSlip = function() {
       $http({
@@ -80,4 +83,5 @@ console.log('this is the studentController');
 
     };//end of postStudentSlip
    vm.getStudentSlips();
+
 }]);
