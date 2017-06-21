@@ -813,10 +813,8 @@ h1{
 	width: 300px;
 	height: 50px;
 	line-height: 50px;
-	background-color: red;
   border-radius: 8px;
 	color: #fff;
-  font-family: 'Indie Flower', cursive;
   font-size: 22px;
   font-weight: normal;
 	text-decoration: none;
@@ -1286,8 +1284,8 @@ html, body {
 
 /* Individual styles */
 
-.sashimi dt, .sashimi dd, .sashimi a { background: #73C8A9!important; }
-.nigiri dt, .nigiri dd, .nigiri a { background: #E32551!important; }
+.sashimi dt, .sashimi dd, .sashimi a { border: 0.5px solid black;background: blue!important; }
+.nigiri dt, .nigiri dd, .nigiri a { color: black;  border: 0.5px solid black;background: yellow!important; }
 .maki dt, .maki dd, .maki a { background: #FFC219!important; }
 
 .sashimi a:hover { background: #61c19e!important; }
