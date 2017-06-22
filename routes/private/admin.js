@@ -7,17 +7,7 @@ var express = require('express');
 var router = express.Router();
 var path = require('path');
 var app = express();
-const pg = require('pg');
-let port = 3000;
-
-//PG stuff************
-let config = {
-  database: '',
-  host: 'localhost',
-  port: port,
-  max: 20
-};// end config
-let pool = new pg.Pool ( config );
+var pool = require('../../modules/pool');
 
 // GET Admin
 router.get('/', function (req, res) {
@@ -43,6 +33,29 @@ router.get('/', function (req, res) {
 
   res.sendStatus(200);
 
+});
+
+router.get('/random',function(req,res){
+  var today = new Date();
+  var weekAgo = new Date(myDate.getTime() - (60*60*24*7*1000));
+  pool.connect(function(err,connection,done){
+    if(err){
+      console.log(err);
+      res.sendStatus(500);
+    }
+    else{
+      connection.query('SELECT * FROM slips WHERE date_entered > $1 AND date_entered < $2', [weekAgo,today], function(err,results){
+        done();
+        if(err){
+          console.log(err);
+          res.sendStatus(500);
+        }
+        else{
+          res.send(results.rows);
+        }
+      });
+    }
+  });
 });
 
 module.exports = router;

@@ -78,6 +78,5 @@ console.log('this is the studentController');
         console.log(response);
       });
 
-    };//end of postStudentSlip
-   vm.getStudentSlips();
+    };//end of postStudentSlips
 }]);
