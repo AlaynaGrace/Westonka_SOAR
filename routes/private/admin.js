@@ -21,7 +21,7 @@ router.get('/', function (req, res) {
     } else {
       console.log('inside else adminjs');
       //replace this with actualy query
-      var resultSet = connection.query("SELECT * FROM slips");
+      var resultSet = connection.query("SELECT * FROM users JOIN homerooms ON users.homeroom_id=homerooms.id WHERE identifier in " + req.params);
          var userArray = [];
         resultSet.on('row', function(row){
           // console.log('this is the row: ', row);
@@ -30,7 +30,7 @@ router.get('/', function (req, res) {
       }); //end on row
         resultSet.on('end', function(){
 
-        console.log('user array: ', userArray);
+        // console.log('user array: 'userArray);
         res.send( userArray);
             done();
       });
