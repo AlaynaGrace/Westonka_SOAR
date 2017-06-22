@@ -28,7 +28,7 @@ console.log('this is the studentController');
   vm.getStudentSlips = function() {
     $http({
       method: 'GET',
-      url:'/student'
+      url:'/student' + vm.email
     }).then(function(response){
       vm.studentSlips = response.data.length;
       // console.log(response.data);

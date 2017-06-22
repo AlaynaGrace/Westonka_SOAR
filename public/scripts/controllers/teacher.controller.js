@@ -2,6 +2,7 @@ googleAuthApp.controller('teacherController', ['$http','$scope','$timeout', 'Aut
 console.log('teacher');
 var vm = this;
 var authFactory = AuthFactory;
+vm.studentArray = [];
 
 
 //start getStudentList
@@ -12,6 +13,7 @@ authFactory.isLoggedIn()
     authFactory.setLoggedIn(true);
     console.log('this is response.data',response.data.email);
     vm.email = response.data.email;
+    vm.getStudentList();
   } else { // is not logged in on server
     vm.displayLogout = false;
     authFactory.setLoggedIn(false);
@@ -33,6 +35,9 @@ $http({
     }).then(function(response){
       console.log('response.data', response.data);
       vm.studentArray = response.data;
+      console.log('this is studentArray',vm.studentArray);
+
     });
-  };//end of getStudentList
+    };//end of getStudentList
+
 }]);
