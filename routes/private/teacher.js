@@ -4,15 +4,7 @@
  */
 var express = require('express');
 var router = express.Router();
-const pg = require('pg');
-let port = 3000;
-
-var config = {
- database: '',
- host: 'localhost',
- port: port,
- max: 20
-};// end config
+var pool = require('../../modules/pool');
 
 router.get('/', function (req, res) {
   console.log('hit teacher route on server');
@@ -47,7 +39,7 @@ router.get('/random/:homeroom',function(req,res){
         res.sendStatus(500);
       }
       else{
-        connection.query('SELECT * FROM slips JOIN users ON slips.student_id = users.id JOIN homerooms ON users.homeroom_id = homerooms.id WHERE date_entered > $1 AND date_entered < $2 AND homeroom=$3', [weekAgo,today], function(err,results){
+        connection.query('SELECT * FROM slips JOIN users ON slips.student_id = users.id WHERE date_entered > $1 AND date_entered < $2 AND homeroom_id=$3', [weekAgo,today,req.params.homeroom], function(err,results){
           done();
           if(err){
             console.log(err);

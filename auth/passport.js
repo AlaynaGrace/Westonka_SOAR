@@ -43,9 +43,9 @@ passport.use('google', new GoogleStrategy({
   callbackURL: config.googleAuth.callbackUrl,
 }, function (token, refreshToken, profile, done) {
   // Google has responded
-
+  // console.log('this is everything in the profile:', profile);
   // does this user exist in our database already?
-  UserService.findUserByGoogleId(profile.id, function (err, user) {
+  UserService.findUserByGoogleEmail(profile.email, function (err, user) {
       if (err) {
         return done(err);
       }
