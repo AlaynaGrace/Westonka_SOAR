@@ -1,3 +1,4 @@
+
 googleAuthApp.controller('teacherController', ['$http','AuthFactory',function($http, AuthFactory){
 console.log('teacher');
 var vm = this;
@@ -23,14 +24,24 @@ function () {
   vm.message.type = 'error';
 });
 
-//start getStudentList
-vm.getStudentList = function() {
-  $http({
-    method: 'GET',
-    url:'/teacher'
-  }).then(function(response){
-    vm.studentArray = response.data;
-  });
-};//end of getStudentList
 
-}]);//end myApp
+
+//hook this up to button on student page to get class list
+vm.getStudentList = function() {
+
+  console.log('hit getStudentList');
+  console.log('email in getStudentList', vm.email);
+  var objectToSend = {
+    email: vm.email
+  };
+$http({
+      method: 'POST',
+      url:'/teacher',
+      data: objectToSend
+    }).then(function(response){
+      console.log('response.data', response.data);
+      vm.studentArray = response.data;
+    });
+  };//end of getStudentList
+}]);
+

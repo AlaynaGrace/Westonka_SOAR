@@ -1,11 +1,9 @@
-<div style ='background-color: tomato;'
-     <h1> </h1>
-<h1>S.O.A.R.</h1>
-<h2>West Tonka Elementary</h2>
-<h3>Admin Page</h3>
+<!-- <div style ='background-color: tomato;' -->
+<h1 style= 'color: white; font-size: 40px!important;'>S.O.A.R.</h1>
+<h2 style= 'color: white;'>West Tonka Elementary</h2>
+<h3 style= 'color: white;'>Admin Page</h3>
 <h4> <a href="https://codepen.io/lbebber/pen/RNgBPP" target="_blank"></a>  <a href="https://codepen.io/lbebber/pen/pvwZJp" target="_blank"></a>  <a href="https://codepen.io/lbebber/pen/rawQKR" target="_blank"></a></h4>
 <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-<button ng-click="ac.makePDF()">Make Slips</button>
 
 <nav class="menu">
   <input type="checkbox" href="#" class="menu-open" name="menu-open" id="menu-open"/>
@@ -15,10 +13,10 @@
     <span class="hamburger hamburger-3"></span>
   </label>
   <a class="menu-item"> <i class="fa fa-bar-chart"></i> </a>
-  <a class="menu-item"> <i class="fa fa-plus"></i> </a>
-  <a class="menu-item"> <i class="fa fa-heart"></i> </a>
+  <a class="menu-item"> <i class="fa fa fa-child"></i> </a>
+  <a class="menu-item"> <i class="fa fa-star"></i> </a>
   <a class="menu-item"> <i class="fa fa-envelope"></i> </a>
-  <a class="menu-item"> <i class="fa fa-cog"></i> </a>
+  <a class="menu-item" ng-click="ac.makePDF()"><i class="fa fa-print"></i> </a>
 
 </nav>
 
@@ -42,7 +40,10 @@
       </filter>
     </defs>
 </svg>
- </div>
+
+<!-- <button style ='text-align: center;'class = 'btn btn-success' ng-click="ac.makePDF()">Make Slips</button> -->
+
+ <!-- </div> -->
 <!--<div class="wrapper">
   <p class="holder">
     <a href="#" class="animBtn themeA">Sort Ticket Total</a>

@@ -30,12 +30,15 @@ console.log('this is the studentController');
       method: 'GET',
       url:'/student'
     }).then(function(response){
-      vm.studentSlips = response.data;
+      vm.studentSlips = response.data.length;
       // console.log(response.data);
     });
   };//end of getStudentList
 
  vm.getStudentSlips();
+
+
+
   //start post student slips
     vm.postStudentSlip = function() {
       $http({
@@ -78,5 +81,7 @@ console.log('this is the studentController');
         console.log(response);
       });
 
+
     };//end of postStudentSlips
+
 }]);

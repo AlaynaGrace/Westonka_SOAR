@@ -26,8 +26,8 @@ router.get('/',function(req,res){
     }
     else{
       console.log('connected to db');
-      // var resultSet = connection.query('SELECT * FROM users JOIN slips ON user.id=slips.student_id');
-        var resultSet = connection.query('SELECT * FROM slips WHERE id = 1');
+      var resultSet = connection.query('SELECT * FROM users JOIN slips ON users.id=slips.student_id');
+        // var resultSet = connection.query('SELECT * FROM slips WHERE id = 1');
       resultSet.on('row', function(row){
         // console.log('are you running', row);
         studentSlips.push(row);
