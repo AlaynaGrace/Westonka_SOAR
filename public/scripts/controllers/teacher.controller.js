@@ -1,5 +1,5 @@
 
-googleAuthApp.controller('teacherController', ['$http','AuthFactory',function($http, AuthFactory){
+googleAuthApp.controller('teacherController', ['$http','AuthFactory', '$location',function($http, AuthFactory, $location){
 console.log('teacher');
 var vm = this;
 
@@ -13,6 +13,12 @@ AuthFactory.isLoggedIn()
     vm.email = response.data.email;
     vm.id = response.data.id;
     vm.homeroom = response.data.homeroom_id;
+    if(response.data.admin !== true && response.data.teacher !== true){
+      $location.path('/students');
+    }
+    else if(response.data.admin){
+      $location.path('/admins');
+    }
   } else { // is not logged in on server
     vm.displayLogout = false;
     AuthFactory.setLoggedIn(false);
@@ -36,7 +42,7 @@ vm.getStudentList = function() {
   };
 $http({
       method: 'POST',
-      url:'/teacher',
+      url:'/private/teacher',
       data: objectToSend
     }).then(function(response){
       console.log('response.data', response.data);
@@ -44,4 +50,3 @@ $http({
     });
   };//end of getStudentList
 }]);
-
