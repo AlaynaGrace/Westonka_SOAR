@@ -7,31 +7,36 @@ var express = require('express');
 var router = express.Router();
 var path = require('path');
 var app = express();
+
 var pool = require('../../modules/pool');
 
 // GET Admin
-router.get('/', function (req, res) {
-  console.log('in admin server route');
-  // pool.connect(function ( err, connection, done){
+router.get('/:group', function (req, res) {
+  console.log('in admin server route: ', req.params);
+  pool.connect(function ( err, connection, done){
 
-  //   if (err) {
-  //     res.send( 400 );
-  //   } else {
-  //     //replace this with actualy query
-  //     let resultSet = connection.query("SELECT * FROM slips WHERE student_id IS NOT NULL");
-  //        var userArray = [];
-  //       resultSet.on('row', function(row){
-  //       // userArray.push(row);
-  //     }); //end on row
-  //       resultSet.on('end', function(){
-  //       done();
-  //       console.log(userArray);
-  //       res.send( userArray);
-  //     });
-  //   }//end else
-  // });// end pool connect
+    if (err) {
+      res.send( 400 );
+    } else {
+      console.log('inside else adminjs');
+      //replace this with actualy query
+      var resultSet = connection.query("SELECT name FROM users JOIN homerooms ON users.homeroom_id=homerooms.id WHERE identifier in " + req.params.group);
+         var userArray = [];
+        resultSet.on('row', function(row){
+          // console.log('this is the row: ', row);
+        userArray.push(row);
 
-  res.sendStatus(200);
+      }); //end on row
+        resultSet.on('end', function(){
+
+        // console.log('user array: 'userArray);
+        res.send( userArray);
+            done();
+      });
+    }//end else
+  });// end pool connect
+
+  // res.sendStatus(200);
 
 });
 
