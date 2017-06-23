@@ -40,6 +40,35 @@ router.get('/:group', function (req, res) {
 
 });
 
+router.get('/',function(req,res){
+  console.log('in student slips');
+  var allSchoolSlips = [];
+
+  pool.connect(function (err, connection, done){
+    if(err){
+      console.log(err);
+      res.send(400);
+    }
+    else{
+      console.log('connected to db');
+      var resultSet = connection.query('SELECT * FROM users JOIN slips ON users.id=slips.student_id');
+        
+      resultSet.on('row', function(row){
+        // console.log('are you running', row);
+        allSchoolSlips.push(row);
+      });
+      resultSet.on('end', function(){
+
+        console.log('all School Slips', allSchoolSlips);
+        res.send(allSchoolSlips);
+
+        done();
+      });
+    }
+  });
+  // res.send(200);
+}); // end router.get
+
 router.get('/random',function(req,res){
   var today = new Date();
   var weekAgo = new Date(myDate.getTime() - (60*60*24*7*1000));

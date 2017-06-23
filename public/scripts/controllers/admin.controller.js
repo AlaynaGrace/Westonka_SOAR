@@ -34,9 +34,10 @@ googleAuthApp.controller('adminController', ['$http', '$scope', '$timeout', 'PDF
       method: 'GET',
       url: '/admin'
     }).then(function(response) {
-      vm.allSlips = response.data;
+      vm.allSlips = response.data.length;
     });
   }; //end of get all slips for all grades
+  vm.getAllSlipsForAllGrades();
 
   //start post incentive
   vm.postIncentive = function() {
