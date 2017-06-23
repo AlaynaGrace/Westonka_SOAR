@@ -1,0 +1,17 @@
+<h1>Permissions</h1>
+<a href="#!admins">Back to admin page</a>
+<br>
+<label>Search:</label>
+<input placeholder="Email" ng-model="ac.searchedEmail">
+<button ng-click="ac.searchForEmail()">Search</button>
+<hr>
+<div ng-repeat="user in ac.emailResults">
+  {{user.email}}
+  <span ng-if="!user.admin">
+    <button ng-click="ac.makeUserAdmin(user)" ng-disable="ac.madeAdmin">Make Admin</button>
+  </span>
+  <span ng-if="!user.teacher">
+    <button ng-click="ac.makeUserTeacher(user)" ng-disable="ac.madeTeacher">Make Teacher</button>
+  </span>
+  <hr>
+</div>
