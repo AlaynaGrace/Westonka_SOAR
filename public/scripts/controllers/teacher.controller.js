@@ -28,6 +28,7 @@ AuthFactory.isLoggedIn()
 
 
 
+
 //hook this up to button on student page to get class list
 vm.getStudentList = function() {
 
