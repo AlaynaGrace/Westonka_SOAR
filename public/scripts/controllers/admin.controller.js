@@ -60,6 +60,10 @@ console.log('');
     PDFService.makeNewPDF();
   };
 
+  vm.uploadCSVFile = function(){
+    console.log('this is what the file looks like:', vm.uploadedFile);
+  };
+
 
 
 

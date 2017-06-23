@@ -26,7 +26,7 @@ CREATE TABLE homerooms(
   identifier VARCHAR(120)
 );
 
-INSERT INTO slips (slip_number) VALUES (3ndkgid6);
-INSERT INTO slips (slip_number) VALUES (47ufndks);
-INSERT INTO slips (slip_number) VALUES (pld96nw2);
-INSERT INTO slips (slip_number) VALUES (0k4mxive);
+INSERT INTO slips (slip_number) VALUES ('3ndkgid6');
+INSERT INTO slips (slip_number) VALUES ('47ufndks');
+INSERT INTO slips (slip_number) VALUES ('pld96nw2');
+INSERT INTO slips (slip_number) VALUES ('0k4mxive');
