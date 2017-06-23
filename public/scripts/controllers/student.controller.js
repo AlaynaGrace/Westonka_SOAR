@@ -18,6 +18,7 @@ console.log('this is the studentController');
       else if(response.data.teacher){
         $location.path('/teachers');
       }
+
       // vm.homeroom = response.data.homeroom_id;
     } else { // is not logged in on server
       vm.displayLogout = false;
@@ -62,6 +63,7 @@ console.log('this is the studentController');
             student_id: vm.id,
             date_entered: new Date()
           };
+           console.log('this is the object I am sending:', objectToSend);
 
           $http({
             method: 'POST',
