@@ -82,5 +82,6 @@ console.log('this is the studentController');
       });
 
     };//end of postStudentSlip
+   vm.getStudentSlips();
 
 }]);
