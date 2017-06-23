@@ -1,26 +1,34 @@
-googleAuthApp.controller('teacherController', ['$http','$scope','$timeout', 'AuthFactory',function($http, $scope, $timeout, AuthFactory){
+
+googleAuthApp.controller('teacherController', ['$http','AuthFactory',function($http, AuthFactory){
 console.log('teacher');
 var vm = this;
-var authFactory = AuthFactory;
 
-
-//start getStudentList
-authFactory.isLoggedIn()
+AuthFactory.isLoggedIn()
 .then(function (response) {
-  if (response.data) {
+  if (response.data.status) {
     vm.displayLogout = true;
-    authFactory.setLoggedIn(true);
-    console.log('this is response.data',response.data.email);
+    AuthFactory.setLoggedIn(true);
+    console.log(response.data);
+    vm.username = response.data.name;
     vm.email = response.data.email;
+    vm.id = response.data.id;
+    vm.homeroom = response.data.homeroom_id;
   } else { // is not logged in on server
     vm.displayLogout = false;
-    authFactory.setLoggedIn(false);
+    AuthFactory.setLoggedIn(false);
   }
+},
+
+function () {
+  vm.message.text = 'Unable to properly authenticate user';
+  vm.message.type = 'error';
 });
+
 
 
 //hook this up to button on student page to get class list
 vm.getStudentList = function() {
+
   console.log('hit getStudentList');
   console.log('email in getStudentList', vm.email);
   var objectToSend = {
@@ -36,3 +44,4 @@ $http({
     });
   };//end of getStudentList
 }]);
+
