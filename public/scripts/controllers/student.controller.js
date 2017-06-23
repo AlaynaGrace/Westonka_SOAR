@@ -12,6 +12,8 @@ console.log('this is the studentController');
       vm.username = response.data.name;
       vm.email = response.data.email;
       vm.id = response.data.id;
+      console.log('this is the student id:', vm.id);
+      console.log('this is the whole user', response.data);
       // vm.homeroom = response.data.homeroom_id;
     } else { // is not logged in on server
       vm.displayLogout = false;
@@ -56,6 +58,7 @@ console.log('this is the studentController');
             student_id: vm.id,
             date_entered: new Date()
           };
+           console.log('this is the object I am sending:', objectToSend);
 
           $http({
             method: 'POST',
