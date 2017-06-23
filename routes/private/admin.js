@@ -63,4 +63,46 @@ router.get('/random',function(req,res){
   });
 });
 
+router.put('/',function(req,res){
+  pool.connect(function(err, connection, done){
+    if(err){
+      console.log(err);
+      res.sendStatus(500);
+    }
+    else{
+      connection.query('UPDATE users SET ' + req.body.type + '=true WHERE id=$1', [req.body.user.id], function(err){
+        done();
+        if(err){
+          console.log(err);
+          res.sendStatus(500);
+        }
+        else{
+          res.sendStatus(200);
+        }
+      });
+    }
+  });
+});
+
+router.get('/findEmail/:email', function(req,res){
+    pool.connect(function(err,connection,done){
+      if(err){
+        console.log(err);
+        res.sendStatus(500);
+      }
+      else{
+        connection.query('SELECT * FROM users WHERE email=$1',[req.params.email],function(err,result){
+          done();
+          if(err){
+            console.log(err);
+            res.sendStatus(500);
+          }
+          else{
+            res.send(result.rows);
+          }
+        });
+      }
+    });
+});
+
 module.exports = router;

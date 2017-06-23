@@ -1,4 +1,4 @@
-googleAuthApp.controller('adminController', ['$http', '$scope', '$timeout', 'PDFService', function($http, $scope, $timeout, PDFService) {
+googleAuthApp.controller('adminController', ['$http', '$scope', '$timeout', 'PDFService', 'EmailSearchService', 'UpdateUserService', function($http, $scope, $timeout, PDFService, EmailSearchService, UpdateUserService) {
   console.log('inside admin controller');
   var vm = this;
 
@@ -83,8 +83,34 @@ googleAuthApp.controller('adminController', ['$http', '$scope', '$timeout', 'PDF
     PDFService.makeNewPDF();
   };
 
+  vm.searchForEmail = function() {
+    // vm.emailResults = [];
+    EmailSearchService.findEmail(vm.searchedEmail).then(function(data){
+      vm.emailResults = data;
+    });
+  };
 
+  vm.makeUserAdmin = function(user){
+    user.admin = true;
+    UpdateUserService.updateUser(user, 'admin').then(function(response){
+      if(response){
+        vm.madeAdmin = true;
+      }
+      else{
+        vm.madeAdmin = false;
+      }
+    });
+  };
 
-
-
+  vm.makeUserTeacher = function(user){
+    user.teacher = true;
+    UpdateUserService.updateUser(user, 'teacher').then(function(response){
+      if(response){
+        vm.madeTeacher = true;
+      }
+      else{
+        vm.madeTeacher = false;
+      }
+    });
+  };
 }]);
