@@ -7,7 +7,7 @@ googleAuthApp.controller('adminController', ['$http', '$scope', '$timeout', 'PDF
     console.log('hitting k through two');
     return $http({
       method: 'GET',
-      url: "/admin/" + "('k-1', 'k-2', '1-1', '1-2', '2-1', '2-2')d"
+      url: "/admin/" + "('k-1', 'k-2', '1-1', '1-2', '2-1', '2-2')"
     }).then(function(response) {
       vm.kThroughTwo = response.data;
       console.log('inside the then k-2');

@@ -12,8 +12,8 @@ var app = express();
 var pool = require('../../modules/pool');
 
 // GET Admin
-router.get('/', function (req, res) {
-  console.log('in admin server route');
+router.get('/:group', function (req, res) {
+  console.log('in admin server route: ', req.params);
   pool.connect(function ( err, connection, done){
 
     if (err) {
@@ -21,7 +21,7 @@ router.get('/', function (req, res) {
     } else {
       console.log('inside else adminjs');
       //replace this with actualy query
-      var resultSet = connection.query("SELECT * FROM users JOIN homerooms ON users.homeroom_id=homerooms.id WHERE identifier in " + req.params);
+      var resultSet = connection.query("SELECT name FROM users JOIN homerooms ON users.homeroom_id=homerooms.id WHERE identifier in " + req.params.group);
          var userArray = [];
         resultSet.on('row', function(row){
           // console.log('this is the row: ', row);
