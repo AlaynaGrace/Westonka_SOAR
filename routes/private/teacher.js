@@ -16,28 +16,33 @@
 router.post('/', function (req, res) {
   console.log('req.body on server /teacher', req.body.email);
   var userEmail = req.body.email;
+  var userHomeroom = req.body.homeroom;
+  var namesArray = [];
+
   pool.connect(function ( err, connection, done){
     if (err) {
       console.log(err);
       res.send( 400 );
-    } else {
-      //replace this with actualy query
-      // var resultSet = connection.query("SELECT * FROM users JOIN homerooms ON users.homeroom_id=homerooms.id WHERE users.email=$1 AND teacher=NULL", [userEmail]);
-        var resultSet = connection.query("SELECT * from users WHERE homeroom_id=(SELECT homeroom_id from users WHERE email =$1)", [req.body.email]);
-         var userArray = [];
-        resultSet.on('row', function(row){
-        userArray.push(row);
-      }); //end on row
-        resultSet.on('end', function(){
-        done();
-        console.log('userArray', userArray);
-        res.send(userArray);
+    } else{
+    console.log('connected to db');
+    var resultSet = connection.query("SELECT * FROM slips JOIN users ON slips.student_id = users.id WHERE homeroom_id =$1", [userHomeroom]);
+    resultSet.on('row', function(row){
+      // console.log('are you running', row);
+      namesArray.push(row.name);
+    });
+    resultSet.on('end', function(){
+      console.log('namesArray', namesArray);
+      res.send(namesArray);
+      done();
       });
-    }//end else
-  });// end pool connect
+    }
+  });
+}); // end router.get
 
 
-});
+
+
+
 
 router.get('/random/:homeroom',function(req,res){
   router.get('/random',function(req,res){
@@ -65,3 +70,24 @@ router.get('/random/:homeroom',function(req,res){
 });
 
 module.exports = router;
+
+// var userArray = [];
+// resultSet.on('row', function(row){
+//  userArray.push(row);
+//  for (var i = 0; i < userArray.length; i++) {
+//    var classObjects = userArray[i];
+//    var studentNames = studentObjects.name;
+//    namesArray.push(studentNames);
+// }
+// }); //end on row
+// resultSet.on('end', function(){
+// done();
+// // console.log('userArray', userArray);
+// console.log('!!!studentNames', slipsArray);
+// res.send(userArray);
+// });
+// }//end else
+// });// end pool connect
+//
+//
+// });

@@ -14,6 +14,9 @@ AuthFactory.isLoggedIn()
     console.log(response.data);
     vm.username = response.data.name;
     vm.email = response.data.email;
+    vm.id = response.data.id;
+    // vm.homeroom = response.data.homeroom;
+    vm.homeroom = '123';
     vm.getStudentList();
   } else { // is not logged in on server
     vm.displayLogout = false;
@@ -35,8 +38,10 @@ vm.getStudentList = function() {
   console.log('hit getStudentList');
   console.log('email in getStudentList', vm.email);
   var objectToSend = {
-    email: vm.email
+    email: vm.email,
+    homeroom: vm.homeroom
   };
+  console.log(objectToSend);
 $http({
       method: 'POST',
       url:'/teacher',
