@@ -7,7 +7,7 @@ googleAuthApp.service('UpdateUserService',['$http', function($http){
       type: type
     };
       return $http({
-        url: '/admin',
+        url: '/private/admin',
         method: 'PUT',
         data: objectToSend
       }).then(function success(response){

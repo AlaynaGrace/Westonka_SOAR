@@ -1,6 +1,6 @@
-console.log('jq');
-$(document).ready(function(){
-  $('.toggle').on('click', function(){
+
+$(function() {
+  $('.ngview').on('click', '.toggle',function(){
     console.log('toggle has been clicked');
   });
 

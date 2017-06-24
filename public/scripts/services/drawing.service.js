@@ -3,7 +3,7 @@ googleAuthApp.service('DrawingService', ['$http',function($http){
 
   self.grabRandomSlipsAll = function(){
     return $http({
-      url: '/admin/random',
+      url: '/private/admin/random',
       method: 'GET'
     }).then(function success(response){
       console.log(response);
@@ -14,7 +14,7 @@ googleAuthApp.service('DrawingService', ['$http',function($http){
 
   self.grabRandomSlipsHomeroom = function(homeroom){
     return $http({
-      url: '/teacher/random/' + homeroom,
+      url: '/private/teacher/random/' + homeroom,
       method: 'GET'
     }).then(function success(response){
       console.log(response);

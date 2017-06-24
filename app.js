@@ -46,9 +46,9 @@ app.use(passport.session());
 /** ---------- ROUTES ---------- **/
 app.use('/auth', auth);
 app.use('/private', isLoggedIn, private);
-app.use('/teacher', teacher);
-app.use('/student', student);
-app.use('/admin', admin);
+// app.use('/teacher', teacher);
+// app.use('/student', student);
+// app.use('/admin', admin);
 app.use('/slipnumbers',slipnumbers);
 app.use('/*', index);
 
