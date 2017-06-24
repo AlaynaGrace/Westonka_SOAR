@@ -28,7 +28,7 @@ router.post('/', function (req, res) {
     var resultSet = connection.query("SELECT * FROM slips JOIN users ON slips.student_id = users.id WHERE homeroom_id =$1", [userHomeroom]);
     resultSet.on('row', function(row){
       // console.log('are you running', row);
-      namesArray.push(row.name);
+      namesArray.push(row);
     });
     resultSet.on('end', function(){
       console.log('namesArray', namesArray);
