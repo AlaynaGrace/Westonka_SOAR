@@ -3,7 +3,7 @@ googleAuthApp.service('EmailSearchService',['$http', function($http){
 
   self.findEmail = function(email){
       return $http({
-        url: '/admin/findEmail/' + email,
+        url: '/private/admin/findEmail/' + email,
         method: 'GET'
       }).then(function success(response){
         console.log(response);

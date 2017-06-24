@@ -10,10 +10,15 @@ var teacher = require('./teacher');
 var admin = require ('./admin');
 var student = require ('./student');
 
+var isAdmin = require('../../utils/checkAdminStatus');
+var isTeacher = require('../../utils/checkTeacherStatus');
+var isStudent = require('../../utils/checkStudentStatus');
+
+
 /** ---------- SUBROUTES ---------- **/
-router.use('/teacher', teacher);
-router.use('/admin', admin);
-router.use('/student', student);
+router.use('/teacher', isTeacher, teacher);
+router.use('/admin', isAdmin, admin);
+router.use('/student', isStudent, student);
 
 
 /**

@@ -122,6 +122,25 @@
      //   return callback(null, user);
      // });
    },
+
+   updateWithToken: function(token, googleId, user){
+     pool.connect(function(err,connection,done){
+       if(err){
+         console.log(err);
+       }
+       else{
+         connection.query('UPDATE users SET token=$1, google_id=$2 WHERE id=$3', [token,googleId,user.id],function(err){
+           done();
+           if(err){
+             console.log(err);
+           }
+           else{
+             console.log('we did it!!!!!!!!!!!!!!');
+           }
+         });
+       }
+     });
+   }
  };
 
  module.exports = UserService;
