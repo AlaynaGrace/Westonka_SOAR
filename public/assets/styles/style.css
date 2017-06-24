@@ -2,9 +2,9 @@
 
 /* config.css */
 
-:root {
+/*:root {
   --baseColor: #606468;
-}
+}*/
 
 #whiteHawk {
     position: relative;
@@ -12,6 +12,7 @@
     -webkit-animation-direction: alternate; /* Safari 4.0 - 8.0 */
     animation: myfirst 5s;
     animation-direction: alternate;
+    margin:0,auto;
 }
 
 
@@ -65,19 +66,14 @@ animation: AnimationName 22s ease infinite;
 
 
 /* helpers/grid.css */
-
+/*
 @import url(//fonts.googleapis.com/css?family=Oswald:300);
 html, body, .wrapper {
   height: 100%;
-}
+}*/
 
-body {
-  background: #28B2CB url(https://dl.dropboxusercontent.com/s/ic905z0dhblfizd/12.jpg) center center no-repeat;
-  background-size: cover;
-  font-family: 'Oswald', sans-serif;
-}
 
-.wrapper {
+/*.wrapper {
   margin-top: 100px !important;
   background-image: url(https://db.tt/xO15SiJ0);
   width: 100%;
@@ -120,7 +116,7 @@ a.animBtn:link:after, a.animBtn:visited:after {
   z-index: -1;
   -webkit-transition: all .3s ease 0s;
   transition: all .3s ease 0s;
-}
+}*/
 a.animBtn:link:hover, a.animBtn:visited:hover {
   color: #333;
   text-shadow: none;
@@ -163,9 +159,6 @@ body {
   background-color: black !important;
 }
 
-html {
-  background-color: black;
-}
 
 h1 {
   font-size: 90px !important;
@@ -393,15 +386,9 @@ h1, h2, h3, h4 {
 
 /*start teacher page css*/
 
-.jumbotron{
-  background-color: black;
-  padding-top:20px;
-  padding-bottom: 10px;
-  text-align: center;
-}
 
 
-.position {
+/*.position {
   margin-left: 80%;
 
   text-align: center;
@@ -414,19 +401,19 @@ h1, h2, h3, h4 {
   width: 100%;
   height: 100%;
   font-family: Raleway;
-}
+}*/
 
-#text{
+/*#text{
   margin-top:20px;
-}
+}*/
 
-#personal {
+/*#personal {
   color:white;
   text-decoration:none;
   position:absolute;
   bottom:15px;
   right:2%;
-}
+}*/
 /*    start code for the actual button:         */
 
 
@@ -436,13 +423,13 @@ h1, h2, h3, h4 {
     for the entire div
 */
 
-.spot {
+/*.spot {
   position: absolute;
   width: 100%;
   height: 100%;
   top: 0;
   left: 0;
-}
+}*/
 /*
     This is the outer svg wrapper that the SVG itself will
     fill. Multiple svg-wrapper classes can be put side by side.
@@ -479,7 +466,7 @@ h1, h2, h3, h4 {
     text would be below the div's.
 */
 
-#text {
+/*#text {
   margin-top: -35px;
   text-align: center;
 }
@@ -495,16 +482,16 @@ h1, h2, h3, h4 {
 make it thinner, then set it to again wrap around the entire parent element.
 */
 
-.svg-wrapper:hover #shape {
+/*.svg-wrapper:hover #shape {
   stroke-dasharray: 50 0;
   stroke-width: 3px;
   stroke-dashoffset: 0;
   stroke: #06D6A0;
-}
+}*/
 
 // Fonts
 
-@import url(https://fonts.googleapis.com/css?family=Indie+Flower);
+/*@import url(https://fonts.googleapis.com/css?family=Indie+Flower);
 
 h1{
   text-shadow: 2px 2px 2px silver;
@@ -514,13 +501,10 @@ h1{
   font-size: 48px;
   font-weight: normal;
   text-align: center;
-}
+}*/
 
-.btn-container{
 
-}
-
-.btn{
+/*.btn{
 	width: 300px;
 	height: 50px;
 	line-height: 50px;
@@ -590,9 +574,9 @@ h1{
 	&:hover{
 		background-color: #e16e50;
 	}
-}
+}*/
 
-@keyframes hover {
+/*@keyframes hover {
   50% {
     -webkit-transform: translateY(-3px);
     -ms-transform: translateY(-3px);
@@ -673,7 +657,7 @@ h1{
     -ms-transform: translateY(-6px);
     transform: translateY(-6px);
   }
-}
+}*/
 
 
 
@@ -687,77 +671,6 @@ body {
   font-size: 14px;
   margin: 0 auto;
   background: grey;
-}
-
-.right {
-  float: right;
-  position: relative;
-  top: 6px;
-}
-
-.top {
-  margin-top: -30px;
-}
-
-#notebooks {
-  background: whitesmoke;
-  position: absolute;
-  left: 25%;
-  margin-left: -175px;
-  margin-top: 35px;
-  width: 350px;
-  padding: 15px;
-  border: 1px solid rgba(0, 0, 0, 0.2);
-  border-radius: 5px;
-  box-shadow: inset 1px 1px 0 white;
-  max-height: 450px;
-}
-
-
-
-#query {
-  width: 100%;
-  box-sizing: border-box;
-  font-size: 19px;
-  padding: 5px;
-  font-family: calibri light;
-  margin-bottom: 10px;
-  border: 1px solid rgba(0, 0, 0, 0.2);
-  border-radius: 3px;
-  box-shadow: inset 1px 1px 0 rgba(0, 0, 0, 0.1);
-}
-
-#notebooks span {
-  width: 350px!important;
-  display: block;
-  position: absolute;
-  background: red;
-  bottom: -35px;
-  left: -1px;
-  width: 360px;
-  border-radius: 0 0 5px 5px;
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  padding: 10px;
-  border-top: 1px solid rgba(0, 0, 0, 0.1);
-  box-shadow: inset 1px 1px rgba(255, 255, 255, 0.5);
-}
-
-#notebooks select {
-  width: 120px;
-  margin-left: 230px;
-  margin-top: -45px;
-  border-radius: 0 3px 3px 0;
-  border: 1px solid rgba(0, 0, 0, 0.2);
-  border-left: 1px solid rgba(0, 0, 0, 0.1);
-  position: absolute;
-  padding: 7.5px;
-  box-shadow: inset 0 1px 0 rgba(0, 0, 0, 0.1);
-}
-
-#notebooks select:focus, #query:focus {
-  border: 1px solid #FFD32E;
-  box-shadow: 0 0 10px rgba(255, 255, 0, 0.1);
-  outline: none;
 }
 
 svg{
@@ -798,9 +711,6 @@ body {
   -webkit-animation-duration: 3s;
   -moz-animation-duration: 3s;
   animation-duration: 3s;
-  /*-webkit-animation-iteration-count: infinite;*/
-  /*-moz-animation-iteration-count: infinite;*/
-  /*animation-iteration-count: infinite;*/
   background-repeat: no-repeat;
   background-position: 0 0;
   background-color: grey;
@@ -845,8 +755,6 @@ body {
 #navbar-primary .navbar-nav {
   width: 100%;
   text-align: center;
-  text-decoration: overline;
-  /*background-color: silver;*/
 }
 #navbar-primary .navbar-nav > li {
   display: inline-block;
@@ -864,22 +772,7 @@ body {
 
 /*end logo shimmer*/
 
-@import url(https://fonts.googleapis.com/css?family=Quantico);
-html, body {
-  background: #111;
-}
 
-#container {
-  position: absolute;
-}
-
-.cont {
-  width: 500px;
-  height:300px;
-  padding-top: 50%;
-  display: inline;
-  padding-left: 50%;
-}
 
 /* Info */
 @keyframes show-info {
@@ -899,7 +792,6 @@ html, body {
 /* List styles */
 
 .list {
-
     -webkit-transform-style: preserve-3d;
     -moz-transform-stle: preserve-3d;
     -ms-transform-style: preserve-3d;
@@ -909,7 +801,7 @@ html, body {
     text-transform: uppercase;
     position: absolute;
     margin-left: -140px;
-    top: 30%;
+    /*top: 30%;*/
 }
 
 .list a {
@@ -988,7 +880,6 @@ html, body {
 }
 
 .toggle:hover {
-
     background: #66ff33!important;
 }
 
@@ -1019,18 +910,6 @@ html, body {
 
     left: 20%;
 }
-
-.maki {
-
-    -webkit-transform: perspective(600px) translateZ(1px) !important;
-    -moz-transform: perspective(600px) translateZ(1px) !important;
-    -ms-transform: perspective(600px) translateZ(1px) !important;
-    -o-transform: perspective(600px) translateZ(1px) !important;
-    transform: perspective(600px) translateZ(1px) !important;
-
-    left: 50%;
-}
-
 .sashimi {
 
     -webkit-transform: perspective(1200px) rotateY(-40deg) !important;
@@ -1053,11 +932,11 @@ html, body {
 
 
 /*Modules Start*/
-* {
+/** {
   box-sizing: border-box;
-}
+}*/
 
-html, body {
+/*html, body {
   min-height: 100%;
   height: 100%;
   background-image: url(http://theartmad.com/wp-content/uploads/Dark-Grey-Texture-Wallpaper-5.jpg);
@@ -1065,10 +944,10 @@ html, body {
   background-position: top center;
   font-family: helvetica neue, helvetica, arial, sans-serif;
   font-weight: 200;
-}
-html.modal-active, body.modal-active {
+}*/
+/*html.modal-active, body.modal-active {
   overflow: hidden;
-}
+}*/
 
 #modal-container {
   position: fixed;
@@ -1625,3 +1504,68 @@ html.modal-active, body.modal-active {
 }
 
 /*Modules End*/
+
+.row {
+    /*border:solid 1px #CCCCCC;*/
+    /*margin:0 auto!important;*/
+  /*display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display:         flex;*/
+}
+.contain{
+  text-align: center;
+}
+.col{
+  /*border:solid 1px #CCCCCC;*/
+
+}
+.col-md-auto .col-5 .col-md-5 .col-6 .col-3 .col-md-6{
+  /*margin:0 auto!important;*/
+  /*border:solid 1px #CCCCCC;*/
+  /*margin-right:-1px;*/
+  padding:10px;
+}
+
+
+.navbarr {
+  overflow: hidden;
+z-index: 2;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.navbarr a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+.c {
+  width: 100%;
+  height: 100%;
+  background-color: #282828;
+}
+
+
+
+
+.spin {
+  margin: 0 auto;
+  width: 100%
+}
+
+.c {
+  background-color: #282828;
+}
