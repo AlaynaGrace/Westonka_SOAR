@@ -9,7 +9,8 @@
  var path = require('path');
  var bodyParser = require('body-parser');
  var pool = require('../../modules/pool.js');
-
+ var arrayToSend = [];
+ var resultsArray = [];
 
 
 
@@ -17,22 +18,37 @@ router.post('/', function (req, res) {
   console.log('req.body on server /teacher', req.body.email);
   var userEmail = req.body.email;
   var userHomeroom = req.body.homeroom;
-  var namesArray = [];
+  var arrayToSend = [];
 
   pool.connect(function ( err, connection, done){
     if (err) {
       console.log(err);
       res.send( 400 );
     } else{
+      resultsArray = [];
     console.log('connected to db');
-    var resultSet = connection.query("SELECT * FROM slips JOIN users ON slips.student_id = users.id WHERE homeroom_id =$1", [userHomeroom]);
+    // var resultSet = connection.query("SELECT * FROM slips JOIN users ON slips.student_id = users.id WHERE homeroom_id =$1", [userHomeroom]);
+    var resultSet = connection.query('SELECT users.name, count(users.id) from slips JOIN users on slips.student_id = users.id where homeroom_id = 123 group by users.id');
+    // var nullSet = connection.query('SELECT users.id, users.name from slips right JOIN users on slips.student_id = users.id where homeroom_id = 123 AND slips.id IS NULL AND users.teacher = false group by users.id');
     resultSet.on('row', function(row){
-      // console.log('are you running', row);
-      namesArray.push(row);
+      // resultsArray.push(row);
+      resultsArray.push(row);
+      console.log('this is resultsArray', resultsArray);
     });
     resultSet.on('end', function(){
-      console.log('namesArray', namesArray);
-      res.send(namesArray);
+      for (var i = 0; i < resultsArray.length; i++) {
+        var stName = resultsArray[i].name;
+        var stCount = resultsArray[i].count;
+        var studentObj = {
+          name: stName,
+          count: stCount
+          };
+        arrayToSend.push(studentObj);
+      }
+
+
+      console.log('namesArray', arrayToSend);
+      res.send(arrayToSend);
       done();
       });
     }

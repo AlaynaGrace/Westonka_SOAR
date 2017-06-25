@@ -3,7 +3,7 @@ googleAuthApp.controller('teacherController', ['$http','AuthFactory', '$location
 console.log('teacher');
 var vm = this;
 var authFactory = AuthFactory;
-vm.studentSlipCount = [];
+// vm.classInfoArray = [];
 
 
 AuthFactory.isLoggedIn()
@@ -42,8 +42,8 @@ AuthFactory.isLoggedIn()
 
 
 
-//hook this up to button on student page to get class list
 vm.getStudentList = function() {
+
   console.log('hit getStudentList');
   console.log('email in getStudentList', vm.email);
   var objectToSend = {
@@ -51,45 +51,15 @@ vm.getStudentList = function() {
     homeroom: vm.homeroom
   };
   console.log(objectToSend);
-$http({
-      method: 'POST',
-      url:'/private/teacher',
-      data: objectToSend
-    }).then(function(response){
-      console.log('response.data', response.data);
-      var all = [];
-      var student = response.data[0].name;
-      var studentObject= {
-        name: student,
-        count: 0
-      };
-      for (var i = 0; i < response.data.length; i++) {
-        if (studentObject.name === response.data[i].name) {
-          studentObject.count ++;
-        }else {
-          all.push(studentObject);
-          studentObject = {
-            name: response.data[i].name,
-            count: 1
-          };
-
-        }
-
-      }
-      console.log(studentObject);
-      // vm.studentSlipCount.push(studentObject);
-
-
-
-
-      vm.studentArray = response.data;
-      console.log('this is studentArray',vm.studentArray);
-
-    });
-<<<<<<< HEAD
-  });//end of getStudentList
-
-=======
-  };//end of getStudentList
->>>>>>> 4b3e5764ecc3666dfe2b4bae2a3650bd544267ac
+  $http({
+        method: 'POST',
+        url:'/private/teacher',
+        data: objectToSend
+      }).then(function(response){
+        console.log('this is response.data', response.data);
+        vm.studentArray = [];
+        vm.studentArray = response.data;
+        console.log('this is studentArray',vm.studentArray);
+      });
+    });//end of getStudentList
 }]);
