@@ -28,11 +28,8 @@ router.post('/', function (req, res) {
     } else{
       resultsArray = [];
     console.log('connected to db');
-    // var resultSet = connection.query("SELECT * FROM slips JOIN users ON slips.student_id = users.id WHERE homeroom_id =$1", [userHomeroom]);
     var resultSet = connection.query('SELECT users.name, count(users.id) from slips JOIN users on slips.student_id = users.id where homeroom_id = 123 group by users.id');
-    // var nullSet = connection.query('SELECT users.id, users.name from slips right JOIN users on slips.student_id = users.id where homeroom_id = 123 AND slips.id IS NULL AND users.teacher = false group by users.id');
     resultSet.on('row', function(row){
-      // resultsArray.push(row);
       resultsArray.push(row);
       console.log('this is resultsArray', resultsArray);
     });
@@ -48,7 +45,7 @@ router.post('/', function (req, res) {
           count: stCount
           };
         arrayToSend.push(studentObj);
-      }
+        }
         res.send(arrayToSend);
 
         done();
@@ -61,15 +58,11 @@ function getNullUsers (req, res){
   pool.connect(function ( err, connection, done){
   if (err) {
     console.log(err);
-    // res.send( 400 );
   } else{
-//     resultsArray = [];
   console.log('connected to db');
   var resultSet = connection.query('SELECT users.id, users.name from slips right JOIN users on slips.student_id = users.id where homeroom_id = 123 AND slips.id IS NULL AND users.teacher = false group by users.id');
   resultSet.on('row', function(row){
-    // resultsArray.push(row);
     resultsArray.push(row);
-    // console.log('this is resultsArray', resultsArray);
   });
   resultSet.on('end', function(){
     for (var i = 0; i < resultsArray.length; i++) {
@@ -82,7 +75,6 @@ function getNullUsers (req, res){
       arrayToSend.push(studentObj);
     }
     console.log('arrayToSend in null', arrayToSend);
-    // res.send(arrayToSend);
     done();
     });
   }
