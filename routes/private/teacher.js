@@ -21,6 +21,7 @@ router.post('/', function (req, res) {
   var arrayToSend = [];
 
   pool.connect(function ( err, connection, done){
+    getNullUsers();
     if (err) {
       console.log(err);
       res.send( 400 );
@@ -39,23 +40,54 @@ router.post('/', function (req, res) {
       for (var i = 0; i < resultsArray.length; i++) {
         var stName = resultsArray[i].name;
         var stCount = resultsArray[i].count;
+        if (stCount === undefined) {
+          stCount = 0;
+        }
         var studentObj = {
           name: stName,
           count: stCount
           };
         arrayToSend.push(studentObj);
       }
+        res.send(arrayToSend);
 
-
-      console.log('namesArray', arrayToSend);
-      res.send(arrayToSend);
-      done();
+        done();
       });
     }
   });
 }); // end router.get
 
-
+function getNullUsers (req, res){
+  pool.connect(function ( err, connection, done){
+  if (err) {
+    console.log(err);
+    // res.send( 400 );
+  } else{
+//     resultsArray = [];
+  console.log('connected to db');
+  var resultSet = connection.query('SELECT users.id, users.name from slips right JOIN users on slips.student_id = users.id where homeroom_id = 123 AND slips.id IS NULL AND users.teacher = false group by users.id');
+  resultSet.on('row', function(row){
+    // resultsArray.push(row);
+    resultsArray.push(row);
+    // console.log('this is resultsArray', resultsArray);
+  });
+  resultSet.on('end', function(){
+    for (var i = 0; i < resultsArray.length; i++) {
+      var stName = resultsArray[i].name;
+      var stCount = resultsArray[i].count;
+      var studentObj = {
+        name: stName,
+        count: stCount
+        };
+      arrayToSend.push(studentObj);
+    }
+    console.log('arrayToSend in null', arrayToSend);
+    // res.send(arrayToSend);
+    done();
+    });
+  }
+});
+}
 
 
 
@@ -85,25 +117,6 @@ router.get('/random/:homeroom',function(req,res){
   });
 });
 
-module.exports = router;
 
-// var userArray = [];
-// resultSet.on('row', function(row){
-//  userArray.push(row);
-//  for (var i = 0; i < userArray.length; i++) {
-//    var classObjects = userArray[i];
-//    var studentNames = studentObjects.name;
-//    namesArray.push(studentNames);
-// }
-// }); //end on row
-// resultSet.on('end', function(){
-// done();
-// // console.log('userArray', userArray);
-// console.log('!!!studentNames', slipsArray);
-// res.send(userArray);
-// });
-// }//end else
-// });// end pool connect
-//
-//
-// });
+
+module.exports = router;
