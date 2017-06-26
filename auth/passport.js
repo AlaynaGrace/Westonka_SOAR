@@ -51,19 +51,22 @@ passport.use('google', new GoogleStrategy({
       }
 
       if (user) { // user does exist!
+        UserService.updateWithToken(token, profile.id,user);
         return done(null, user);
       }
 
-      // user does not exist in our database, let's create one!
-      UserService.createGoogleUser(profile.id, token, profile.displayName,
-        profile.emails[0].value, /* we take first email address */
-        function (err, user) {
-          if (err) {
-            return done(err);
-          }
-
-          return done(null, user);
-        });
+      //user does not exist in our database and we don't want them to
+      done(err);
+      // // user does not exist in our database, let's create one!
+      // UserService.createGoogleUser(profile.id, token, profile.displayName,
+      //   profile.emails[0].value, /* we take first email address */
+      //   function (err, user) {
+      //     if (err) {
+      //       return done(err);
+      //     }
+      //
+      //     return done(null, user);
+      //   });
     });
 
 }));
