@@ -141,4 +141,16 @@ googleAuthApp.controller('adminController', ['$http', '$scope', '$timeout', 'PDF
       }
     });
   };
+
+  vm.experimentCreate = function(){
+      $http({
+        url: '/private/admin/experimentCreate/createTable',
+        method: 'GET'
+      }).then(function success(response){
+        console.log('it worked');
+      }, function failure(response){
+        console.log(response);
+      });
+  };
+
 }]);
