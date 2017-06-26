@@ -16,12 +16,14 @@
 <div class="col col-md-auto">
     <dl class="list sashimi">
       <dt>Prize Winners</dt>
-      <dd><a href="#">fahza</a></dd>
-      <dd><a href="#">ronald</a></dd>
+      <!-- <dd><a href="#">fahza</a></dd>
+      <dd><a href="#">ronald</a></dd> -->
+      <dd><a href="#">{{tc.winner}}</a></dd>
+
+
     </dl>
 </div>
 </div>
-
 
 
 
@@ -31,6 +33,14 @@
 </div>
 </div>
 </div>
+        <dt>Prize Winners</dt>
+        <dd><a href="#">fahza</a></dd>
+        <dd><a href="#">ronald</a></dd>
+
+    </dl> -->
+
+    <button style='border: 0.5px solid black; width: 200px; font-size: 27px; margin-top: 3px; text-shadow:1px 1px 1px #000000;'class="toggle btn-success">Hide/Show</button>
+    <button ng-click='tc.getWinners()' style='border: 0.5px solid black; width: 200px; font-size: 27px; margin-top: 3px; text-shadow:1px 1px 1px #000000;'class= 'btn btn-success'>SPIN TO WIN</button>
 
 </section>
 <p>hello
