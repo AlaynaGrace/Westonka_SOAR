@@ -1,7 +1,11 @@
-<!-- <div style ='background-color: tomato;' -->
-<h1 style= 'color: white; font-size: 40px!important;'>S.O.A.R.</h1>
-<h2 style= 'color: white;'>West Tonka Elementary</h2>
-<h3 style= 'color: white;'>Admin Page</h3>
+
+<div style ='background-color: tomato;'>
+     <h1> </h1>
+<h1>S.O.A.R.</h1>
+<h2>West Tonka Elementary</h2>
+<h3>Admin Page</h3>
+<a href="#!permissions">Permissions</a>
+
 <h4> <a href="https://codepen.io/lbebber/pen/RNgBPP" target="_blank"></a>  <a href="https://codepen.io/lbebber/pen/pvwZJp" target="_blank"></a>  <a href="https://codepen.io/lbebber/pen/rawQKR" target="_blank"></a></h4>
 <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 <div class = 'contain'>
@@ -65,3 +69,33 @@
     </filter>
   </defs>
 </svg>
+
+
+
+<div style ='color: white; text-shadow: 2px 2px 2px black;' class="allSlips">All School Slips: {{ac.allSlips}}</div>
+<!-- testing view -->
+
+<br /><br /><br /><br /><br /><br /><br />
+<button class="btn-default btn" ng-click="ac.clickKTwo()" type="button" name="button">K - 2</button>
+<button class="btn-default btn" ng-click="ac.clickThreeFour()" type="button" name="button">3 -4</button>
+
+
+<div ng-repeat="thing in ac.kThroughTwo track by $index">{{thing.name}} </div>
+<!-- <div ng-repeat="thing in ac.threeAndFour">{{thing.name}}</div> -->
+
+
+<!-- end of main div -->
+ </div>
+
+<!-- <button style ='text-align: center;'class = 'btn btn-success' ng-click="ac.makePDF()">Make Slips</button> -->
+
+ <!-- </div> -->
+
+<!--<div class="wrapper">
+  <p class="holder">
+    <a href="#" class="animBtn themeA">Sort Ticket Total</a>
+    <a href="#" class="animBtn themeB">Sort Students</a>
+    <a href="#" class="animBtn themeC">Sort Teachers</a>
+    <a href="#" class="animBtn themeD">Slip Chart</a>
+  </p>
+</div> -->

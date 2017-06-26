@@ -42,7 +42,7 @@
      // });
    },
 
-   findUserByGoogleId: function (id, callback) {
+   findUserByGoogleEmail: function (email, callback) {
      pool.connect(function(err,connection,done){
        if(err){
          console.log('there was an error in finding the person',err);
@@ -50,14 +50,14 @@
        }
        else{
          console.log('in findUserByGoogleId pool connect with no errors');
-         connection.query("SELECT * FROM users WHERE google_id=$1",[id],function(error,user){
+         connection.query("SELECT * FROM users WHERE email=$1",[email],function(error,user){
            done();
            if(error){
              console.log(error);
              return callback(error, null);
            }
            else{
-             console.log('this is the user found by google id', user.rows[0]);
+             console.log('this is the user found by google email', user.rows[0]);
              return callback(null, user.rows[0]);
            }
          });
@@ -122,6 +122,25 @@
      //   return callback(null, user);
      // });
    },
+
+   updateWithToken: function(token, googleId, user){
+     pool.connect(function(err,connection,done){
+       if(err){
+         console.log(err);
+       }
+       else{
+         connection.query('UPDATE users SET token=$1, google_id=$2 WHERE id=$3', [token,googleId,user.id],function(err){
+           done();
+           if(err){
+             console.log(err);
+           }
+           else{
+             console.log('we did it!!!!!!!!!!!!!!');
+           }
+         });
+       }
+     });
+   }
  };
 
  module.exports = UserService;

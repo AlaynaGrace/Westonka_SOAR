@@ -1,38 +1,65 @@
-googleAuthApp.controller('teacherController', ['$http','$scope','$timeout', 'AuthFactory',function($http, $scope, $timeout, AuthFactory){
+
+googleAuthApp.controller('teacherController', ['$http','AuthFactory', '$location',function($http, AuthFactory, $location){
 console.log('teacher');
 var vm = this;
 var authFactory = AuthFactory;
+// vm.classInfoArray = [];
 
 
-//start getStudentList
-authFactory.isLoggedIn()
+AuthFactory.isLoggedIn()
 .then(function (response) {
-  if (response.data) {
+  if (response.data.status) {
     vm.displayLogout = true;
-    authFactory.setLoggedIn(true);
-    console.log('this is response.data',response.data.email);
+    AuthFactory.setLoggedIn(true);
+    console.log(response.data);
+    vm.username = response.data.name;
     vm.email = response.data.email;
+    vm.id = response.data.id;
+    // vm.homeroom = response.data.homeroom;
+    vm.homeroom = '123';
+    vm.getStudentList();
+
+    vm.id = response.data.id;
+    vm.homeroom = response.data.homeroom_id;
+    if(response.data.admin !== true && response.data.teacher !== true){
+      $location.path('/students');
+    }
+    else if(response.data.admin){
+      $location.path('/admins');
+    }
+
   } else { // is not logged in on server
     vm.displayLogout = false;
-    authFactory.setLoggedIn(false);
+    AuthFactory.setLoggedIn(false);
   }
-});
+},
 
 
-//hook this up to button on student page to get class list
+//   vm.message.text = 'Unable to properly authenticate user';
+//   vm.message.type = 'error';
+// });
+
+
+
+
 vm.getStudentList = function() {
+
   console.log('hit getStudentList');
   console.log('email in getStudentList', vm.email);
   var objectToSend = {
-    email: vm.email
+    email: vm.email,
+    homeroom: vm.homeroom
   };
-$http({
-      method: 'POST',
-      url:'/teacher',
-      data: objectToSend
-    }).then(function(response){
-      console.log('response.data', response.data);
-      vm.studentArray = response.data;
-    });
-  };//end of getStudentList
+  console.log(objectToSend);
+  $http({
+        method: 'POST',
+        url:'/private/teacher',
+        data: objectToSend
+      }).then(function(response){
+        console.log('this is response.data', response.data);
+        vm.studentArray = [];
+        vm.studentArray = response.data;
+        console.log('this is studentArray',vm.studentArray);
+      });
+    });//end of getStudentList
 }]);

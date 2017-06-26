@@ -22,6 +22,13 @@ $routeProvider
       templateUrl: '/public/views/admin.html',
       controller: "adminController as ac"
     })
+    .when('/permissions',{
+      templateUrl: 'public/views/permissions.html',
+      controller:'adminController as ac'
+    })
+    .when('/redirect', {
+      templateUrl: 'public/views/redirect.html'
+    })
     .when('/students', {
       templateUrl: '/public/views/student.html',
       controller: "studentController as sc"
