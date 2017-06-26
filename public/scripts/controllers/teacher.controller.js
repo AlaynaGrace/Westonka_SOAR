@@ -54,12 +54,14 @@ vm.getStudentList = function() {
     });//end of getStudentList
 
     vm.getWinners = function(homeroom){
+      vm.winner = '';
       console.log('hit getWinners');
       console.log('this is HR number', vm.homeroom);
       DrawingService.grabRandomSlipsHomeroom(homeroom).then(function(data){
         var slipsArray = data.data;
         console.log('ARRAY of slips', data.data);
         var random = Math.floor((Math.random() * slipsArray.length) );
+        vm.winner = slipsArray[random];
         console.log(random);
 
       });
