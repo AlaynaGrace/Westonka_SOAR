@@ -12,12 +12,13 @@ googleAuthApp.service('DrawingService', ['$http',function($http){
     });
   };
 
-  self.grabRandomSlipsHomeroom = function(homeroom){
+  self.grabRandomSlipsHomeroom = function(homeroom, email){
+    console.log('hit grabRandomSlipsHomeroom');
     return $http({
-      url: '/private/teacher/random/' + homeroom,
+      url: '/private/teacher/random/' + homeroom + email,
       method: 'GET'
     }).then(function success(response){
-      console.log(response);
+      console.log('random slips by homeroom',response);
     }, function failure(response){
       console.log(response);
     });

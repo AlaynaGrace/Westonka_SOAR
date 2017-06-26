@@ -1,9 +1,8 @@
 
-googleAuthApp.controller('teacherController', ['$http','AuthFactory', '$location',function($http, AuthFactory, $location){
+googleAuthApp.controller('teacherController', ['$http','AuthFactory', '$location', 'DrawingService', function($http, AuthFactory, $location, DrawingService){
 console.log('teacher');
 var vm = this;
 var authFactory = AuthFactory;
-// vm.classInfoArray = [];
 
 
 AuthFactory.isLoggedIn()
@@ -34,16 +33,7 @@ AuthFactory.isLoggedIn()
   }
 },
 
-
-//   vm.message.text = 'Unable to properly authenticate user';
-//   vm.message.type = 'error';
-// });
-
-
-
-
 vm.getStudentList = function() {
-
   console.log('hit getStudentList');
   console.log('email in getStudentList', vm.email);
   var objectToSend = {
@@ -62,4 +52,12 @@ vm.getStudentList = function() {
         console.log('this is studentArray',vm.studentArray);
       });
     });//end of getStudentList
+
+    vm.getWinners = function(){
+      console.log('hit getWinners');
+      DrawingService.grabRandomSlipsHomeroom(vm.homeroom);
+
+    };
+
+
 }]);

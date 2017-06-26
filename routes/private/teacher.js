@@ -84,7 +84,7 @@ function getNullUsers (req, res){
 
 
 
-router.get('/random/:homeroom',function(req,res){
+router.get('/random/:homeroom:email',function(req,res){
   router.get('/random',function(req,res){
     var today = new Date();
     var weekAgo = new Date(myDate.getTime() - (60*60*24*7*1000));
