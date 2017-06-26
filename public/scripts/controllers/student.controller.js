@@ -12,6 +12,9 @@ console.log('this is the studentController');
       vm.username = response.data.name;
       vm.email = response.data.email;
       vm.id = response.data.id;
+      console.log('authfact vm.id',vm.email);
+      vm.getStudentSlips();
+
       // vm.homeroom = response.data.homeroom_id;
     } else { // is not logged in on server
       vm.displayLogout = false;
@@ -26,23 +29,25 @@ console.log('this is the studentController');
 
 //start get student slips
   vm.getStudentSlips = function() {
+    console.log('getstudentslips', vm.email);
     $http({
       method: 'GET',
-      url:'/student'
+      url:'/private/student/slips/' + vm.email
     }).then(function(response){
+      console.log('in vmgetstudentslips',response);
       vm.studentSlips = response.data.length;
       // console.log(response.data);
     });
   };//end of getStudentList
 
- vm.getStudentSlips();
+ // vm.getStudentSlips();
 
 
 
   //start post student slips
     vm.postStudentSlip = function() {
       $http({
-        url: '/student/check/' + vm.slipKey,
+        url: '/private/student/check/' + vm.slipKey,
         method: 'GET'
       }).then(function success(response){
         console.log('This is the response',response.data);
