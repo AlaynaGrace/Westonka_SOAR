@@ -24,6 +24,9 @@ AuthFactory.isLoggedIn()
     if(response.data.admin !== true && response.data.teacher !== true){
       $location.path('/students');
     }
+    else if(response.data.admin && response.data.teacher){
+      vm.both=true;
+    }
     else if(response.data.admin){
       $location.path('/admins');
     }
