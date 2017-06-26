@@ -12,12 +12,10 @@ console.log('this is the studentController');
       vm.username = response.data.name;
       vm.email = response.data.email;
       vm.id = response.data.id;
-      if(response.data.admin){
-        $location.path('/admins');
-      }
-      else if(response.data.teacher){
-        $location.path('/teachers');
-      }
+
+      console.log('authfact vm.email',vm.email);
+      vm.getStudentSlips();
+
 
       // vm.homeroom = response.data.homeroom_id;
     } else { // is not logged in on server
@@ -33,16 +31,20 @@ console.log('this is the studentController');
 
 //start get student slips
   vm.getStudentSlips = function() {
+    console.log('getstudentslips', vm.email);
     $http({
       method: 'GET',
-      url:'/private/student'
+
+      url:'/private/student/slips/' + vm.email
+
     }).then(function(response){
+      console.log('in vmgetstudentslips',response);
       vm.studentSlips = response.data.length;
       // console.log(response.data);
     });
   };//end of getStudentList
 
- vm.getStudentSlips();
+ // vm.getStudentSlips();
 
 
 

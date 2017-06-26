@@ -13,10 +13,22 @@ var bodyParser = require('body-parser');
 var pool = require('../../modules/pool');
 
 
-
-
 router.get('/',function(req,res){
-  console.log('in student slips');
+  console.log('base student router.get');
+
+    if(err){
+      console.log(err);
+      res.send(400);
+    }
+    else{
+      res.send(200);
+    }
+  });
+
+
+
+router.get('/slips/:email',function(req,res){
+  console.log('in student slips req.params =', req.params.email);
   var studentSlips = [];
 
   pool.connect(function (err, connection, done){
@@ -25,9 +37,9 @@ router.get('/',function(req,res){
       res.send(400);
     }
     else{
-      console.log('connected to db');
-      var resultSet = connection.query('SELECT * FROM users JOIN slips ON users.id=slips.student_id');
-        // var resultSet = connection.query('SELECT * FROM slips WHERE id = 1');
+
+        var resultSet = connection.query('SELECT * FROM slips JOIN users ON users.id=slips.student_id WHERE email= $1', [req.params.email]);
+
       resultSet.on('row', function(row){
         // console.log('are you running', row);
         studentSlips.push(row);
@@ -43,6 +55,7 @@ router.get('/',function(req,res){
   });
   // res.send(200);
 }); // end router.get
+
 
 
 router.post('/', function(req,res){
