@@ -1,13 +1,40 @@
-googleAuthApp.controller('adminController', ['$http', '$scope', '$timeout', 'PDFService', 'EmailSearchService', 'UpdateUserService', function($http, $scope, $timeout, PDFService, EmailSearchService, UpdateUserService) {
+googleAuthApp.controller('adminController', ['$http', '$scope', '$timeout', 'PDFService', 'EmailSearchService', 'UpdateUserService', 'AuthFactory', '$location', function($http, $scope, $timeout, PDFService, EmailSearchService, UpdateUserService, AuthFactory, $location) {
   console.log('inside admin controller');
   var vm = this;
+
+  AuthFactory.isLoggedIn()
+  .then(function (response) {
+    if (response.data.status) {
+      vm.displayLogout = true;
+      AuthFactory.setLoggedIn(true);
+      console.log(response.data);
+      vm.username = response.data.name;
+      vm.email = response.data.email;
+      vm.id = response.data.id;
+      if(response.data.admin !== true && response.data.teacher !== true){
+        $location.path('/students');
+      }
+      else if(response.data.teacher){
+        $location.path('/teachers');
+      }
+      // vm.homeroom = response.data.homeroom_id;
+    } else { // is not logged in on server
+      vm.displayLogout = false;
+      AuthFactory.setLoggedIn(false);
+    }
+  },
+
+  function () {
+    vm.message.text = 'Unable to properly authenticate user';
+    vm.message.type = 'error';
+  });
 
   //start get slips for grades one and two
   vm.gradesKThroughTwo = function() {
     console.log('hitting k through two');
     return $http({
       method: 'GET',
-      url: "/admin/" + "('k-1', 'k-2', '1-1', '1-2', '2-1', '2-2')"
+      url: "/private/admin/" + "('k-1', 'k-2', '1-1', '1-2', '2-1', '2-2')"
     }).then(function(response) {
       vm.kThroughTwo = response.data;
       console.log('inside the then k-2');
@@ -21,7 +48,7 @@ googleAuthApp.controller('adminController', ['$http', '$scope', '$timeout', 'PDF
     console.log('hitting three and four');
     return $http({
       method: 'GET',
-      url: "/admin/" + "('3-1', '3-1', '4-1', '4-2')"
+      url: "/private/admin/" + "('3-1', '3-1', '4-1', '4-2')"
     }).then(function(response) {
       vm.threeAndFour = response.data;
     });
@@ -32,7 +59,7 @@ googleAuthApp.controller('adminController', ['$http', '$scope', '$timeout', 'PDF
     console.log('hitting all slips for all grades');
     $http({
       method: 'GET',
-      url: '/admin'
+      url: '/private/admin'
     }).then(function(response) {
       vm.allSlips = response.data.length;
     });
@@ -44,7 +71,7 @@ googleAuthApp.controller('adminController', ['$http', '$scope', '$timeout', 'PDF
     console.log('hitting post inscentive');
     $http({
       method: 'POST',
-      url: '/admin'
+      url: '/private/admin'
     }).then(function(response) {
       vm.incentive = response.data;
     });
@@ -56,7 +83,7 @@ googleAuthApp.controller('adminController', ['$http', '$scope', '$timeout', 'PDF
     console.log('hitting get incentive');
     $http({
       method: 'GET',
-      url: '/admin'
+      url: '/private/admin'
     }).then(function(response) {
       vm.incentive = response.data;
     });

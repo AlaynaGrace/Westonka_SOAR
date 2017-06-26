@@ -1,4 +1,4 @@
-googleAuthApp.controller('studentController', ['$http','$scope','$timeout', 'AuthFactory',function($http, $scope, $timeout, AuthFactory){
+googleAuthApp.controller('studentController', ['$http','$scope','$timeout', 'AuthFactory','$location',function($http, $scope, $timeout, AuthFactory, $location){
 console.log('this is the studentController');
   var vm = this;
   var authFactory = AuthFactory;
@@ -12,8 +12,10 @@ console.log('this is the studentController');
       vm.username = response.data.name;
       vm.email = response.data.email;
       vm.id = response.data.id;
-      console.log('authfact vm.id',vm.email);
+
+      console.log('authfact vm.email',vm.email);
       vm.getStudentSlips();
+
 
       // vm.homeroom = response.data.homeroom_id;
     } else { // is not logged in on server
@@ -32,7 +34,9 @@ console.log('this is the studentController');
     console.log('getstudentslips', vm.email);
     $http({
       method: 'GET',
+
       url:'/private/student/slips/' + vm.email
+
     }).then(function(response){
       console.log('in vmgetstudentslips',response);
       vm.studentSlips = response.data.length;
@@ -61,10 +65,11 @@ console.log('this is the studentController');
             student_id: vm.id,
             date_entered: new Date()
           };
+           console.log('this is the object I am sending:', objectToSend);
 
           $http({
             method: 'POST',
-            url:'/student',
+            url:'/private/student',
             data: objectToSend
           }).then(function success(response){
             console.log(response);

@@ -39,7 +39,7 @@ router.get('/google', passport.authenticate('google',
 router.get('/google/callback', passport.authenticate('google',
   {
     successRedirect: '/private', // take them to their private data
-    failureRedirect: '/', // take them back home to try again
+    failureRedirect: '/#!/redirect', // take them back home to try again
   })
 );
 /**
@@ -52,8 +52,10 @@ router.get('/google/callback', passport.authenticate('google',
 router.get('/', function (req, res) {
   if (req.isAuthenticated()) {
     console.log("this is the user in auth!",req.user);
+
     // res.send({ status: true, name: req.user.name, email: req.user.email });
 req.user.status= true;
+
     res.send(req.user);
   } else {
     res.json({ status: false });
