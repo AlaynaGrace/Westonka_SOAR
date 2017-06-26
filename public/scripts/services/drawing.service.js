@@ -13,14 +13,19 @@ googleAuthApp.service('DrawingService', ['$http',function($http){
   };
 
   self.grabRandomSlipsHomeroom = function(homeroom){
-    return $http({
+    console.log('hit grabRandomSlipsHomeroom');
+    return  $http({
       url: '/private/teacher/random/' + homeroom,
       method: 'GET'
     }).then(function success(response){
-      console.log(response);
-    }, function failure(response){
-      console.log(response);
+      console.log('random slips by homeroom',response.data);
+      return response;
     });
   };
+  //   function failure(response){
+  //     console.log(response);
+  //   });
+  // };
+
 
 }]);
