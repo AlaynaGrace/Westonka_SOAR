@@ -278,6 +278,7 @@ h1, h2, h3, h4 {
   background: white;
   color: silver;
 }
+
 .menu-item:nth-child(3) {
   -webkit-transition-duration: 200ms;
           transition-duration: 200ms;
@@ -331,32 +332,38 @@ h1, h2, h3, h4 {
 .menu-open:checked ~ .menu-item:nth-child(3) {
   -webkit-transition-duration: 300ms;
           transition-duration: 300ms;
-  -webkit-transform: translate3d(114.42548px, 11.48084px, 0);
-          transform: translate3d(114.42548px, 11.48084px, 0);
+  -webkit-transform: translate3d(114.42548px, 31.48084px, 0);
+          transform: translate3d(114.42548px, 31.48084px, 0);
 }
 .menu-open:checked ~ .menu-item:nth-child(4) {
   -webkit-transition-duration: 400ms;
           transition-duration: 400ms;
-  -webkit-transform: translate3d(77.18543px, 85.2491px, 0);
-          transform: translate3d(77.18543px, 85.2491px, 0);
+  -webkit-transform: translate3d(77.18543px, 105.2491px, 0);
+          transform: translate3d(77.18543px, 105.2491px, 0);
 }
 .menu-open:checked ~ .menu-item:nth-child(5) {
   -webkit-transition-duration: 500ms;
           transition-duration: 500ms;
-  -webkit-transform: translate3d(0.09158px, 114.99996px, 0);
-          transform: translate3d(0.09158px, 114.99996px, 0);
+  -webkit-transform: translate3d(0.09158px, 134.99996px, 0);
+          transform: translate3d(0.09158px, 134.99996px, 0);
 }
 .menu-open:checked ~ .menu-item:nth-child(6) {
   -webkit-transition-duration: 600ms;
           transition-duration: 600ms;
-  -webkit-transform: translate3d(-77.04956px, 85.37192px, 0);
-          transform: translate3d(-77.04956px, 85.37192px, 0);
+  -webkit-transform: translate3d(-77.04956px, 105.37192px, 0);
+          transform: translate3d(-77.04956px, 105.37192px, 0);
 }
 .menu-open:checked ~ .menu-item:nth-child(7) {
   -webkit-transition-duration: 700ms;
           transition-duration: 700ms;
-  -webkit-transform: translate3d(-114.40705px, 11.66307px, 0);
-          transform: translate3d(-114.40705px, 11.66307px, 0);
+  -webkit-transform: translate3d(-114.40705px, 31.66307px, 0);
+          transform: translate3d(-114.40705px, 31.66307px, 0);
+}
+.menu-open:checked ~ .menu-item:nth-child(8) {
+  -webkit-transition-duration: 800ms;
+          transition-duration: 800ms;
+  -webkit-transform: translate3d(300.40705px, 500.66307px, 0);
+          transform: translate3d(300.40705px, 500.66307px, 0);
 }
 
 .fa-bar-chart-o:before, .fa-bar-chart:before {
@@ -374,14 +381,21 @@ h1, h2, h3, h4 {
   color: black;
 }
 
-.fa-envelope:before {
-  content: "\f0e0";
+#lilChild:before {
+  /*content: "\f013";*/
   color: black;
+  font-size: 20px!important;
 }
 
-.fa-child:before, .fa-child:before {
+.fa-child:before {
   content: "\f013";
   color: black;
+  font-size: 40px;
+}
+
+.fa-question:before {
+  color:white;
+  font-size: 40px;
 }
 
 /*start teacher page css*/
@@ -439,7 +453,6 @@ h1, h2, h3, h4 {
   margin-top: 0;
   position: relative;
   width: 150px;
-  /*make sure to use same height/width as in the html*/
   height: 40px;
   display: inline-block;
   border-radius: 3px;
@@ -749,9 +762,6 @@ body {
 }
 /*student page end css*/
 
-
-/*start nav bar*/
-
 #navbar-primary .navbar-nav {
   width: 100%;
   text-align: center;
@@ -765,16 +775,6 @@ body {
   padding-right: 30px;
 }
 
-/*end nav bar*/
-
-/*start logo shimmer*/
-
-
-/*end logo shimmer*/
-
-
-
-/* Info */
 @keyframes show-info {
   0% {
     transform: rotateY(120deg);
@@ -797,15 +797,12 @@ body {
     -ms-transform-style: preserve-3d;
     -o-transform-style: preserve-3d;
     transform-style: preserve-3d;
-
     text-transform: uppercase;
     position: absolute;
     margin-left: -140px;
-    /*top: 30%;*/
 }
 
 .list a {
-
     display: block;
     color: white;
     font-weight: bolder;
@@ -816,7 +813,6 @@ body {
 }
 
 .list dt, .list dd {
-
     text-indent: 10px;
     line-height: 55px;
     background: #E0FBAC;
@@ -827,14 +823,12 @@ body {
 }
 
 .list dt {
-
     /* Since we're hiding elements behind here, we need it in 3d */
     -webkit-transform: translateZ(0.3px);
     -moz-transform: translateZ(0.3px);
     -ms-transform: translateZ(0.3px);
     -o-transform: translateZ(0.3px);
     transform: translateZ(0.3px);
-
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
     font-size: 15px;
 }
@@ -848,52 +842,10 @@ body {
     margin: 0;
 }
 
-/* UI */
-
-.toggle {
-    font-weight: bolder;
-
-    -webkit-transform: translateZ(100px)!important;
-    -moz-transform: translateZ(100px)!important;
-    -ms-transform: translateZ(100px)!important;
-    -o-transform: translateZ(100px)!important;
-    transform: translateZ(100px)!important;
-
-    /*box-shadow: 0 1px 4px rgba(0,0,0,0.15)!important;*/
-    border-radius: 3px!important;
-
-    text-transform: uppercase!important;
-    letter-spacing: -1px!important;
-    line-height: 50px!important;
-    margin-left: -70px!important;
-    margin-top: -20px!important;
-    /*background: #2b2b2b!important;*/
-    text-align: center!important;
-    font-size: 20px!important;
-    position: absolute!important;
-    z-index: 1!important;
-    height: 50px!important;
-    bottom: 10%!important;
-    width: 140px!important;
-    /*color: #fff!important;*/
-    left: 50%!important;
-}
-
-.toggle:hover {
-    background: #66ff33!important;
-}
-
-
-/* Individual styles */
-
 .sashimi dt, .sashimi dd, .sashimi a { border: 0.5px solid black;background: blue!important; }
 .nigiri dt, .nigiri dd, .nigiri a { color: black;  border: 0.5px solid black;background: yellow!important; }
-.maki dt, .maki dd, .maki a { background: #FFC219!important; }
-
 .sashimi a:hover { background: #61c19e!important; }
 .nigiri a:hover { background: #d31b46!important; }
-.maki a:hover { background: #ffbb00!important; }
-
 .nigiri {
 
     -webkit-transform: perspective(1200px) rotateY(40deg) !important;
@@ -932,23 +884,6 @@ body {
 
 
 /*Modules Start*/
-/** {
-  box-sizing: border-box;
-}*/
-
-/*html, body {
-  min-height: 100%;
-  height: 100%;
-  background-image: url(http://theartmad.com/wp-content/uploads/Dark-Grey-Texture-Wallpaper-5.jpg);
-  background-size: cover;
-  background-position: top center;
-  font-family: helvetica neue, helvetica, arial, sans-serif;
-  font-weight: 200;
-}*/
-/*html.modal-active, body.modal-active {
-  overflow: hidden;
-}*/
-
 #modal-container {
   position: fixed;
   display: table;
@@ -1502,7 +1437,6 @@ body {
     transform: scale(0);
   }
 }
-
 /*Modules End*/
 
 .row {
@@ -1526,7 +1460,6 @@ body {
   /*margin-right:-1px;*/
   padding:10px;
 }
-
 
 .navbarr {
   overflow: hidden;
@@ -1557,9 +1490,6 @@ body {
   height: 100%;
   background-color: #282828;
 }
-
-
-
 
 .spin {
   margin: 0 auto;
