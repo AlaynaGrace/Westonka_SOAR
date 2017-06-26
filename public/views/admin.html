@@ -8,53 +8,92 @@
 
 <h4> <a href="https://codepen.io/lbebber/pen/RNgBPP" target="_blank"></a>  <a href="https://codepen.io/lbebber/pen/pvwZJp" target="_blank"></a>  <a href="https://codepen.io/lbebber/pen/rawQKR" target="_blank"></a></h4>
 <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+<div class = 'contain'>
+  <div class="row">
+    <div class="col col-md-auto">
 
-<nav class="menu">
-  <input type="checkbox" href="#" class="menu-open" name="menu-open" id="menu-open"/>
-  <label class="menu-open-button" for="menu-open">
-    <span class="hamburger hamburger-1"></span>
-    <span class="hamburger hamburger-2"></span>
-    <span class="hamburger hamburger-3"></span>
-  </label>
-  <a class="menu-item"> <i class="fa fa-bar-chart"></i> </a>
-  <a class="menu-item"> <i class="fa fa fa-child"></i> </a>
-  <a class="menu-item"> <i class="fa fa-star"></i> </a>
-  <a class="menu-item"> <i class="fa fa-envelope"></i> </a>
-  <a class="menu-item" ng-click="ac.makePDF()"><i class="fa fa-print"></i> </a>
 
-</nav>
+      <nav class="menu">
+        <input type="checkbox" href="#" class="menu-open" name="menu-open" id="menu-open"/>
+        <label class="menu-open-button" for="menu-open">
+          <span class="hamburger hamburger-1"></span>
+          <span class="hamburger hamburger-2"></span>
+          <span class="hamburger hamburger-3"></span>
+        </label>
+        <a class="menu-item"> <i class="fa fa-bar-chart"></i> </a>
+        <a class="menu-item"> <i class="fa fa-child"></i> </a>
+        <a class="menu-item"> <i class="fa fa-star fa-spin"></i> </a>
+        <a class="menu-item"> <i class="fa fa-child" id='lilChild'></i> </a>
+        <a class="menu-item" ng-click="ac.makePDF()"><i class="fa fa-print"></i> </a>
+        <a style='background-color: white;'class="menu-item"><i style= 'font-size: 30px; background-color:white; color: black; padding-right:30px; font-weight: bolder;' id="one" class= 'button fa-question'>?</i></a>
+
+      </nav>
+    </div>
+  </div>
+</div>
+<!-- Model Container Start(for questionmark) -->
+<div id="modal-container">
+  <div class="modal-background">
+    <div class="modal">
+      <h2 style= 'color: red; font-size:50px;'>Button Key</h2><br>
+      <p><i class="fa fa-child"></i>: Shows S.O.A.R. slips for grades 3-4 </p><br>
+      <p><i class="fa fa-child" id='lilChild' style='color: green!important;'></i>: Shows S.O.A.R. slips for grades k-2 </p><br>
+      <p><i class="fa fa-bar-chart"></i>: Shows a graph of S.O.A.R. slips</p><br>
+      <p><i class="fa fa-print"></i>: Prints S.O.A.R. slips</p><br>
+      <p><i class="fa fa-star"></i>: Sets a new incentive for S.O.A.R. slips</p>
+      <svg class="modal-svg" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" preserveAspectRatio="none">
+								<rect x="0" y="0" fill="none" width="226" height="162" rx="3" ry="3"></rect>
+							</svg>
+    </div>
+  </div>
+</div>
+<!-- Model Container Start(for questionmark) -->
 
 <!-- filters -->
 <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
-    <defs>
-      <filter id="shadowed-goo">
+  <defs>
+    <filter id="shadowed-goo">
 
-          <feGaussianBlur in="SourceGraphic" result="blur" stdDeviation="10" />
-          <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7" result="goo" />
-          <feGaussianBlur in="goo" stdDeviation="3" result="shadow" />
-          <feColorMatrix in="shadow" mode="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 1 -0.2" result="shadow" />
-          <feOffset in="shadow" dx="1" dy="1" result="shadow" />
-          <feBlend in2="shadow" in="goo" result="goo" />
-          <feBlend in2="goo" in="SourceGraphic" result="mix" />
-      </filter>
-      <filter id="goo">
-          <feGaussianBlur in="SourceGraphic" result="blur" stdDeviation="10" />
-          <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7" result="goo" />
-          <feBlend in2="goo" in="SourceGraphic" result="mix" />
-      </filter>
-    </defs>
+      <feGaussianBlur in="SourceGraphic" result="blur" stdDeviation="10" />
+      <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7" result="goo" />
+      <feGaussianBlur in="goo" stdDeviation="3" result="shadow" />
+      <feColorMatrix in="shadow" mode="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 1 -0.2" result="shadow" />
+      <feOffset in="shadow" dx="1" dy="1" result="shadow" />
+      <feBlend in2="shadow" in="goo" result="goo" />
+      <feBlend in2="goo" in="SourceGraphic" result="mix" />
+    </filter>
+    <filter id="goo">
+      <feGaussianBlur in="SourceGraphic" result="blur" stdDeviation="10" />
+      <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7" result="goo" />
+      <feBlend in2="goo" in="SourceGraphic" result="mix" />
+    </filter>
+  </defs>
 </svg>
+
+
+<!-- get rid of <br /> below and manipulate the space using margin -->
+
+
 
 <div style ='color: white; text-shadow: 2px 2px 2px black;' class="allSlips">All School Slips: {{ac.allSlips}}</div>
 <!-- testing view -->
 
+
 <br /><br /><br /><br /><br /><br /><br />
-<button class="btn-default btn" ng-click="ac.clickKTwo()" type="button" name="button">K - 2</button>
-<button class="btn-default btn" ng-click="ac.clickThreeFour()" type="button" name="button">3 -4</button>
+<button class="btn-default btn" ng-click="ac.clickKTwo()" type="button" name="kThroughTwo">K - 2</button>
+<button class="btn-default btn" ng-click="ac.clickThreeFour()" type="button" name="threeAndFour">3 -4</button>
 
 
 <div ng-repeat="thing in ac.kThroughTwo track by $index">{{thing.name}} </div>
-<!-- <div ng-repeat="thing in ac.threeAndFour">{{thing.name}}</div> -->
+<div ng-repeat="thing in ac.threeAndFour track by $index">{{thing.name}}</div>
+
+
+
+
+<!-- testing for random winner based on grade group -->
+<button class"btn-default btn" ng-click="ac.groupRandomWinner()" type="button" name="winnerButton">Select A Random Winner</button>
+<div ng-repeat="thing in ac.getRan track by $index">{{thing.id}}</div>
+
 
 
 <!-- end of main div -->

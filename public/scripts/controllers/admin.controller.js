@@ -38,7 +38,7 @@ googleAuthApp.controller('adminController', ['$http', '$scope', '$timeout', 'PDF
     }).then(function(response) {
       vm.kThroughTwo = response.data;
       console.log('inside the then k-2');
-      console.log('response: ', response);
+      console.log('response k-2: ', response);
     });
   }; //end get slips for grades one and two
   // vm.gradesKThroughTwo();
@@ -51,6 +51,7 @@ googleAuthApp.controller('adminController', ['$http', '$scope', '$timeout', 'PDF
       url: "/private/admin/" + "('3-1', '3-1', '4-1', '4-2')"
     }).then(function(response) {
       vm.threeAndFour = response.data;
+      console.log('response 3-4: ', response);
     });
   }; //end get slips for three and four
 
@@ -89,6 +90,19 @@ googleAuthApp.controller('adminController', ['$http', '$scope', '$timeout', 'PDF
     });
   }; //end get incentive
 
+// get for random winner based on grade group
+vm.getRandom = function() {
+  console.log('hittin in get random');
+  $http({
+    method: 'GET',
+    url: '/random'
+  }).then(function(response){
+    vm.getRan = response.data;
+  });
+};
+
+
+
   vm.clickKTwo = function() {
     vm.gradesKThroughTwo().then(function(response) {
       //need if statement to make sure it shows the correct grade group
@@ -110,6 +124,17 @@ googleAuthApp.controller('adminController', ['$http', '$scope', '$timeout', 'PDF
   vm.makePDF = function() {
     PDFService.makeNewPDF();
   };
+
+
+  vm.groupRandomWinner = function() {
+    console.log('inside group random winner button');
+    vm.gradesKThroughTwo().then(function(response){
+      vm.getRan = (Math.floor(Math.random() * vm.kThroughTwo.length) + 1);
+      console.log('get ran: ', vm.getRan);
+    });
+  };//end group random winner
+
+
 
   vm.searchForEmail = function() {
     // vm.emailResults = [];
@@ -141,4 +166,5 @@ googleAuthApp.controller('adminController', ['$http', '$scope', '$timeout', 'PDF
       }
     });
   };
+
 }]);
