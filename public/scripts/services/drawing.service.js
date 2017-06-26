@@ -12,16 +12,20 @@ googleAuthApp.service('DrawingService', ['$http',function($http){
     });
   };
 
-  self.grabRandomSlipsHomeroom = function(homeroom, email){
+  self.grabRandomSlipsHomeroom = function(homeroom){
     console.log('hit grabRandomSlipsHomeroom');
-    return $http({
-      url: '/private/teacher/random/' + homeroom + email,
+    return  $http({
+      url: '/private/teacher/random/' + homeroom,
       method: 'GET'
     }).then(function success(response){
-      console.log('random slips by homeroom',response);
-    }, function failure(response){
-      console.log(response);
+      console.log('random slips by homeroom',response.data);
+      return response;
     });
   };
+  //   function failure(response){
+  //     console.log(response);
+  //   });
+  // };
+
 
 }]);

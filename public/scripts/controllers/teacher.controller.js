@@ -53,11 +53,18 @@ vm.getStudentList = function() {
       });
     });//end of getStudentList
 
-    vm.getWinners = function(){
+    vm.getWinners = function(homeroom){
       console.log('hit getWinners');
-      DrawingService.grabRandomSlipsHomeroom(vm.homeroom);
+      console.log('this is HR number', vm.homeroom);
+      DrawingService.grabRandomSlipsHomeroom(homeroom).then(function(data){
+        var slipsArray = data.data;
+        console.log('ARRAY of slips', data.data);
+        var random = Math.floor((Math.random() * slipsArray.length) );
+        console.log(random);
 
+      });
     };
+    vm.getWinners('123');
 
 
 }]);

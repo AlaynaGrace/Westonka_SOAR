@@ -21,6 +21,7 @@ router.post('/', function (req, res) {
   var arrayToSend = [];
 
   pool.connect(function ( err, connection, done){
+    arrayToSend = [];
     getNullUsers();
     if (err) {
       console.log(err);
@@ -31,7 +32,7 @@ router.post('/', function (req, res) {
     var resultSet = connection.query('SELECT users.name, count(users.id) from slips JOIN users on slips.student_id = users.id where homeroom_id = 123 group by users.id');
     resultSet.on('row', function(row){
       resultsArray.push(row);
-      console.log('this is resultsArray', resultsArray);
+      // console.log('this is resultsArray', resultsArray);
     });
     resultSet.on('end', function(){
       for (var i = 0; i < resultsArray.length; i++) {
@@ -55,6 +56,7 @@ router.post('/', function (req, res) {
 }); // end router.get
 
 function getNullUsers (req, res){
+  arrayToSend = [];
   pool.connect(function ( err, connection, done){
   if (err) {
     console.log(err);
@@ -74,7 +76,7 @@ function getNullUsers (req, res){
         };
       arrayToSend.push(studentObj);
     }
-    console.log('arrayToSend in null', arrayToSend);
+    // console.log('arrayToSend in null', arrayToSend);
     done();
     });
   }
@@ -84,10 +86,14 @@ function getNullUsers (req, res){
 
 
 
-router.get('/random/:homeroom:email',function(req,res){
-  router.get('/random',function(req,res){
+router.get('/random/:homeroom',function(req,res){
+  // console.log('!!! hit random winners on server', req.params);
+  // router.get('/random',function(req,res){
+    console.log('### hit random');
     var today = new Date();
-    var weekAgo = new Date(myDate.getTime() - (60*60*24*7*1000));
+    // var weekAgo = new Date(myDate.getTime() - (60*60*24*7*1000));
+    var weekAgo = new Date();
+    weekAgo.setDate(weekAgo.getDate() - 7);
     pool.connect(function(err,connection,done){
       if(err){
         console.log(err);
@@ -101,12 +107,13 @@ router.get('/random/:homeroom:email',function(req,res){
             res.sendStatus(500);
           }
           else{
+            // console.log('@@@@@@@@', results.rows);
             res.send(results.rows);
           }
         });
       }
     });
-  });
+  // });
 });
 
 
