@@ -61,8 +61,8 @@ vm.getStudentList = function() {
         var slipsArray = data.data;
         console.log('ARRAY of slips', data.data);
         var random = Math.floor((Math.random() * slipsArray.length) );
-        vm.winner = slipsArray[random];
-        console.log(random);
+        vm.winner = slipsArray[random].name;
+        console.log('WINNER IS', vm.winner);
 
       });
     };
