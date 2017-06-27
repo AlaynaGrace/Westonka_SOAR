@@ -12,7 +12,7 @@ var pool = require('../../modules/pool');
 
 // GET Admin
 router.get('/:group', function (req, res) {
-  console.log('in admin server route: ', req.params);
+  console.log('in admin server route: ', req.params.group);
   pool.connect(function ( err, connection, done){
 
     if (err) {
@@ -20,19 +20,28 @@ router.get('/:group', function (req, res) {
     } else {
       console.log('inside else adminjs');
       //replace this with actualy query
-      var resultSet = connection.query("SELECT name FROM users JOIN homerooms ON users.homeroom_id=homerooms.id WHERE identifier in " + req.params.group);
-         var userArray = [];
-        resultSet.on('row', function(row){
-          // console.log('this is the row: ', row);
-        userArray.push(row);
-
-      }); //end on row
-        resultSet.on('end', function(){
-
-        // console.log('user array: 'userArray);
-        res.send( userArray);
-            done();
+      connection.query("SELECT * FROM slips JOIN users on slips.student_id=users.id JOIN homerooms ON users.homeroom_id=homerooms.id WHERE identifier in " + req.params.group, function(err, result){
+        done();
+        if(err){
+          console.log(err);
+          res.sendStatus(500);
+        } else {
+          console.log('results: ', result.rows);
+          res.send(result.rows);
+        }
       });
+        //  var userArray = [];
+        // resultSet.on('row', function(row){
+        //   // console.log('this is the row: ', row);
+        // userArray.push(row);
+
+      // }); //end on row
+      //   resultSet.on('end', function(){
+      //
+      //   console.log('user array: ', userArray);
+      //   res.send( userArray);
+      //       done();
+      // });
     }//end else
   });// end pool connect
 
@@ -52,7 +61,7 @@ router.get('/',function(req,res){
     else{
       console.log('connected to db');
       var resultSet = connection.query('SELECT * FROM users JOIN slips ON users.id=slips.student_id');
-        
+
       resultSet.on('row', function(row){
         // console.log('are you running', row);
         allSchoolSlips.push(row);

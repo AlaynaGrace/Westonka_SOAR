@@ -25,7 +25,6 @@
         <a class="menu-item"> <i class="fa fa-star fa-spin"></i> </a>
         <a class="menu-item"> <i class="fa fa-child" id='lilChild'></i> </a>
         <a class="menu-item" ng-click="ac.makePDF()"><i class="fa fa-print"></i> </a>
-        <a style='background-color: white;'class="menu-item"><i style= 'font-size: 30px; background-color:white; color: black; padding-right:30px; font-weight: bolder;' id="one" class= 'button fa-question'>?</i></a>
 
       </nav>
     </div>
@@ -80,19 +79,30 @@
 
 
 <br /><br /><br /><br /><br /><br /><br />
-<button class="btn-default btn" ng-click="ac.clickKTwo()" type="button" name="kThroughTwo">K - 2</button>
+<!-- <button class="btn-default btn" ng-click="ac.clickKTwo()" type="button" name="kThroughTwo">K - 2</button>
 <button class="btn-default btn" ng-click="ac.clickThreeFour()" type="button" name="threeAndFour">3 -4</button>
-
 
 <div ng-repeat="thing in ac.kThroughTwo track by $index">{{thing.name}} </div>
 <div ng-repeat="thing in ac.threeAndFour track by $index">{{thing.name}}</div>
-
-
-
-
 <!-- testing for random winner based on grade group -->
-<button class"btn-default btn" ng-click="ac.groupRandomWinner()" type="button" name="winnerButton">Select A Random Winner</button>
-<div ng-repeat="thing in ac.getRan track by $index">{{thing.id}}</div>
+<!-- <button class"btn-default btn" ng-click="ac.groupRandomWinner()" type="button" name="winnerButton">Select A Random Winner</button>
+<div ng-repeat="thing in ac.getRan track by $index">{{thing.id}}</div> -->
+
+
+<!-- randome winner. one button based on previously selected grade group -->
+<button class="btn-default btn" ng-click="ac.clickKTwo()" type="button" name="kThroughTwo">K - 2</button>
+<button class"btn-default btn" ng-click="ac.groupRandomWinnerKTwo()" type="button" name="winnerButton">Select A Random Winner</button>
+<div ng-repeat="thing in ac.kThroughTwo track by $index">{{thing.name}} </div>
+---
+<div ng-repeat="thing in ac.getRanKTwo track by $index">{{thing.name}}</div>
+<br /><br />
+
+<button class="btn-default btn" ng-click="ac.clickThreeFour()" type="button" name="threeAndFour">3 -4</button>
+<button class"btn-default btn" ng-click="ac.groupRandomWinnerThreeFour()" type="button" name="winnerButton">Select A Random Winner</button>
+<div ng-repeat="thing in ac.threeAndFour track by $index">{{thing.name}}</div>
+---
+<div ng-repeat="thing in ac.getRanThreeFour track by $index">{{thing.name}}</div>
+
 
 
 

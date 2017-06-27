@@ -52,6 +52,7 @@ router.get('/google/callback', passport.authenticate('google',
 router.get('/', function (req, res) {
   if (req.isAuthenticated()) {
     console.log("this is the user in auth!",req.user);
+    req.user.status=true;
     res.send(req.user);
   } else {
     res.json({ status: false });
