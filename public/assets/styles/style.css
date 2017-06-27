@@ -17,34 +17,20 @@
 
 
 body{
-background: linear-gradient(270deg, #0a0b0b, #800000)!important;
+background: #c0020f!important;
 background-size: 400% 400%!important;
-
--webkit-animation: AnimationName 22s ease infinite;
--moz-animation: AnimationName 22s ease infinite;
-animation: AnimationName 22s ease infinite;
 }
 
-@-webkit-keyframes AnimationName {
-    0%{background-position:0% 94%}
-    50%{background-position:100% 7%}
-    100%{background-position:0% 94%}
-}
-@-moz-keyframes AnimationName {
-    0%{background-position:0% 94%}
-    50%{background-position:100% 7%}
-    100%{background-position:0% 94%}
-}
-@keyframes AnimationName {
-    0%{background-position:0% 94%}
-    50%{background-position:100% 7%}
-    100%{background-position:0% 94%}
-}
 
+/*Student page h1*/
+
+input[type="checkbox"]{
+  width: 25px; /*Desired width*/
+  height: 25px; /*Desired height*/
+}
 .studentHone{
   font-size: 20px!important;
   color: white;
-  text-shadow: 2px 2px 2px red;
   text-align: center;
 }
 /* Safari 4.0 - 8.0 */
@@ -63,703 +49,12 @@ animation: AnimationName 22s ease infinite;
     75%  { left: 0px; top: 0px;}
     100% { left: 0px; top: 0px;}
 }
-
-
-/* helpers/grid.css */
-/*
-@import url(//fonts.googleapis.com/css?family=Oswald:300);
-html, body, .wrapper {
-  height: 100%;
-}*/
-
-
-/*.wrapper {
-  margin-top: 100px !important;
-  background-image: url(https://db.tt/xO15SiJ0);
-  width: 100%;
+label{
+  font-size: 33px!important;
 }
-
-.holder {
-  position: absolute;
-  top: 50%;
-  height: 300px;
-  width: 100%;
-  margin-top: 15px;
-}
-
-a.animBtn:link, a.animBtn:visited {
-  position: relative;
-  display: block;
-  width: 180px;
-  margin: 30px auto 0;
-  padding: 14px 15px;
-  border: 2px solid #fff;
-  background: rgba(255, 255, 255, 0.2);
-  color: #fff;
-  text-align: center;
-  text-decoration: none;
-  text-transform: uppercase;
-  overflow: hidden;
-  letter-spacing: .08em;
-  text-shadow: 0 0 1px rgba(0, 0, 0, 0.2), 0 1px 0 rgba(0, 0, 0, 0.2);
-  -webkit-transition: all .3s ease;
-  transition: all .3s ease;
-}
-a.animBtn:link:after, a.animBtn:visited:after {
-  content: "";
-  position: absolute;
-  background: none repeat scroll 0 0 #fff;
-  height: 0%;
-  left: 50%;
-  top: 50%;
-  width: 100%;
-  z-index: -1;
-  -webkit-transition: all .3s ease 0s;
-  transition: all .3s ease 0s;
-}*/
-a.animBtn:link:hover, a.animBtn:visited:hover {
-  color: #333;
-  text-shadow: none;
-}
-a.animBtn:link:hover:after, a.animBtn:visited:hover:after {
-  height: 420%;
-}
-
-a.animBtn.themeA:after {
-  -webkit-transform: translateX(-50%) translateY(-50%) rotate(-45deg);
-  transform: translateX(-50%) translateY(-50%) rotate(-45deg);
-}
-a.animBtn.themeB:after {
-  -webkit-transform: translateX(-50%) translateY(-50%) rotate(45deg);
-  transform: translateX(-50%) translateY(-50%) rotate(45deg);
-}
-a.animBtn.themeC:after {
-  opacity: .5;
-  -webkit-transform: translateX(-50%) translateY(-50%);
-  transform: translateX(-50%) translateY(-50%);
-}
-a.animBtn.themeC:hover:after {
-  height: 140%;
-  opacity: 1;
-}
-a.animBtn.themeD:after {
-  width: 0%;
-  border-radius: 50%;
-  opacity: .5;
-  -webkit-transform: translateX(-50%) translateY(-50%);
-  transform: translateX(-50%) translateY(-50%);
-}
-a.animBtn.themeD:hover:after {
-  height: 450%;
-  width: 110%;
-  opacity: 1;
-}
-
-body {
-  background-color: black !important;
-}
-
-
-h1 {
-  font-size: 90px !important;
-  text-shadow: 3px 3px 3px black;
-}
-
-h3 {
-  text-shadow: 3px 3px 3px black;
-}
-
-h2 {
-  text-shadow: 3px 3px 3px black;
-}
-
-body {
-  background: #3f51b5;
-  color: white;
-  text-align: center;
-}
-
-a {
-  color: inherit;
-}
-
-h1, h2, h3, h4 {
-  margin: 0;
-  margin-bottom: 10px;
-  margin-top: 10px;
-}
-
-.menu {
-  -webkit-filter: url("#shadowed-goo");
-          filter: url("#shadowed-goo");
-}
-
-.menu-item, .menu-open-button {
-  background: silver;
-  border-radius: 100%;
-  width: 80px;
-  height: 80px;
-  margin-left: -40px;
-  position: absolute;
-  top: 20px;
-  color: white;
-  text-align: center;
-  line-height: 80px;
-  -webkit-transform: translate3d(0, 0, 0);
-          transform: translate3d(0, 0, 0);
-  -webkit-transition: -webkit-transform ease-out 200ms;
-  transition: -webkit-transform ease-out 200ms;
-  transition: transform ease-out 200ms;
-  transition: transform ease-out 200ms, -webkit-transform ease-out 200ms;
-}
-
-.menu-open {
-  display: none;
-}
-
-.hamburger {
-  width: 25px;
-  height: 3px;
-  background: white;
-  display: block;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  margin-left: -12.5px;
-  margin-top: -1.5px;
-  -webkit-transition: -webkit-transform 2000ms;
-  transition: -webkit-transform 2000ms;
-  transition: transform 2000ms;
-  transition: transform 2000ms, -webkit-transform 2000ms;
-}
-
-.hamburger-1 {
-  -webkit-transform: translate3d(0, -8px, 0);
-          transform: translate3d(0, -8px, 0);
-}
-
-.hamburger-2 {
-  -webkit-transform: translate3d(0, 0, 0);
-          transform: translate3d(0, 0, 0);
-}
-
-.hamburger-3 {
-  -webkit-transform: translate3d(0, 8px, 0);
-          transform: translate3d(0, 8px, 0);
-}
-
-.menu-open:checked + .menu-open-button .hamburger-1 {
-  -webkit-transform: translate3d(0, 0, 0) rotate(45deg);
-          transform: translate3d(0, 0, 0) rotate(45deg);
-}
-.menu-open:checked + .menu-open-button .hamburger-2 {
-  -webkit-transform: translate3d(0, 0, 0) scale(0.1, 1);
-          transform: translate3d(0, 0, 0) scale(0.1, 1);
-}
-.menu-open:checked + .menu-open-button .hamburger-3 {
-  -webkit-transform: translate3d(0, 0, 0) rotate(-45deg);
-          transform: translate3d(0, 0, 0) rotate(-45deg);
-}
-
-.menu {
-  position: absolute;
-  left: 50%;
-  margin-left: -190px;
-  padding-top: 20px;
-  padding-left: 190px;
-  width: 380px;
-  height: 250px;
-  box-sizing: border-box;
-  font-size: 20px;
-  text-align: left;
-}
-
-.menu-item:hover {
-  background: white;
-  color: silver;
-}
-
-.menu-item:nth-child(3) {
-  -webkit-transition-duration: 200ms;
-          transition-duration: 200ms;
-}
-.menu-item:nth-child(4) {
-  -webkit-transition-duration: 300ms;
-          transition-duration: 300ms;
-}
-.menu-item:nth-child(5) {
-  -webkit-transition-duration: 400ms;
-          transition-duration: 400ms;
-}
-.menu-item:nth-child(6) {
-  -webkit-transition-duration: 500ms;
-          transition-duration: 500ms;
-}
-.menu-item:nth-child(7) {
-  -webkit-transition-duration: 600ms;
-          transition-duration: 600ms;
-}
-
-.menu-open-button {
-  z-index: 2;
-  -webkit-transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
-          transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  -webkit-transition-duration: 500ms;
-          transition-duration: 500ms;
-  -webkit-transform: scale(1.1, 1.1) translate3d(0, 0, 0);
-          transform: scale(1.1, 1.1) translate3d(0, 0, 0);
-  cursor: pointer;
-}
-
-.menu-open-button:hover {
-  -webkit-transform: scale(1.2, 1.2) translate3d(0, 0, 0);
-          transform: scale(1.2, 1.2) translate3d(0, 0, 0);
-}
-
-.menu-open:checked + .menu-open-button {
-  -webkit-transition-timing-function: linear;
-          transition-timing-function: linear;
-  -webkit-transition-duration: 500ms;
-          transition-duration: 500ms;
-  -webkit-transform: scale(0.8, 0.8) translate3d(0, 0, 0);
-          transform: scale(0.8, 0.8) translate3d(0, 0, 0);
-}
-
-.menu-open:checked ~ .menu-item {
-  -webkit-transition-timing-function: cubic-bezier(0.935, 0, 0.34, 1.33);
-          transition-timing-function: cubic-bezier(0.935, 0, 0.34, 1.33);
-}
-.menu-open:checked ~ .menu-item:nth-child(3) {
-  -webkit-transition-duration: 300ms;
-          transition-duration: 300ms;
-  -webkit-transform: translate3d(114.42548px, 31.48084px, 0);
-          transform: translate3d(114.42548px, 31.48084px, 0);
-}
-.menu-open:checked ~ .menu-item:nth-child(4) {
-  -webkit-transition-duration: 400ms;
-          transition-duration: 400ms;
-  -webkit-transform: translate3d(77.18543px, 105.2491px, 0);
-          transform: translate3d(77.18543px, 105.2491px, 0);
-}
-.menu-open:checked ~ .menu-item:nth-child(5) {
-  -webkit-transition-duration: 500ms;
-          transition-duration: 500ms;
-  -webkit-transform: translate3d(0.09158px, 134.99996px, 0);
-          transform: translate3d(0.09158px, 134.99996px, 0);
-}
-.menu-open:checked ~ .menu-item:nth-child(6) {
-  -webkit-transition-duration: 600ms;
-          transition-duration: 600ms;
-  -webkit-transform: translate3d(-77.04956px, 105.37192px, 0);
-          transform: translate3d(-77.04956px, 105.37192px, 0);
-}
-.menu-open:checked ~ .menu-item:nth-child(7) {
-  -webkit-transition-duration: 700ms;
-          transition-duration: 700ms;
-  -webkit-transform: translate3d(-114.40705px, 31.66307px, 0);
-          transform: translate3d(-114.40705px, 31.66307px, 0);
-}
-.menu-open:checked ~ .menu-item:nth-child(8) {
-  -webkit-transition-duration: 800ms;
-          transition-duration: 800ms;
-  -webkit-transform: translate3d(300.40705px, 500.66307px, 0);
-          transform: translate3d(300.40705px, 500.66307px, 0);
-}
-
-.fa-bar-chart-o:before, .fa-bar-chart:before {
-  content: "\f080";
-  color: black;
-}
-
-.fa-print:before {
-  content: "\f067";
-  color: black;
-}
-
-.fa-star:before {
-  content: "\f004";
-  color: black;
-}
-
-#lilChild:before {
-  /*content: "\f013";*/
-  color: black;
-  font-size: 20px!important;
-}
-
-.fa-child:before {
-  content: "\f013";
-  color: black;
-  font-size: 40px;
-}
-
-.fa-question:before {
-  color:white;
-  font-size: 40px;
-}
-
-/*start teacher page css*/
-
-
-
-/*.position {
-  margin-left: 80%;
-
-  text-align: center;
-  margin-top: 15%;
-}
-
-#workarea {
-  float: right;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  font-family: Raleway;
-}*/
-
-/*#text{
-  margin-top:20px;
-}*/
-
-/*#personal {
-  color:white;
-  text-decoration:none;
-  position:absolute;
-  bottom:15px;
-  right:2%;
-}*/
-/*    start code for the actual button:         */
-
-
-/*
-    Spot is the span on the inside of the href that
-    fills the parent and makes the hover and link work
-    for the entire div
-*/
-
-/*.spot {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-}*/
-/*
-    This is the outer svg wrapper that the SVG itself will
-    fill. Multiple svg-wrapper classes can be put side by side.
-*/
-
-.svg-wrapper {
-  margin-top: 0;
-  position: relative;
-  width: 150px;
-  height: 40px;
-  display: inline-block;
-  border-radius: 3px;
-  margin-left: 5px;
-  margin-right: 5px
-}
-/*
-  This is where we define the fill, color, thickness,
-  and stroke pattern of the SVG when there is no hover.
-  The dasharray and offset together define the line position
-  under the words. Here's also where the transition speed is set.
-*/
-
-#shape {
-  stroke-width: 6px;
-  fill: transparent;
-  stroke: #009FFD;
-  stroke-dasharray: 85 400;
-  stroke-dashoffset: -220;
-  transition: 1s all ease;
-}
-/*
-    Pushing the text up into the SVG. Without this the
-    text would be below the div's.
-*/
-
-/*#text {
-  margin-top: -35px;
-  text-align: center;
-}
-
-#text a {
-  color: white;
-  text-decoration: none;
-  font-weight: 100;
-  font-size: 1.1em;
-}
-/*
-    Changing the shape on hover. I change the color of the stroke,
-make it thinner, then set it to again wrap around the entire parent element.
-*/
-
-/*.svg-wrapper:hover #shape {
-  stroke-dasharray: 50 0;
-  stroke-width: 3px;
-  stroke-dashoffset: 0;
-  stroke: #06D6A0;
-}*/
-
-// Fonts
-
-/*@import url(https://fonts.googleapis.com/css?family=Indie+Flower);
-
-h1{
-  text-shadow: 2px 2px 2px silver;
-  margin: 50px 0;
-  color: #fff;
-  font-family: 'Indie Flower', cursive;
-  font-size: 48px;
-  font-weight: normal;
-  text-align: center;
-}*/
-
-
-/*.btn{
-	width: 300px;
-	height: 50px;
-	line-height: 50px;
-  border-radius: 8px;
-	color: #fff;
-  font-size: 22px;
-  font-weight: normal;
-	text-decoration: none;
-	text-align: center;
-	display: inline-block;
-  position: relative;
-  -webkit-transition-duration: 0.3s;
-  transition-duration: 0.3s;
-  -webkit-transition-property: -webkit-transform;
-  transition-property: transform;
-  -webkit-transform: translateZ(0);
-  -ms-transform: translateZ(0);
-  transform: translateZ(0);
-  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
-  -webkit-transform: translateY(-6px);
-  -ms-transform: translateY(-6px);
-  transform: translateY(-6px);
-  -webkit-animation-name: hover;
-  animation-name: hover;
-  -webkit-animation-duration: 1.5s;
-  animation-duration: 1.5s;
-  -webkit-animation-delay: 0.3s;
-  animation-delay: 0.3s;
-  -webkit-animation-timing-function: linear;
-  animation-timing-function: linear;
-  -webkit-animation-iteration-count: infinite;
-  animation-iteration-count: infinite;
-  -webkit-animation-direction: alternate;
-  animation-direction: alternate;
-  &:before{
-  	pointer-events: none;
-	  position: absolute;
-	  z-index: -1;
-	  content: '';
-
-	  height: 10px;
-	  width: 90%;
-	  opacity: 0;
-	  background: -webkit-radial-gradient(center, ellipse, rgba(0, 0, 0, 0.35) 0%, rgba(0, 0, 0, 0) 80%);
-	  background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.35) 0%, rgba(0, 0, 0, 0) 80%);
-	  -webkit-transition-duration: 0.3s;
-	  transition-duration: 0.3s;
-	  -webkit-transition-property: -webkit-transform, opacity;
-	  transition-property: transform, opacity;
-	  opacity: .4;
-	  -webkit-transform: translateY(6px);
-	  -ms-transform: translateY(6px);
-	  transform: translateY(6px);
-	  -webkit-animation-name: hover-shadow;
-	  animation-name: hover-shadow;
-	  -webkit-animation-duration: 1.5s;
-	  animation-duration: 1.5s;
-	  -webkit-animation-delay: .3s;
-	  animation-delay: .3s;
-	  -webkit-animation-timing-function: linear;
-	  animation-timing-function: linear;
-	  -webkit-animation-iteration-count: infinite;
-	  animation-iteration-count: infinite;
-	  -webkit-animation-direction: alternate;
-	  animation-direction: alternate;
-  }
-	&:hover{
-		background-color: #e16e50;
-	}
-}*/
-
-/*@keyframes hover {
-  50% {
-    -webkit-transform: translateY(-3px);
-    -ms-transform: translateY(-3px);
-    transform: translateY(-3px);
-  }
-
-  100% {
-    -webkit-transform: translateY(-6px);
-    -ms-transform: translateY(-6px);
-    transform: translateY(-6px);
-  }
-}
-
-@-webkit-keyframes hover-shadow {
-  0% {
-    -webkit-transform: translateY(6px);
-    transform: translateY(6px);
-    opacity: .4;
-  }
-
-  50% {
-    -webkit-transform: translateY(3px);
-    transform: translateY(3px);
-    opacity: 1;
-  }
-
-  100% {
-    -webkit-transform: translateY(6px);
-    transform: translateY(6px);
-    opacity: .4;
-  }
-}
-
-@keyframes hover-shadow {
-  0% {
-    -webkit-transform: translateY(6px);
-    -ms-transform: translateY(6px);
-    transform: translateY(6px);
-    opacity: .4;
-  }
-
-  50% {
-    -webkit-transform: translateY(3px);
-    -ms-transform: translateY(3px);
-    transform: translateY(3px);
-    opacity: 1;
-  }
-
-  100% {
-    -webkit-transform: translateY(6px);
-    -ms-transform: translateY(6px);
-    transform: translateY(6px);
-    opacity: .4;
-  }
-}
-
-@-webkit-keyframes hover {
-  50% {
-    -webkit-transform: translateY(-3px);
-    transform: translateY(-3px);
-  }
-
-  100% {
-    -webkit-transform: translateY(-6px);
-    transform: translateY(-6px);
-  }
-}
-
-@keyframes hover {
-  50% {
-    -webkit-transform: translateY(-3px);
-    -ms-transform: translateY(-3px);
-    transform: translateY(-3px);
-  }
-
-  100% {
-    -webkit-transform: translateY(-6px);
-    -ms-transform: translateY(-6px);
-    transform: translateY(-6px);
-  }
-}*/
-
-
-
-html, body {
-  height: 100%;
-}
-
-body {
-  font-family: helvetica;
-  font-weight: 100;
-  font-size: 14px;
-  margin: 0 auto;
-  background: grey;
-}
-
-svg{
-  padding-top: 10px;
-}
-
-/*end teacher page css*/
-
 
 /*student page start css*/
-body {
-  background: #000;
-}
-.shimmer {
-  font-family: "Lato";
-  text-align: center;
-  font-size: 60px!important;
-  margin: 0 auto;
-  display: inline;
-  margin-bottom: 0;
-}
 
-.shimmer {
-  text-align: center!important;
-  color: rgba(255, 0, 0, 0.4);
-  background: -webkit-gradient(linear, left top, right top, from(#222), to(#222), color-stop(0.5, #fff));
-  background: -moz-gradient(linear, left top, right top, from(#222), to(#222), color-stop(0.5, #fff));
-  background: gradient(linear, left top, right top, from(#222), to(#222), color-stop(0.5, #fff));
-  -webkit-background-size: 125px 100%;
-  -moz-background-size: 125px 100%;
-  background-size: 125px 100%;
-  -webkit-background-clip: text;
-  -moz-background-clip: text;
-  background-clip: text;
-  -webkit-animation-name: shimmer;
-  -moz-animation-name: shimmer;
-  animation-name: shimmer;
-  -webkit-animation-duration: 3s;
-  -moz-animation-duration: 3s;
-  animation-duration: 3s;
-  background-repeat: no-repeat;
-  background-position: 0 0;
-  background-color: grey;
-}
-@-moz-keyframes shimmer {
-  0% {
-    background-position: top left;
-  }
-  100% {
-    background-position: top right;
-  }
-}
-@-webkit-keyframes shimmer {
-  0% {
-    background-position: top left;
-  }
-  100% {
-    background-position: top right;
-  }
-}
-@-o-keyframes shimmer {
-  0% {
-    background-position: top left;
-  }
-  100% {
-    background-position: top right;
-  }
-}
-@keyframes shimmer {
-  0% {
-    background-position: top left;
-  }
-  100% {
-    background-position: top right;
-  }
-}
 /*student page end css*/
 
 #navbar-primary .navbar-nav {
@@ -775,21 +70,13 @@ body {
   padding-right: 30px;
 }
 
-@keyframes show-info {
-  0% {
-    transform: rotateY(120deg);
-  }
-  100% {
-    transform: rotateY(0deg);
-  }
-}
 
 
 
 
 
 /*teacher page*/
-/* List styles */
+
 
 .list {
     -webkit-transform-style: preserve-3d;
@@ -816,10 +103,9 @@ body {
     text-indent: 10px;
     line-height: 55px;
     background: #E0FBAC;
-    margin: 0;
     height: 55px;
     width: 270px;
-    color: #fff;
+    color: black;
 }
 
 .list dt {
@@ -834,16 +120,16 @@ body {
 }
 
 .list dd {
-    color: white !important;
+    color: black !important;
     border-top: 1px dashed rgba(255,255,255,0.3);
     line-height: 35px;
     font-size: 11px;
     height: 35px;
-    margin: 0;
+
 }
 
-.sashimi dt, .sashimi dd, .sashimi a { border: 0.5px solid black;background: blue!important; }
-.nigiri dt, .nigiri dd, .nigiri a { color: black;  border: 0.5px solid black;background: yellow!important; }
+.sashimi dt, .sashimi dd, .sashimi a { border: 0.5px solid black;background: whitesmoke!important; }
+.nigiri dt, .nigiri dd, .nigiri a { color: black;  border: 0.5px solid black;background: whitesmoke!important; }
 .sashimi a:hover { background: #61c19e!important; }
 .nigiri a:hover { background: #d31b46!important; }
 .nigiri {
@@ -1441,11 +727,6 @@ body {
 
 .row {
     /*border:solid 1px #CCCCCC;*/
-    /*margin:0 auto!important;*/
-  /*display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display:         flex;*/
 }
 .contain{
   text-align: center;
@@ -1458,12 +739,12 @@ body {
   /*margin:0 auto!important;*/
   /*border:solid 1px #CCCCCC;*/
   /*margin-right:-1px;*/
-  padding:10px;
+  /*padding:10px;*/
 }
 
 .navbarr {
   overflow: hidden;
-z-index: 2;
+  z-index: 2;
   position: fixed;
   top: 0;
   width: 100%;
@@ -1498,4 +779,59 @@ body {
 
 .c {
   background-color: #282828;
+}
+
+#usr{
+  text-align: center;
+  width: 50%
+}
+
+
+
+
+/* Style The Dropdown Button */
+.dropbtn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {
+    background-color: #3e8e41;
 }
