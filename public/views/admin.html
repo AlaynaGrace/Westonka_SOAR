@@ -1,6 +1,5 @@
 
 <!-- menue div -->
-<div style="background-color: #E32526; padding: 3%; margin: 5% 10% 0% 10%;">
   <button style='text-align: center; color: white; margin: 1% 2%;' class='' ng-click="ac.makePDF()">Make Slips</button>
  <div class="dropdown">
    <button class="dropbtn">Admin Controls</button>
@@ -13,8 +12,23 @@
      </span>
    </div>
  </div>
+
+
+<!-- randome winner. one button based on previously selected grade group -->
+<button class="btn-default btn" ng-click="ac.clickKTwo()" type="button" name="kThroughTwo">K - 2</button>
+<button class"btn-default btn" ng-click="ac.groupRandomWinnerKTwo()" type="button" name="winnerButton">Select A Random Winner</button>
+<!-- <div ng-repeat="thing in ac.kThroughTwo track by $index">{{thing.identifier}} - {{thing.name}} </div> -->
+
+<div ng-repeat="thing in ac.getRanKTwo">{{thing.grade}} - {{thing.name}}</div>
+
+
+
+
+
+
 <!-- end menue div -->
  </div>
+
 
 <!-- content div -->
 <div style="background-color: #E32526; padding: 3%; margin: 0% 10% 10% 10%;">
@@ -23,9 +37,16 @@
   <h3 style="color: white;">Year To Date Slip Count: {{ac.allSlips}}</h3>
 
   <!-- buttons -->
+
+  <br>
+<!--   <button class="btn-default btn" ng-click="ac.clickKTwo()" type="button" name="kThroughTwo">K - 2</button>
+  <button class="btn-default btn" ng-click="ac.groupRandomWinnerKTwo()" type="button" name="winnerButton">Select A Random Winner</button>
+  <br />
+
   <br />
   <button class="btn-default btn" ng-click="ac.clickKTwo()" type="button" name="kThroughTwo">K - 2</button>
   <button class="btn-default btn" ng-click="ac.groupRandomWinnerKTwo()" type="button" name="winnerButton">Random Winner</button>
+
 
   <button class="btn-default btn" ng-click="ac.clickThreeFour()" type="button" name="threeAndFour">3 -4</button>
   <button class="btn-default btn" ng-click="ac.groupRandomWinnerThreeFour()" type="button" name="winnerButton">Random Winner</button>
@@ -42,4 +63,11 @@
   <div ng-repeat="thing in ac.threeAndFour track by $index">{{thing.identifier}} - {{thing.name}}</div>
 
 
+  <br><br>
+
+
+
+  <!-- end of main div -->
+</div>
   <br /><br />
+
