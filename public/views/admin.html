@@ -1,25 +1,14 @@
 
 
-<h1>S.O.A.R.</h1>
-<h2>West Tonka Elementary</h2>
-<h3>Admin Page</h3>
+
+     <span ng-if="ac.both">
+       <a href="#!admins">Admin Page</a>
+       <a href="#!teachers">Teacher Page</a>
+     </span>
 <a href="#!permissions">Permissions</a>
+
 <a href="#!upload">Upload New Class Info</a>
 
-
-<a class="menu-item" ng-click="ac.makePDF()"><i class="fa fa-print"></i> </a>
-<div style ='color: white; text-shadow: 2px 2px 2px black;' class="allSlips">All School Slips: {{ac.allSlips}}</div>
-
-
-
-<!-- <button class="btn-default btn" ng-click="ac.clickKTwo()" type="button" name="kThroughTwo">K - 2</button>
-<button class="btn-default btn" ng-click="ac.clickThreeFour()" type="button" name="threeAndFour">3 -4</button>
-
-<div ng-repeat="thing in ac.kThroughTwo track by $index">{{thing.name}} </div>
-<div ng-repeat="thing in ac.threeAndFour track by $index">{{thing.name}}</div>
-<!-- testing for random winner based on grade group -->
-<!-- <button class"btn-default btn" ng-click="ac.groupRandomWinner()" type="button" name="winnerButton">Select A Random Winner</button>
-<div ng-repeat="thing in ac.getRan track by $index">{{thing.id}}</div> -->
 
 
 <!-- randome winner. one button based on previously selected grade group -->
@@ -40,7 +29,7 @@
 
 
 <!-- end of main div -->
- </div>
+
 
 <!-- <button style ='text-align: center;'class = 'btn btn-success' ng-click="ac.makePDF()">Make Slips</button> -->
 

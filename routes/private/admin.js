@@ -62,7 +62,10 @@ router.get('/',function(req,res){
     }
     else{
       console.log('connected to db');
+
       var resultSet = connection.query('SELECT * FROM users JOIN slips ON users.id=slips.student_id');
+
+
 
       resultSet.on('row', function(row){
         // console.log('are you running', row);
@@ -147,6 +150,7 @@ router.get('/findEmail/:email', function(req,res){
     });
 });
 
+
 router.delete('/dropTables',function(req,res){
   pool.connect(function(err,connection,done){
     if(err){
@@ -172,34 +176,43 @@ router.delete('/dropTables',function(req,res){
             else{
               //Next four queries makes sure that there are at least 4 slips in the db to start out
                 connection.query("INSERT INTO slips (slip_number) VALUES ('3ndkgid6')", function(err){
+
                   done();
                   if(err){
                     console.log(err);
                     res.sendStatus(500);
                   }
                   else{
+
                     connection.query("INSERT INTO slips (slip_number) VALUES ('47ufndks')", function(err){
+
                       done();
                       if(err){
                         console.log(err);
                         res.sendStatus(500);
                       }
                       else{
+
                         connection.query("INSERT INTO slips (slip_number) VALUES ('pld96nw2')", function(err){
+
                           done();
                           if(err){
                             console.log(err);
                             res.sendStatus(500);
                           }
                           else{
+
                             connection.query("INSERT INTO slips (slip_number) VALUES ('0k4mxive')", function(err){
+
                               done();
                               if(err){
                                 console.log(err);
                                 res.sendStatus(500);
                               }
                               else{
+
                                 res.sendStatus(200);
+
                               }
                             });
                           }
@@ -215,6 +228,7 @@ router.delete('/dropTables',function(req,res){
       }
     });
   });
+
 
 router.post('/createTables',function(req,res){
     pool.connect(function(err,connection,done){
@@ -366,5 +380,6 @@ function deleteJSONTable() {
     }
   });
 }
+
 
 module.exports = router;
