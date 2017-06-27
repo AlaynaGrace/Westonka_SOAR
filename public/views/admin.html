@@ -1,38 +1,45 @@
 
-
-
+<!-- menue div -->
+<div style="background-color: #E32526; padding: 3%; margin: 5% 10% 0% 10%;">
+  <button style='text-align: center; color: white; margin: 1% 2%;' class='' ng-click="ac.makePDF()">Make Slips</button>
+ <div class="dropdown">
+   <button class="dropbtn">Admin Controls</button>
+   <div class="dropdown-content">
+     <a href="#!permissions">Permissions</a>
+     <a href="#!upload">Upload CSV</a>
      <span ng-if="ac.both">
        <a href="#!admins">Admin Page</a>
        <a href="#!teachers">Teacher Page</a>
      </span>
-<a href="#!permissions">Permissions</a>
+   </div>
+ </div>
+<!-- end menue div -->
+ </div>
 
-<a href="#!upload">Upload New Class Info</a>
+<!-- content div -->
+<div style="background-color: #E32526; padding: 3%; margin: 0% 10% 10% 10%;">
 
+  <h2 style="color: white;"> Admin Page</h2>
+  <h3 style="color: white;">Year To Date Slip Count: {{ac.allSlips}}</h3>
 
+  <!-- buttons -->
+  <br />
+  <button class="btn-default btn" ng-click="ac.clickKTwo()" type="button" name="kThroughTwo">K - 2</button>
+  <button class="btn-default btn" ng-click="ac.groupRandomWinnerKTwo()" type="button" name="winnerButton">Random Winner</button>
 
-<!-- randome winner. one button based on previously selected grade group -->
-<button class="btn-default btn" ng-click="ac.clickKTwo()" type="button" name="kThroughTwo">K - 2</button>
-<button class"btn-default btn" ng-click="ac.groupRandomWinnerKTwo()" type="button" name="winnerButton">Select A Random Winner</button>
-<!-- <div ng-repeat="thing in ac.kThroughTwo track by $index">{{thing.identifier}} - {{thing.name}} </div> -->
-
-<div ng-repeat="thing in ac.getRanKTwo">{{thing.grade}} - {{thing.name}}</div>
-
-
-<button class="btn-default btn" ng-click="ac.clickThreeFour()" type="button" name="threeAndFour">3 -4</button>
-<button class"btn-default btn" ng-click="ac.groupRandomWinnerThreeFour()" type="button" name="winnerButton">Select A Random Winner</button>
-<!-- <div ng-repeat="thing in ac.threeAndFour track by $index">{{thing.identifier}} - {{thing.name}}</div> -->
-
-<div ng-repeat="thing in ac.getRanThreeFour track by $index">{{thing.grade}} - {{thing.name}}</div>
-
+  <button class="btn-default btn" ng-click="ac.clickThreeFour()" type="button" name="threeAndFour">3 -4</button>
+  <button class="btn-default btn" ng-click="ac.groupRandomWinnerThreeFour()" type="button" name="winnerButton">Random Winner</button>
 
 
+  <!-- results -->
+  <br />
+  <h4 style="color: white;">Winners:</h4>
+  <div ng-repeat="thing in ac.getRanKTwo track by $index">{{thing.identifier}} {{thing.name}}</div>
+  <div ng-repeat="thing in ac.getRanThreeFour track by $index">{{thing.identifier}} - {{thing.name}}</div>
+  <br />
+  <h4 style="color: white;">Students:</h4>
+  <div ng-repeat="thing in ac.kThroughTwo track by $index">{{thing.identifier}} {{thing.name}} </div>
+  <div ng-repeat="thing in ac.threeAndFour track by $index">{{thing.identifier}} - {{thing.name}}</div>
 
-<!-- end of main div -->
 
-
-<!-- <button style ='text-align: center;'class = 'btn btn-success' ng-click="ac.makePDF()">Make Slips</button> -->
-
- <!-- </div> -->
-
-
+  <br /><br />

@@ -65,8 +65,6 @@ router.get('/',function(req,res){
 
       var resultSet = connection.query('SELECT * FROM users JOIN slips ON users.id=slips.student_id');
 
-
-
       resultSet.on('row', function(row){
         // console.log('are you running', row);
         allSchoolSlips.push(row);

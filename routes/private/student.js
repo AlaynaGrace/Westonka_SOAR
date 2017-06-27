@@ -28,7 +28,7 @@ router.get('/',function(req,res){
 
 
 router.get('/slips/:email',function(req,res){
-  console.log('in student slips req.params =', req.params.email);
+  console.log('in student slips req.params.email =', req.params.email);
   var studentSlips = [];
 
   pool.connect(function (err, connection, done){
