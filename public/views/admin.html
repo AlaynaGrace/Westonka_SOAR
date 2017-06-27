@@ -2,15 +2,6 @@
 <!-- menue div -->
 <div style="background-color: #E32526; padding: 3%; margin: 5% 10% 0% 10%;">
   <button style='text-align: center; color: white; margin: 1% 2%;' class='' ng-click="ac.makePDF()">Make Slips</button>
-<!--
-  <select style="color: white;">
-    <option value="admin congrols">Admin Controls</option>
-    <a href="#!permissions"><option value="Permissions">Permissions</option></a>
-    <option value="Upload CSV">Upload CSV</option>
-    <option value="Permissions">Permissions</option>
-  </select>
- -->
-
  <div class="dropdown">
    <button class="dropbtn">Admin Controls</button>
    <div class="dropdown-content">
@@ -22,18 +13,8 @@
      </span>
    </div>
  </div>
-
-<!-- randome winner. one button based on previously selected grade group -->
-<button class="btn-default btn" ng-click="ac.clickKTwo()" type="button" name="kThroughTwo">K - 2</button>
-<button class"btn-default btn" ng-click="ac.groupRandomWinnerKTwo()" type="button" name="winnerButton">Select A Random Winner</button>
-<!-- <div ng-repeat="thing in ac.kThroughTwo track by $index">{{thing.identifier}} - {{thing.name}} </div> -->
-
-<div ng-repeat="thing in ac.getRanKTwo">{{thing.grade}} - {{thing.name}}</div>
-
-
-
-
-</div>
+<!-- end menue div -->
+ </div>
 
 <!-- content div -->
 <div style="background-color: #E32526; padding: 3%; margin: 0% 10% 10% 10%;">
@@ -43,12 +24,12 @@
 
   <!-- buttons -->
   <br />
-<!--   <button class="btn-default btn" ng-click="ac.clickKTwo()" type="button" name="kThroughTwo">K - 2</button>
-  <button class="btn-default btn" ng-click="ac.groupRandomWinnerKTwo()" type="button" name="winnerButton">Select A Random Winner</button>
-  <br />
+  <button class="btn-default btn" ng-click="ac.clickKTwo()" type="button" name="kThroughTwo">K - 2</button>
+  <button class="btn-default btn" ng-click="ac.groupRandomWinnerKTwo()" type="button" name="winnerButton">Random Winner</button>
+
   <button class="btn-default btn" ng-click="ac.clickThreeFour()" type="button" name="threeAndFour">3 -4</button>
-  <button class="btn-default btn" ng-click="ac.groupRandomWinnerThreeFour()" type="button" name="winnerButton">Select A Random Winner</button>
- -->
+  <button class="btn-default btn" ng-click="ac.groupRandomWinnerThreeFour()" type="button" name="winnerButton">Random Winner</button>
+
 
   <!-- results -->
   <br />
