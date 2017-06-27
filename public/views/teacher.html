@@ -1,49 +1,29 @@
 
 <div class="contain">
   <div class="row">
-
-
-   <div class="col col-md-auto">
+    <div class="col col-md-auto">
       <section class="demo">
         <dl class="list nigiri">
-          <dt><button style='border: none; height:50px;width: 200px; font-size: 27px; margin-top: 3px; background: yellow; text-shadow:1px 1px 1px #000000;'class="toggle">Class List</button></dt>
+          <dt><button style='border: none; height:50px;width: 200px; font-size: 27px; margin-top: 3px; background: #ECF0F1; text-shadow:1px 1px 1px #000000;'class="toggle">Class List</button></dt>
           <dd><a style= 'color: white; z-index:50;' ng-repeat='studObj in tc.studentArray'>{{studObj.name}} 'has' {{studObj.count}}</a></dd>
         </dl>
-</div>
-<div class="col col-md-auto">
-<!-- <button style='border: 0.5px solid black; width: 200px; font-size: 27px; margin-top: 3px; text-shadow:1px 1px 1px #000000;'class="toggle btn-success">Hide/Show</button> -->
-</div>
-<div class="col col-md-auto">
-    <dl class="list sashimi">
-      <dt>Prize Winners</dt>
-      <!-- <dd><a href="#">fahza</a></dd>
-      <dd><a href="#">ronald</a></dd> -->
-      <dd><a href="#">{{tc.winner}}</a></dd>
-
-
-    </dl>
-</div>
-</div>
-
-
-
+      </div>
+      <div class="col col-md-auto">
+        {{tc.winner}}
+      </div>
+    </div>
+    <div class="row">
+      <div class="col col-md-auto">
+        <button ng-click='tc.getWinners()' style='border: 0.5px solid black; width: 200px; font-size: 27px; margin-top: 3px; text-shadow:1px 1px 1px #000000;'class= "toggle btn-success">SPIN TO WIN</button>
+      </div>
+    </div>
+  </div>
 <div class="row">
   <div class="col col-md-auto">
-      <button style='border: 0.5px solid black; width: 100px; font-size: 15px; margin-top: 3px; text-shadow:1px 1px 1px #000000;'id="start" onClick="startIt()"class= 'spin'>SPIN</button>
+    <dl class="list sashimi">
+      <dt>Prize Winners</dt>
+      <dd><a href="#">{{tc.winner}}</a></dd>
+   </dl>
 </div>
 </div>
-</div>
-        <dt>Prize Winners</dt>
-        <dd><a href="#">fahza</a></dd>
-        <dd><a href="#">ronald</a></dd>
-
-    </dl> -->
-
-    <button style='border: 0.5px solid black; width: 200px; font-size: 27px; margin-top: 3px; text-shadow:1px 1px 1px #000000;'class="toggle btn-success">Hide/Show</button>
-    <button ng-click='tc.getWinners()' style='border: 0.5px solid black; width: 200px; font-size: 27px; margin-top: 3px; text-shadow:1px 1px 1px #000000;'class= 'btn btn-success'>SPIN TO WIN</button>
-
 </section>
-<p>hello
-</p>
-
-<h3 style= 'z-index: 555; color: green; font-size: 80px;' ng-repeat = 'studObj in tc.studentArray'>{{studObj.name}} 'has' {{studObj.count}}</h3>
