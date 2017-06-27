@@ -13,6 +13,16 @@ console.log('this is the studentController');
       vm.email = response.data.email;
       vm.id = response.data.id;
 
+      if(response.data.admin !== true && response.data.teacher !== true){
+        $location.path('/students');
+      }
+      else if(response.data.admin && response.data.teacher){
+        $location.path('/admins');
+      }
+      else if(response.data.admin){
+        $location.path('/admins');
+      }
+
       console.log('authfact vm.email',vm.email);
       vm.getStudentSlips();
 

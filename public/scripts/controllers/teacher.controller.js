@@ -1,9 +1,8 @@
 
-googleAuthApp.controller('teacherController', ['$http','AuthFactory', '$location',function($http, AuthFactory, $location){
+googleAuthApp.controller('teacherController', ['$http','AuthFactory', '$location', 'DrawingService', function($http, AuthFactory, $location, DrawingService){
 console.log('teacher');
 var vm = this;
 var authFactory = AuthFactory;
-// vm.classInfoArray = [];
 
 
 AuthFactory.isLoggedIn()
@@ -24,6 +23,9 @@ AuthFactory.isLoggedIn()
     if(response.data.admin !== true && response.data.teacher !== true){
       $location.path('/students');
     }
+    else if(response.data.admin && response.data.teacher){
+      vm.both=true;
+    }
     else if(response.data.admin){
       $location.path('/admins');
     }
@@ -34,16 +36,7 @@ AuthFactory.isLoggedIn()
   }
 },
 
-
-//   vm.message.text = 'Unable to properly authenticate user';
-//   vm.message.type = 'error';
-// });
-
-
-
-
 vm.getStudentList = function() {
-
   console.log('hit getStudentList');
   console.log('email in getStudentList', vm.email);
   var objectToSend = {
@@ -62,4 +55,21 @@ vm.getStudentList = function() {
         console.log('this is studentArray',vm.studentArray);
       });
     });//end of getStudentList
+
+    vm.getWinners = function(homeroom){
+      vm.winner = '';
+      console.log('hit getWinners');
+      console.log('this is HR number', vm.homeroom);
+      DrawingService.grabRandomSlipsHomeroom(homeroom).then(function(data){
+        var slipsArray = data.data;
+        console.log('ARRAY of slips', data.data);
+        var random = Math.floor((Math.random() * slipsArray.length) );
+        vm.winner = slipsArray[random].name;
+        console.log('WINNER IS', vm.winner);
+
+      });
+    };
+    vm.getWinners('123');
+
+
 }]);

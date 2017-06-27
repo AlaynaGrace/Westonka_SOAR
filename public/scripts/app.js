@@ -33,6 +33,10 @@ $routeProvider
       templateUrl: '/public/views/student.html',
       controller: "studentController as sc"
     })
+    .when('/upload', {
+      templateUrl: '/public/views/upload.html',
+      controller: 'uploadController as uc'
+    })
     .otherwise({
       redirectTo: '/login'
     });

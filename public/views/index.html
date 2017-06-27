@@ -2,8 +2,8 @@
 <html lang="en" class="no-js">
 <head>
   <meta charset="UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
   <title>Westonka</title>
   <script src="public/vendors/angular.min.js"></script>
   <script src="public/vendors/angular-route.min.js"></script>
@@ -14,12 +14,18 @@
   <link rel="stylesheet" href="public/assets/styles/menu.css"></link>
   <script src='public/vendors/font-awesome.css'></script>
 
-  <script src="public/scripts/services/updateUser.service.js" charset="utf-8"></script>
+
+  <script src="public/scripts/services/upload.service.js" charset="utf-8"></script>
   <script src="public/scripts/services/emailSearch.service.js" charset="utf-8"></script>
+
   <script src="public/scripts/services/pdf.service.js" charset="utf-8"></script>
+  <script src="public/scripts/services/updateUser.service.js" charset="utf-8"></script>
+  <script src="public/scripts/services/drawing.service.js" charset="utf-8"></script>
   <script src="public/scripts/services/authFactory.js"></script>
   <script src="public/scripts/controllers/navController.js"></script>
   <script src="public/scripts/controllers/authController.js"></script>
+  <script src="public/scripts/controllers/uploadController.js" charset="utf-8"></script>
+
 
 
 
@@ -32,80 +38,52 @@
   <script type="text/javascript" src="public/scripts/controllers/admin.controller.js"></script>
   <script type="text/javascript" src="public/scripts/controllers/jq.controller.js"></script>
   <script type="text/javascript" src="public/scripts/controllers/jqStudent.controller.js"></script>
-
-  <!-- <script type="text/javascript" src="public/scripts/controllers/login.controller.js"></script> -->
-
-
 </head>
 
 
 <!-- body start -->
 <body ng-app="theGoogles">
+  <div class="navbarr">
 
-
-
-<!-- <div style = 'text-align: center;' class="jumbrotron"> -->
-
-  <main class="container">
-    <div class="align">
-<a href="/" class="logo"><span></span></a>
-    <!-- <img name= "whitehawk" id = "whiteHawk" style = 'box-shadow: 3px 3px 3px red; margin-bottom: 30px;width: 200px; height: 200px; background-color: grey; border-radius: 70px 70px 70px 70px; box-shadow: 3px 1px red;' src="http://cdn1.sportngin.com/attachments/call_to_action/6516/5224/WH_Logo_RGB._full_size_large.jpg" alt=""></img> -->
-</div>
-</div>
-    <!-- <ul style= 'list-style: none;'>
-      <li><a class = 'listEm' href="#!teachers">Teacher Page</a></li>
-      <li><a class = 'listEm' href="#!admins">Admin Page</a></li>
-      <li><a class = 'listEm' href="#!students">Student Page</a></li>
-    </ul> -->
-<!-- All navs will not be included for mvp -->
-
-
-<header role="banner">
-<nav id="navbar-primary" class="navbar" role="navigation">
-  <div class="container-fluid">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-primary-collapse">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
+    <div class="col col-md-auto">
+      <a href="#!login">Login</a>
     </div>
-    <div class="collapse navbar-collapse" id="navbar-primary-collapse">
-      <ul class="nav navbar-nav">
-        <li class="active"><a href="#!login">Login</a></li>
-        <li><a class = 'listEm' href="#!teachers">Teacher Page</a></li>
-        <li><a><img class = 'shimm' id= 'whiteHawk' style = 'width: 200px; height: 200px;' src='public/assets/styles/wHawk.png'></a></li>
-        <li><a class = 'listEm' href="#!admins">Admin Page</a></li>
-        <li><a class = 'listEm' href="#!students">Student Page</a></li>
-      </ul>
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
-</nav>
-</header><!-- header role="banner" -->
+
+    <div class="col col-md-auto">
+      <a href="#!teachers">Teacher Page</a>
+    </div>
+
+    <div class="col col-md-auto">
+      <a href="#!admins">Admin Page</a>
+    </div>
+
+    <div class="col col-md-auto">
+      <a href="#!students">Student Page</a>
+    </div>
+  </div>
+
+  <div class="contain">
+    <div class="row">
+      <div class="col-5 col-md-auto">
+        <div class="">
 
 
+        <img class="text-center" id= 'whiteHawk' style = 'width: 200px; height: 200px; text-align: center;' src='public/assets/styles/wHawk.png'></img>
+      </div>
+    </div>
+  </div>
 
 
+  </div>
 
+  <div class="ngview">
+    <ng-view></ng-view>
+  </div>
 
-<div class="ngview">
-  <ng-view></ng-view>
-</div>
-
-
-
-
-
-      <nav ng-controller="NavController as nav">
-        <ul class="row">
-
-          <li class="six columns" ng-show="nav.displayLogout">Hi {{nav.username}}! | <a href="#" ng-click="nav.logout()">Logout</a></li>
-        </ul>
-      </nav>
-    <!-- Pull in views via ngRoutes here -->
-
-  </main>
+  <nav ng-controller="NavController as nav">
+    <ul class="row">
+      <li class="six columns" ng-show="nav.displayLogout">Hi {{nav.username}}! | <a href="#" ng-click="nav.logout()">Logout</a></li>
+    </ul>
+  </nav>
 </body>
 </html>
