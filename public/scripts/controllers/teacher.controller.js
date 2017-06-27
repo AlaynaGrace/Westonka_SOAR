@@ -10,12 +10,12 @@ AuthFactory.isLoggedIn()
   if (response.data.status) {
     vm.displayLogout = true;
     AuthFactory.setLoggedIn(true);
-    console.log(response.data);
+    console.log('user response data',response.data);
     vm.username = response.data.name;
     vm.email = response.data.email;
     vm.id = response.data.id;
-    // vm.homeroom = response.data.homeroom;
-    vm.homeroom = '123';
+    vm.homeroom = response.data.homeroom_id;
+    // vm.homeroom = '123';
     vm.getStudentList();
 
     vm.id = response.data.id;
@@ -69,7 +69,6 @@ vm.getStudentList = function() {
 
       });
     };
-    vm.getWinners('123');
 
 
 }]);
