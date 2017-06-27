@@ -96,7 +96,10 @@ router.get('/check/:slipNumber', function(req,res){
         }
         else{
           console.log('here is the result from a specific slip:',result.rows[0]);
-          if(result.rows[0].student_id === null || result.rows[0].student_id === undefined){
+          if(result.rows[0] === null || result.rows[0] === undefined){
+            res.send({isNotUsed: 'It does not even exist'});
+          }
+          else if(result.rows[0].student_id === null || result.rows[0].student_id === undefined){
             res.send({isNotUsed: true});
           }
           else{

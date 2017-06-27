@@ -60,12 +60,14 @@ console.log('this is the studentController');
 
   //start post student slips
     vm.postStudentSlip = function() {
+      // vm.modalValue = true;
+
       $http({
         url: '/private/student/check/' + vm.slipKey,
         method: 'GET'
       }).then(function success(response){
         console.log('This is the response',response.data);
-        if(response.data.isNotUsed){
+        if(response.data.isNotUsed === true){
           var objectToSend = {
             slip_number: vm.slipKey,
             s: vm.s,
@@ -82,6 +84,11 @@ console.log('this is the studentController');
             url:'/private/student',
             data: objectToSend
           }).then(function success(response){
+            swal({
+              title: "Nice job!",
+              text: "You have successfully entered a SOAR slip! Keep up the good work!",
+              type: "success"
+            });
             console.log(response);
             vm.slipKey = '';
             vm.s = false;
@@ -96,8 +103,22 @@ console.log('this is the studentController');
         else{
           //Make this into an alert or a message
           console.log('Try again! Slip was already used!');
+          swal({
+            title: "Oops..",
+            text: "Looks like this slip number is unavailable!",
+            type: "error"
+          });
+          // vm.modalValue = false;
+
         }
       }, function failure(response){
+        swal({
+          title: "Oops..",
+          text: "Looks like this slip number is unavailable!",
+          type: "error"
+        });
+        // vm.modalValue = false;
+
         console.log(response);
       });
 
