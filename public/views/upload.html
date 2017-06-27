@@ -1,0 +1,67 @@
+<h2>WARNING: BY FOLLOWING THESE INSTRUCTIONS, YOU WILL BE ALTERING YOUR
+  CURRENT SCHOOL DATA ALONG WITH USER, SLIP, AND HOMEROOM DATA!</h2>
+<div style="color:white;">
+  <p>Make sure to follow these steps to replace old class and homeroom
+    lists with new class and homeroom lists.</p>
+
+  <ol>
+    <li>Drop all current tables</li>
+    <p>Only drop current tables if this is NOT the first time you are using
+      this application. The first time this application is used, the tables
+       will not exist.</p>
+    <button ng-click="uc.dropTables()">Drop Tables</button>
+    <!-- <p>If this is the first time that you have ever used this application and
+    you need to create the tables, press the 'Create Tables' button below.
+    </p>
+    <button ng-click="uc.createTables()">Create Tables</button>
+    <br> -->
+    <br>
+    <li>Upload the homeroom data</li>
+    <p>In this CSV file, there should be the following columns with these
+      headers: <br><br>
+      identifier,grade
+      <br><br>
+      Where identifier is the homeroom class number and the grade is one
+      of five choices:
+      <br>
+      <ol>
+        <li>KD</li>
+        <li>01</li>
+        <li>02</li>
+        <li>03</li>
+        <li>04</li>
+      </ol>
+      Below are examples of how certain rows should look in the CSV file:
+      <br>
+      <ol>
+        <li>123, KD</li>
+        <li>26, 01</li>
+        <li>106, 02</li>
+        <li>14, 03</li>
+        <li>111, 04</li>
+      </ol>
+  </p>
+  <label>Upload Homeroom Data:</label>
+  <input type="file" id="homeroomFiles" name="homeroomFiles" accept=".csv">
+    <li>Upload the CSV file that has all of the user data, including students,
+      teachers, and admins</li>
+    <p>In this CSV file, there should be the following columns with these
+      headers: <br><br>
+      name, email, admin, teacher, homeroom_id
+      <br><br>
+      Below are examples of how certain rows should look in the CSV file:
+      <br>
+      <ol>
+        <li>Student</li>
+        <p>Full Name, student@277apps.com, false, false, 1</p>
+        <li>Teacher</li>
+        <p>Full Name, teacher@277apps.com, false, true, 1</p>
+        <li>Admin</li>
+        <p>Full Name, admin@277apps.com, true, false,</p>
+      </ol>
+      <br>
+      <label>Upload User Data:</label>
+      <input type="file" id="files" name="file" accept=".csv">
+    </p>
+  </ol>
+</div>
