@@ -1,14 +1,27 @@
 
 <!-- menue div -->
 <div style="background-color: #E32526; padding: 3%; margin: 5% 10% 0% 10%;">
-  <button style='text-align: center; color: white;' class='' ng-click="ac.makePDF()">Make Slips</button>
-
+  <button style='text-align: center; color: white; margin: 1% 2%;' class='' ng-click="ac.makePDF()">Make Slips</button>
+<!--
   <select style="color: white;">
     <option value="admin congrols">Admin Controls</option>
     <a href="#!permissions"><option value="Permissions">Permissions</option></a>
     <option value="Upload CSV">Upload CSV</option>
     <option value="Permissions">Permissions</option>
   </select>
+ -->
+
+ <div class="dropdown">
+   <button class="dropbtn">Admin Controls</button>
+   <div class="dropdown-content">
+     <a href="#!permissions">Permissions</a>
+     <a href="#!upload">Upload CSV</a>
+   </div>
+ </div>
+
+
+
+
 </div>
 
 <!-- content div -->
