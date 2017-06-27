@@ -54,7 +54,7 @@ router.get('/', function (req, res) {
     console.log("this is the user in auth!",req.user);
 
     // res.send({ status: true, name: req.user.name, email: req.user.email });
-req.user.status= true;
+    req.user.status= true;// sets user status to true
 
     res.send(req.user);
   } else {
