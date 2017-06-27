@@ -16,8 +16,19 @@
    <div class="dropdown-content">
      <a href="#!permissions">Permissions</a>
      <a href="#!upload">Upload CSV</a>
+     <span ng-if="ac.both">
+       <a href="#!admins">Admin Page</a>
+       <a href="#!teachers">Teacher Page</a>
+     </span>
    </div>
  </div>
+
+<!-- randome winner. one button based on previously selected grade group -->
+<button class="btn-default btn" ng-click="ac.clickKTwo()" type="button" name="kThroughTwo">K - 2</button>
+<button class"btn-default btn" ng-click="ac.groupRandomWinnerKTwo()" type="button" name="winnerButton">Select A Random Winner</button>
+<!-- <div ng-repeat="thing in ac.kThroughTwo track by $index">{{thing.identifier}} - {{thing.name}} </div> -->
+
+<div ng-repeat="thing in ac.getRanKTwo">{{thing.grade}} - {{thing.name}}</div>
 
 
 
@@ -32,11 +43,12 @@
 
   <!-- buttons -->
   <br />
-  <button class="btn-default btn" ng-click="ac.clickKTwo()" type="button" name="kThroughTwo">K - 2</button>
+<!--   <button class="btn-default btn" ng-click="ac.clickKTwo()" type="button" name="kThroughTwo">K - 2</button>
   <button class="btn-default btn" ng-click="ac.groupRandomWinnerKTwo()" type="button" name="winnerButton">Select A Random Winner</button>
   <br />
   <button class="btn-default btn" ng-click="ac.clickThreeFour()" type="button" name="threeAndFour">3 -4</button>
   <button class="btn-default btn" ng-click="ac.groupRandomWinnerThreeFour()" type="button" name="winnerButton">Select A Random Winner</button>
+ -->
 
   <!-- results -->
   <br />
@@ -47,6 +59,7 @@
   <h4 style="color: white;">Students:</h4>
   <div ng-repeat="thing in ac.kThroughTwo track by $index">{{thing.identifier}} {{thing.name}} </div>
   <div ng-repeat="thing in ac.threeAndFour track by $index">{{thing.identifier}} - {{thing.name}}</div>
+
 
   <br /><br />
 

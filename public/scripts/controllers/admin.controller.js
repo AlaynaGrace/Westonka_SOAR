@@ -14,8 +14,12 @@ googleAuthApp.controller('adminController', ['$http', '$scope', '$timeout', 'PDF
       if(response.data.admin !== true && response.data.teacher !== true){
         $location.path('/students');
       }
+      else if(response.data.teacher && response.data.admin){
+        vm.both = true;
+      }
       else if(response.data.teacher){
         $location.path('/teachers');
+
       }
       // vm.homeroom = response.data.homeroom_id;
     } else { // is not logged in on server
@@ -178,6 +182,8 @@ vm.getRandom = function() {
       }
     });
   };
+
+
 
 // testing if else for winner button based on grade group previously clicked
 //
