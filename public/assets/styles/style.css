@@ -105,7 +105,7 @@ label{
     background: #E0FBAC;
     height: 55px;
     width: 270px;
-    color: #fff;
+    color: black;
 }
 
 .list dt {
@@ -120,7 +120,7 @@ label{
 }
 
 .list dd {
-    color: white !important;
+    color: black !important;
     border-top: 1px dashed rgba(255,255,255,0.3);
     line-height: 35px;
     font-size: 11px;
@@ -128,8 +128,8 @@ label{
 
 }
 
-.sashimi dt, .sashimi dd, .sashimi a { border: 0.5px solid black;background: blue!important; }
-.nigiri dt, .nigiri dd, .nigiri a { color: black;  border: 0.5px solid black;background: yellow!important; }
+.sashimi dt, .sashimi dd, .sashimi a { border: 0.5px solid black;background: whitesmoke!important; }
+.nigiri dt, .nigiri dd, .nigiri a { color: black;  border: 0.5px solid black;background: whitesmoke!important; }
 .sashimi a:hover { background: #61c19e!important; }
 .nigiri a:hover { background: #d31b46!important; }
 .nigiri {
@@ -726,18 +726,18 @@ label{
 /*Modules End*/
 
 .row {
-    border:solid 1px #CCCCCC;
+    /*border:solid 1px #CCCCCC;*/
 }
 .contain{
   text-align: center;
 }
 .col{
-  border:solid 1px #CCCCCC;
+  /*border:solid 1px #CCCCCC;*/
 
 }
 .col-md-auto .col-5 .col-md-5 .col-6 .col-3 .col-md-6{
   /*margin:0 auto!important;*/
-  border:solid 1px #CCCCCC;
+  /*border:solid 1px #CCCCCC;*/
   /*margin-right:-1px;*/
   /*padding:10px;*/
 }
