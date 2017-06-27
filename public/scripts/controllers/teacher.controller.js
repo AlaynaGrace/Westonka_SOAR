@@ -66,7 +66,7 @@ vm.getStudentList = function() {
 
       });
     };
-    vm.getWinners('123');
+    // vm.getWinners('123');
 
 
 }]);
