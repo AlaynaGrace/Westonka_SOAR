@@ -255,6 +255,7 @@ router.post('/createTables',function(req,res){
 
 router.post('/upload', function(req,res){
   if(req.isAuthenticated()) {
+    console.log('in admin/upload');
    var homeroomContent = req.body.fileContent[0];
    var userContent = req.body.fileContent[1];
    // deletes temporary table
@@ -280,23 +281,61 @@ router.post('/upload', function(req,res){
            });
          } // end of for loop
          // Moves information into users table
-         connection.query("INSERT INTO users (name,email,homeroom_id,teacher,admin) " +
+         connection.query("INSERT INTO users (name,email,teacher,admin) " +
          "SELECT INITCAP(info ->> 'name') AS name, LOWER(info ->> 'email') AS email, " +
-         "(info ->> 'homeroom_id') AS homeroom_id, (info ->> 'teacher') AS teacher" +
-         "(info ->> 'admin') AS admin FROM json_users " +
-         "ON CONFLICT DO NOTHING",
+         "(info ->> 'admin')::boolean AS admin, (info ->> 'teacher')::boolean AS teacher" +
+         " FROM json_users " +
+         "ON CONFLICT DO NOTHING;",
           function(err) {
            done();
            if (err) {
              console.log(err);
              res.sendStatus(500);
            } else {
-             res.sendStatus(200);
+             console.log('Homeroom info complete');
+            //  res.sendStatus(200);
+            deleteJSONTable();
+            // converts fileContent to JSON
+            csvtojson({noheader:false})
+            .fromString(homeroomContent)
+            .on('end_parsed',function(jsonArrObj) {
+              // Inserts into json_volunteer table
+                if(err) {
+                  console.log('Error connecting to the database');
+                } else {
+                  for (var i = 0; i < jsonArrObj.length; i++) {
+                    jsonObject = jsonArrObj[i];
+                    connection.query('INSERT INTO json_users (info) VALUES ($1)',
+                    [jsonObject], function(err) {
+                      done();
+                      if (err) {
+                        console.log(err);
+                        res.sendStatus(500);
+                      }
+                    });
+                  } // end of for loop
+                  // Moves information into users table
+                  connection.query("INSERT INTO homerooms (identifier,grade) " +
+                  "SELECT (info ->> 'identifier') AS identifier, LOWER(info ->> 'grade') AS grade " +
+                  "FROM json_users ON CONFLICT DO NOTHING",
+                   function(err) {
+                    done();
+                    if (err) {
+                      console.log(err);
+                      res.sendStatus(500);
+                    } else {
+                      res.sendStatus(200);
+                    }
+                  });
+                }
+            }); // end of csvtojson
            }
          });
        }
      }); // pool.connect
    }); // end of csvtojson
+
+
  } else {
    res.sendStatus(401);
  }

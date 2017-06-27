@@ -59,11 +59,13 @@ googleAuthApp.controller('uploadController', ['$http', 'CSVUploadService', funct
      alert('File read cancelled');
    };
    reader.onloadstart = function(readerEvent) {
-     document.getElementById('progress_bar').className = 'loading';
+    //  document.getElementById('progress_bar').className = 'loading';
+    console.log('Onload start');
    };
    reader.onload = function(readerEvent) {
+     console.log('the file has been loaded');
      // sends read file to service function
-     CSVUploadService.sendCSV(readerEvent.target.result);
+     CSVUploadService.uploadCSV(readerEvent.target.result);
    };
 
    // Read in the file as a text string.
