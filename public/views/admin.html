@@ -42,8 +42,8 @@
   <!-- results -->
   <br />
   <h4 style="color: white;">Winners:</h4>
-  <div ng-repeat="thing in ac.getRanKTwo track by $index">{{thing.identifier}} {{thing.name}}</div>
-  <div ng-repeat="thing in ac.getRanThreeFour track by $index">{{thing.identifier}} - {{thing.name}}</div>
+  <div ng-repeat="thing in ac.getRanKTwo track by $index">{{thing.identifier}} {{thing.name}} - {{thing.grade}}</div>
+  <div ng-repeat="thing in ac.getRanThreeFour track by $index">{{thing.identifier}} - {{thing.name}} - {{thing.grade}}</div>
   <br />
   <h4 style="color: white;">Students:</h4>
   <div ng-repeat="thing in ac.kThroughTwo track by $index">{{thing.identifier}} {{thing.name}} </div>
