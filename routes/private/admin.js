@@ -16,11 +16,12 @@ router.get('/:group', function (req, res) {
   pool.connect(function ( err, connection, done){
 
     if (err) {
-      res.send( 400 );
+      console.log(err);
+      res.sendStatus( 400 );
     } else {
       console.log('inside else adminjs');
       //replace this with actualy query
-      connection.query("SELECT * FROM slips JOIN users on slips.student_id=users.id JOIN homerooms ON users.homeroom_id=homerooms.id WHERE identifier in " + req.params.group, function(err, result){
+      connection.query("SELECT * FROM slips JOIN users on slips.student_id=users.id JOIN homerooms ON users.homeroom_id=homerooms.id WHERE grade in " + req.params.group, function(err, result){
         done();
         if(err){
           console.log(err);

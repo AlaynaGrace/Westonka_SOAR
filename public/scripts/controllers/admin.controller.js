@@ -34,7 +34,7 @@ googleAuthApp.controller('adminController', ['$http', '$scope', '$timeout', 'PDF
     console.log('hitting k through two');
     return $http({
       method: 'GET',
-      url: "/private/admin/" + "('k-1', 'k-2', '1-1', '1-2', '2-1', '2-2')"
+      url: "/private/admin/" + "('KD', '01', '02')"
     }).then(function(response) {
       vm.kThroughTwo = response.data;
       console.log('inside the then k-2');
@@ -48,7 +48,7 @@ googleAuthApp.controller('adminController', ['$http', '$scope', '$timeout', 'PDF
     console.log('hitting three and four');
     return $http({
       method: 'GET',
-      url: "/private/admin/" + "('3-1', '3-1', '4-1', '4-2')"
+      url: "/private/admin/" + "('03','04')"
     }).then(function(response) {
       vm.threeAndFour = response.data;
       console.log('response 3-4: ', response);
@@ -104,18 +104,19 @@ vm.getRandom = function() {
   vm.clickKTwo = function() {
     vm.gradesKThroughTwo().then(function(response) {
       //need if statement to make sure it shows the correct grade group
-      for (var i = 0; i < vm.kThroughTwo.length; i++) {
-        console.log('inside loop click k two');
-      }
+      // for (var i = 0; i < vm.kThroughTwo.length; i++) {
+      //   console.log('inside loop click k two');
+      // }
+      vm.getRanKTwo=[vm.kThroughTwo[Math.floor(Math.random()*items.length)]];
     });
   };
 
   vm.clickThreeFour = function() {
     vm.gradesThreeAndFour().then(function(response){
       //need if statement to make sure it shows the correct grade group
-      for (var i = 0; i<vm.threeAndFour.length; i++){
-        console.log('inside loop click three four');
-      }
+      // for (var i = 0; i<vm.threeAndFour.length; i++){
+      //   console.log('inside loop click three four');
+      // }
     });
   };
 
@@ -127,8 +128,9 @@ vm.getRandom = function() {
   vm.groupRandomWinnerKTwo = function() {
     console.log('inside group random winner button');
     vm.gradesKThroughTwo().then(function(response){
+      vm.getRanKTwo=[vm.kThroughTwo[Math.floor(Math.random()*(vm.kThroughTwo.length-1))]];
 
-      vm.getRanKTwo = (Math.floor(Math.random() * vm.kThroughTwo.length) + 1);
+      // vm.getRanKTwo = (Math.floor(Math.random() * vm.kThroughTwo.length) + 1);
       console.log('get ran: ', vm.getRanKTwo);
     });
   };//end group random winner
@@ -137,7 +139,9 @@ vm.getRandom = function() {
   vm.groupRandomWinnerThreeFour = function() {
     console.log('inside group random winner button');
     vm.gradesThreeAndFour().then(function(response){
-      vm.getRanThreeFour = (Math.floor(Math.random() * vm.threeAndFour.length) + 1);
+      // vm.getRanThreeFour = (Math.floor(Math.random() * vm.threeAndFour.length) + 1);
+      vm.getRanThreeFour=[vm.threeAndFour[Math.floor(Math.random()*(vm.threeAndFour.length-1))]];
+
       console.log('get ran: ', vm.getRanThreeFour);
     });
   };//end group random winner
