@@ -103,7 +103,6 @@ label{
     text-indent: 10px;
     line-height: 55px;
     background: #E0FBAC;
-    margin: 0;
     height: 55px;
     width: 270px;
     color: #fff;
@@ -126,10 +125,12 @@ label{
     line-height: 35px;
     font-size: 11px;
     height: 35px;
-    margin: 0;
+
 }
 
-.nigiri dt, .nigiri dd, .nigiri a { color: black;  border: 0.5px solid black;background: #ECF0F1; }
+.sashimi dt, .sashimi dd, .sashimi a { border: 0.5px solid black;background: blue!important; }
+.nigiri dt, .nigiri dd, .nigiri a { color: black;  border: 0.5px solid black;background: yellow!important; }
+.sashimi a:hover { background: #61c19e!important; }
 .nigiri a:hover { background: #d31b46!important; }
 .nigiri {
 
@@ -146,6 +147,22 @@ label{
     transform-origin: 110% 25%;
 
     left: 20%;
+}
+.sashimi {
+
+    -webkit-transform: perspective(1200px) rotateY(-40deg) !important;
+    -moz-transform: perspective(1200px) rotateY(-40deg) !important;
+    -ms-transform: perspective(1200px) rotateY(-40deg) !important;
+    -o-transform: perspective(1200px) rotateY(-40deg) !important;
+    transform: perspective(1200px) rotateY(-40deg) !important;
+
+    -webkit-transform-origin: -10% 25%;
+    -moz-transform-origin: -10% 25%;
+    -ms-transform-origin: -10% 25%;
+    -o-transform-origin: -10% 25%;
+    transform-origin: -10% 25%;
+
+    left: 80%;
 }
 /*end teacher page*/
 
@@ -709,21 +726,21 @@ label{
 /*Modules End*/
 
 .row {
-    /*border:solid 1px #CCCCCC;*/
+    border:solid 1px #CCCCCC;
 }
 .contain{
   text-align: center;
 }
 .col{
-  /*border:solid 1px #CCCCCC;*/
+  border:solid 1px #CCCCCC;
 
 }
-/*.col-md-auto .col-5 .col-md-5 .col-6 .col-3 .col-md-6{
-  margin:0 auto!important;
+.col-md-auto .col-5 .col-md-5 .col-6 .col-3 .col-md-6{
+  /*margin:0 auto!important;*/
   border:solid 1px #CCCCCC;
-  margin-right:-1px;
-  padding:10px;
-}*/
+  /*margin-right:-1px;*/
+  /*padding:10px;*/
+}
 
 .navbarr {
   overflow: hidden;

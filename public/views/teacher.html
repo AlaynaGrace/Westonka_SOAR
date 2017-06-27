@@ -7,23 +7,15 @@
           <dt><button style='border: none; height:50px;width: 200px; font-size: 27px; margin-top: 3px; background: #ECF0F1; text-shadow:1px 1px 1px #000000;'class="toggle">Class List</button></dt>
           <dd><a style= 'color: white; z-index:50;' ng-repeat='studObj in tc.studentArray'>{{studObj.name}} 'has' {{studObj.count}}</a></dd>
         </dl>
-      </div>
-      <div class="col col-md-auto">
-        {{tc.winner}}
-      </div>
-    </div>
-    <div class="row">
+
       <div class="col col-md-auto">
         <button ng-click='tc.getWinners()' style='border: 0.5px solid black; width: 200px; font-size: 27px; margin-top: 3px; text-shadow:1px 1px 1px #000000;'class= "toggle btn-success">SPIN TO WIN</button>
       </div>
+        <dl class="list sashimi">
+          <dt>Prize Winners</dt>
+          <dd><a>{{tc.winner}}</a></dd>
+        </dl>
+        </section>
+  </div>
     </div>
   </div>
-<div class="row">
-  <div class="col col-md-auto">
-    <dl class="list sashimi">
-      <dt>Prize Winners</dt>
-      <dd><a href="#">{{tc.winner}}</a></dd>
-   </dl>
-</div>
-</div>
-</section>
