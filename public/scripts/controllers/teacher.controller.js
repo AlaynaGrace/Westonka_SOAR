@@ -23,8 +23,9 @@ AuthFactory.isLoggedIn()
     if(response.data.admin !== true && response.data.teacher !== true){
       $location.path('/students');
     }
-    else if(response.data.admin && response.data.teacher){
+    else if(response.data.admin === true && response.data.teacher === true){
       vm.both=true;
+      console.log('this is both:', vm.both);
     }
     else if(response.data.admin){
       $location.path('/admins');
