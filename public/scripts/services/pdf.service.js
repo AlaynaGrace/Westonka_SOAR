@@ -13,7 +13,7 @@ googleAuthApp.service('PDFService',['$http',function($http){
 
       doc.setFontSize(20);
 
-      for(var i=0; i<response.data.length;i+4){
+      for(var i=0; i<response.data.length;i+=4){
         console.log('we in this for loop');
         doc.addImage(imgData, 'JPEG', 0, 0, 210, 180);
         doc.text(10, 95, 'slip number: '+response.data[i]);
