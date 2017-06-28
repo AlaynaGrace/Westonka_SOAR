@@ -25,42 +25,13 @@ router.get('/', function(req,res){
           // var holder = result.rows;
           // console.log('popping off the last thing and grabbing the id:', result.rows.pop().id);
           var slips = [];
-          for (var i = 0; i < 4; i++) {
+          for (var i = 0; i < 40; i++) {
             slips.push(md5(result.rows.pop().id).substring(0,9));
           }
-          connection.query("INSERT INTO slips(slip_number) VALUES($1)",[slips[0]],function(error){
-            done();
-            if(error){
-              console.log(error);
-              res.sendStatus(500);
-            }else{
-              connection.query("INSERT INTO slips(slip_number) VALUES($1)",[slips[1]],function(error){
-                done();
-                if(error){
-                  console.log(error);
-                  res.sendStatus(500);
-                }else{
-                  connection.query("INSERT INTO slips(slip_number) VALUES($1)",[slips[2]],function(error){
-                    done();
-                    if(error){
-                      console.log(error);
-                      res.sendStatus(500);
-                    }else{
-                      connection.query("INSERT INTO slips(slip_number) VALUES($1)",[slips[3]],function(error){
-                        done();
-                        if(error){
-                          console.log(error);
-                          res.sendStatus(500);
-                        }else{
-                          res.send(slips);
-                        }
-                      });
-                    }
-                  });
-                }
-              });
-            }
-          });
+          for(i = 0; i<slips.length; i++){
+            connection.query('INSERT INTO slips (slip_number) VALUES ($1)', [slips[i]]);
+          }
+          res.send(slips);
         }
       });
     }
