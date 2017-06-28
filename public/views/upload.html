@@ -1,27 +1,48 @@
+
 <h2>WARNING: BY FOLLOWING THESE INSTRUCTIONS, YOU WILL BE ALTERING YOUR
   CURRENT SCHOOL DATA ALONG WITH USER, SLIP, AND HOMEROOM DATA!</h2>
   <a href="#!admins">Back to admin page</a>
 
-<div style="color:white;">
-  <p>Make sure to follow these steps to replace old class and homeroom
-    lists with new class and homeroom lists.</p>
 
+<div class="contian">
+  <div class="row">
+<div class="col-md-auto">
+<div style='font-size: 25px; width:auto; text-align: center; display: table; margin: 0 auto; background-color: whitesmoke; margin-bottom:20px;margin-top: 20px;'>WARNING: BY FOLLOWING THESE INSTRUCTIONS, <br>YOU WILL BE ALTERING YOUR
+  CURRENT SCHOOL DATA ALONG WITH USER, SLIP, AND HOMEROOM DATA!</div>
+  </div>
+  </div>
+  <div class="row">
+<div class="col-md-auto">
+
+<div style="color:white;">
+  <p style='text-align: center;font-size:30px;width: auto;'>  Make sure to follow these steps to replace old class and homeroom
+    lists with new class and homeroom lists.</p>
+</div>
+</div>
+</div>
+<div class="row" style='background: whitesmoke;width: auto;display: table; margin: 0 auto;border-radius: 8px 8px 8px 8px;'>
+<div class="col-md-auto">
   <ol>
     <li>Drop all current tables</li>
     <p>Only drop current tables if this is NOT the first time you are using
       this application. The first time this application is used, the tables
        will not exist.</p>
-    <button ng-click="uc.dropTables()">Drop Tables</button>
+    <button class = 'btn-danger'ng-click="uc.dropTables()">Drop Tables</button>
+  </div>
+</div>
     <!-- <p>If this is the first time that you have ever used this application and
     you need to create the tables, press the 'Create Tables' button below.
     </p>
     <button ng-click="uc.createTables()">Create Tables</button>
     <br> -->
     <br>
-    <li>Upload the homeroom data</li>
-    <p>In this CSV file, there should be the following columns with these
+    <br>
+    <div class="row" style='background: whitesmoke; width: auto;display: table; margin: 0 auto;border-radius: 8px 8px 8px 8px;'>
+    <div class="col-md-auto">
+    <li style='padding-left: 20px;'>Upload the homeroom data</li>
+    <p style='padding-left: 20px;'>In this CSV file, there should be the following columns with these
       headers: <br><br>
-      identifier,grade
+      identifier, grade
       <br><br>
       Where identifier is the homeroom class number and the grade is one
       of five choices:
@@ -33,7 +54,7 @@
         <li>03</li>
         <li>04</li>
       </ol>
-      Below are examples of how certain rows should look in the CSV file:
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Below are examples of how certain rows should look in the CSV file:
       <br>
       <ol>
         <li>123, KD</li>
@@ -43,15 +64,22 @@
         <li>111, 04</li>
       </ol>
   </p>
-  <label>Upload Homeroom Data:</label>
-  <input type="file" id="homeroomFiles" name="homeroomFiles" accept=".csv">
-    <li>Upload the CSV file that has all of the user data, including students,
+
+</div>
+</div>
+<br>
+<br>
+<div class="row" style='background: whitesmoke; width: auto;display: table; margin: 0 auto;border-radius: 8px 8px 8px 8px;'>
+<div class="col-md-auto">
+  <label style='padding-left: 20px;'>Upload Homeroom Data:</label>
+  <input style='padding-left: 20px;' type="file" id="homeroomFiles" name="homeroomFiles" accept=".csv">
+    <li style='padding-left: 20px;'>Upload the CSV file that has all of the user data, including students,
       teachers, and admins</li>
-    <p>In this CSV file, there should be the following columns with these
+    <p style='padding-left: 20px;'>In this CSV file, there should be the following columns with these
       headers: <br><br>
-      name, email, admin, teacher, homeroom_id
+      <p style='padding-left: 20px;'>name, email, admin, teacher, homeroom_id</p>
       <br><br>
-      Below are examples of how certain rows should look in the CSV file:
+      <p style='padding-left: 20px;'>Below are examples of how certain rows should look in the CSV file:</p>
       <br>
       <ol>
         <li>Student</li>
@@ -61,9 +89,16 @@
         <li>Admin</li>
         <p>Full Name, admin@277apps.com, true, false,</p>
       </ol>
+    </div>
+  </div>
       <br>
-      <label>Upload User Data:</label>
-      <input type="file" id="files" name="file" accept=".csv">
+      <br>
+      <div class="row" style='background: whitesmoke; width: auto;display: table; margin: 0 auto;border-radius: 8px 8px 8px 8px;'>
+      <div class="col-md-auto">
+      <label style='padding-left: 20px;'>Upload User Data:</label>
+      <input style='padding-left: 20px;' type="file" id="files" name="file" accept=".csv">
     </p>
   </ol>
+</div>
+</div>
 </div>
