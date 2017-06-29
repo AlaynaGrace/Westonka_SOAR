@@ -126,7 +126,10 @@ vm.getRandom = function() {
   vm.groupRandomWinnerKTwo = function() {
     console.log('inside group random winner button');
     vm.gradesKThroughTwo().then(function(response){
-      vm.getRanKTwo=[vm.kThroughTwo[Math.floor(Math.random()*(vm.kThroughTwo.length-1))]];
+      $timeout(function(){
+        vm.getRanKTwo=[vm.kThroughTwo[Math.floor(Math.random()*(vm.kThroughTwo.length-1))]];
+
+      }, 5000);
 
       // vm.getRanKTwo = (Math.floor(Math.random() * vm.kThroughTwo.length) + 1);
       console.log('get ran: ', vm.getRanKTwo);
@@ -137,8 +140,11 @@ vm.getRandom = function() {
   vm.groupRandomWinnerThreeFour = function() {
     console.log('inside group random winner button');
     vm.gradesThreeAndFour().then(function(response){
+      $timeout(function(){
+        vm.getRanThreeFour=[vm.threeAndFour[Math.floor(Math.random()*(vm.threeAndFour.length-1))]];
+        
+      }, 5000);
       // vm.getRanThreeFour = (Math.floor(Math.random() * vm.threeAndFour.length) + 1);
-      vm.getRanThreeFour=[vm.threeAndFour[Math.floor(Math.random()*(vm.threeAndFour.length-1))]];
 
       console.log('get ran: ', vm.getRanThreeFour);
     });
