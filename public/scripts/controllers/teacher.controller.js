@@ -1,5 +1,5 @@
 
-googleAuthApp.controller('teacherController', ['$http','AuthFactory', '$location', 'DrawingService', function($http, AuthFactory, $location, DrawingService){
+googleAuthApp.controller('teacherController', ['$http','AuthFactory', '$location', 'DrawingService', '$timeout', function($http, AuthFactory, $location, DrawingService, $timeout){
 console.log('teacher');
 var vm = this;
 var authFactory = AuthFactory;
@@ -10,12 +10,12 @@ AuthFactory.isLoggedIn()
   if (response.data.status) {
     vm.displayLogout = true;
     AuthFactory.setLoggedIn(true);
-    console.log(response.data);
+    console.log('user response data',response.data);
     vm.username = response.data.name;
     vm.email = response.data.email;
     vm.id = response.data.id;
-    // vm.homeroom = response.data.homeroom;
-    vm.homeroom = '123';
+    vm.homeroom = response.data.homeroom_id;
+    // vm.homeroom = '123';
     vm.getStudentList();
 
     vm.id = response.data.id;
@@ -23,8 +23,9 @@ AuthFactory.isLoggedIn()
     if(response.data.admin !== true && response.data.teacher !== true){
       $location.path('/students');
     }
-    else if(response.data.admin && response.data.teacher){
+    else if(response.data.admin === true && response.data.teacher === true){
       vm.both=true;
+      console.log('this is both:', vm.both);
     }
     else if(response.data.admin){
       $location.path('/admins');
@@ -56,20 +57,20 @@ vm.getStudentList = function() {
       });
     });//end of getStudentList
 
-    vm.getWinners = function(homeroom){
+    vm.getWinners = function(){
       vm.winner = '';
       console.log('hit getWinners');
       console.log('this is HR number', vm.homeroom);
-      DrawingService.grabRandomSlipsHomeroom(homeroom).then(function(data){
+      DrawingService.grabRandomSlipsHomeroom(vm.homeroom).then(function(data){
+        $timeout(
         var slipsArray = data.data;
         console.log('ARRAY of slips', data.data);
         var random = Math.floor((Math.random() * slipsArray.length) );
         vm.winner = slipsArray[random].name;
         console.log('WINNER IS', vm.winner);
-
+      )
       });
     };
-    vm.getWinners('123');
 
 
 }]);

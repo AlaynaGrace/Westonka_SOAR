@@ -13,7 +13,7 @@ googleAuthApp.service('DrawingService', ['$http',function($http){
   };
 
   self.grabRandomSlipsHomeroom = function(homeroom){
-    console.log('hit grabRandomSlipsHomeroom');
+    console.log('hit grabRandomSlipsHomeroom', homeroom);
     return  $http({
       url: '/private/teacher/random/' + homeroom,
       method: 'GET'

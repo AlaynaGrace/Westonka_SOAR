@@ -1,4 +1,3 @@
-
 $(function() {
   $('.ngview').on('click', '.toggle',function(){
     console.log('toggle has been clicked');
@@ -403,20 +402,13 @@ if ( $.fn.makisu.enabled ) {
 
   var $sashimi = $( '.sashimi' );
   var $nigiri = $( '.nigiri' );
-  var $maki = $( '.maki' );
 
-  // Create Makisus
+  // Create sus
 
   $nigiri.makisu({
     selector: 'dd',
     overlap: 0.85,
     speed: 1.7
-  });
-
-  $maki.makisu({
-    selector: 'dd',
-    overlap: 0.6,
-    speed: 0.85
   });
 
   $sashimi.makisu({

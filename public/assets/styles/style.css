@@ -11,10 +11,42 @@
     -webkit-animation: myfirst 5s; /* Safari 4.0 - 8.0 */
     -webkit-animation-direction: alternate; /* Safari 4.0 - 8.0 */
     animation: myfirst 5s;
-    animation-direction: alternate;
+    animation-direction: reverse;
     margin:0,auto;
 }
 
+.original,
+.box {
+  border-radius: 6px;
+}
+.original {
+  /*float: left;
+  margin: 12px 15px;*/
+}
+.box {
+  height: 95px;
+  line-height: 95px;
+  text-align: center;
+  width: 95px;
+}
+#whiteHawk {
+  cursor: pointer;
+  transform-style: preserve-3d;
+}
+#whiteHawk {
+    animation: spin 5s linear;
+}
+@keyframes spin {
+  0% {
+    transform: rotateY(0deg);
+  }
+  100% {
+    transform: rotateY(360deg);
+  }
+}
+.box-2 {
+  transform: scaleY(1.15);
+}
 
 body{
 background: #c0020f!important;
@@ -26,8 +58,17 @@ background-size: 400% 400%!important;
 
 input[type="checkbox"]{
   width: 25px; /*Desired width*/
-  height: 25px; /*Desired height*/
+  height: 25px;
 }
+  input[type='file']{
+  color:blue;
+  font-size:20px;
+ /*Desired height*/
+}
+
+input[type="file" i] {
+}
+
 .studentHone{
   font-size: 20px!important;
   color: white;
@@ -39,7 +80,7 @@ input[type="checkbox"]{
     25%  { left: 0px; top: 0px;}
     50%  { left: 0px; top: 0px;}
     75%  { left: 0px; top: 0px;}
-    100% { left: 0px; top: 0px;}
+    100% { left: 500px; top: 0px;}
 }
 
 @keyframes myfirst {
@@ -47,7 +88,7 @@ input[type="checkbox"]{
     25%  { left: 0px; top: 0px;}
     50%  { left: 0px; top: 0px;}
     75%  { left: 0px; top: 0px;}
-    100% { left: 0px; top: 0px;}
+    100% { left: 500px; top: 0px;}
 }
 label{
   font-size: 33px!important;
@@ -791,10 +832,6 @@ body {
 
 /* Style The Dropdown Button */
 .dropbtn {
-    background-color: #4CAF50;
-    color: white;
-    padding: 16px;
-    font-size: 16px;
     border: none;
     cursor: pointer;
 }
@@ -829,9 +866,98 @@ body {
 /* Show the dropdown menu on hover */
 .dropdown:hover .dropdown-content {
     display: block;
+    border-radius: 3px 3px 3px 3px;
 }
 
 /* Change the background color of the dropdown button when the dropdown content is shown */
 .dropdown:hover .dropbtn {
     background-color: #3e8e41;
+}
+
+/*link colors and details*/
+/* unvisited link */
+a:link {
+    color: #3e3838;
+    text-decoration: underline;
+}
+
+/* visited link */
+a:visited {
+    color: #3e3838;
+    text-decoration: underline;
+
+}
+
+/* mouse over link */
+a:hover {
+    color: #3e3838;
+    text-decoration: underline;
+
+}
+
+/* selected link */
+a:active {
+    color: #3e3838;
+    text-decoration: underline;
+
+=======
+@media only screen
+and (min-device-width : 320px)
+and (max-device-width : 480px) {
+/* Styles */
+}
+
+/* Smartphones (landscape) ----------- */
+@media only screen
+and (min-width : 321px) {
+/* Styles */
+}
+
+/* Smartphones (portrait) ----------- */
+@media only screen
+and (max-width : 320px) {
+/* Styles */
+}
+
+/* iPads (portrait and landscape) ----------- */
+@media only screen
+and (min-device-width : 768px)
+and (max-device-width : 1024px) {
+/* Styles */
+}
+
+/* iPads (landscape) ----------- */
+@media only screen
+and (min-device-width : 768px)
+and (max-device-width : 1024px)
+and (orientation : landscape) {
+/* Styles */
+}
+
+/* iPads (portrait) ----------- */
+@media only screen
+and (min-device-width : 768px)
+and (max-device-width : 1024px)
+and (orientation : portrait) {
+/* Styles */
+}
+
+/* Desktops and laptops ----------- */
+@media only screen
+and (min-width : 1224px) {
+/* Styles */
+}
+
+/* Large screens ----------- */
+@media only screen
+and (min-width : 1824px) {
+/* Styles */
+}
+
+/* iPhone 4 ----------- */
+@media
+only screen and (-webkit-min-device-pixel-ratio : 1.5),
+only screen and (min-device-pixel-ratio : 1.5) {
+/* Styles */
+>>>>>>> master
 }

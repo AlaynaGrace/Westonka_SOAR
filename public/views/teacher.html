@@ -1,9 +1,8 @@
-
-<span ng-if="ac.both">
-  <a href="#!admins">Admin Page</a>
-  <a href="#!teachers">Teacher Page</a>
+<span ng-if="tc.both">
+      <a href="#!admins">Admin Page</a>
+      <a href="#!teachers">Teacher Page</a>
+      <a href="#!teacherSpins">Teacher Spin</a>
 </span>
-
 
   <div class="contain">
     <div class="row">
@@ -11,7 +10,7 @@
         <section class="demo">
           <dl class="list nigiri">
             <dt><button style='margin-bottom: 10px; border: none; height:50px;width: 200px; font-size: 15px; margin-top: 3px; background: whitesmoke; text-shadow:1px 1px 2px rgba(0, 0, 0, 0.2);'class="toggle">CLASS LIST</button></dt>
-            <dd><a style= 'color: white; z-index:50;' ng-repeat='studObj in tc.studentArray'>{{studObj.name}} 'has' {{studObj.count}}</a></dd>
+            <dd><a style= 'color: black; z-index:50;' ng-repeat='studObj in tc.studentArray'>{{studObj.name}} has {{studObj.count}}</a></dd>
           </dl>
   </div>
   <div class="col col-md-auto">
@@ -20,15 +19,13 @@
   <div class="col col-md-auto">
       <dl class="list sashimi">
         <dt>Prize Winners</dt>
-        <!-- <dd><a href="#">fahza</a></dd>
-        <dd><a href="#">ronald</a></dd> -->
-        <dd><a href="#">{{tc.winner}}</a></dd>
+        <dd><a style= 'color: black'>{{tc.winner}}</a></dd>
       </dl>
   </div>
   </div>
   <div class="row">
     <div class="col col-md-auto">
-      <button ng-click='tc.getWinners()' style='border: none; height:50px;width: 150px; font-size: 15px; margin-top: 20px; text-shadow:1px 1px 2px rgba(0, 0, 0, 0.2);;'class= 'btn btn-success'>SPIN TO WIN</button>
+      <button ng-click='tc.getWinners(tc.homeroom)' style='border: none; height:50px;width: 150px; font-size: 15px; margin-top: 20px; text-shadow:1px 1px 2px rgba(0, 0, 0, 0.2);;'class= 'btn btn-success'>SPIN TO WIN</button>
   </div>
   </div>
   </div>
