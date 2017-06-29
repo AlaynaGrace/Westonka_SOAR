@@ -2,7 +2,7 @@
 <!-- menue div -->
 <div class="row" style='background: whitesmoke; width:100%; margin: 0;margin-top: 20px;box-shadow:2px 2px black;'>
 <div class="col-md-auto"style='text-align: center;'>
-<button style='margin-left:10px;ext-align: center; background-color: black;color: white; border-radius: 8px 8px 8px 8px; height: 40px; width: 125px;' class='btn-' ng-click="ac.makePDF()">Make Slips</button>
+<button style='margin-left:10px;ext-align: center; background-color: black;color: white; border-radius: 8px 8px 8px 8px; height: 40px; width: 125px;' class='adminB' ng-click="ac.makePDF()">Make Slips</button>
 <div class="dropdown">
   <button style='margin-left:20px;background-color: black;color: white; height: 40px; width: 125px; text-align: center; border-radius: 8px 8px 8px 8px'class="dropbtn">Admin Controls</button>
   <div class="dropdown-content">
@@ -14,12 +14,12 @@
     </span>
   </div>
 </div>
-  <button style='margin-left:20px;background-color: black;color: white;border-radius: 8px 8px 8px 8px;height: 40px; width: 50px;' class="btn-default btn" ng-click="ac.clickKTwo()" type="button" name="kThroughTwo">K - 2</button>
-  <button style='margin-left:20px;background-color: black;color: white;border-radius: 8px 8px 8px 8px;height: 40px; width: 125px;' class="btn-default btn" ng-click="ac.groupRandomWinnerKTwo()" type="button" name="winnerButton">Random Winner</button>
+  <button style='margin-left:20px;background-color: black;color: white;border-radius: 8px 8px 8px 8px;height: 40px; width: 50px;' class="adminB" ng-click="ac.clickKTwo()" type="button" name="kThroughTwo">K - 2</button>
+  <button style='margin-left:20px;background-color: black;color: white;border-radius: 8px 8px 8px 8px;height: 40px; width: 125px;' class="adminB" ng-click="ac.groupRandomWinnerKTwo()" type="button" name="winnerButton">Random Winner</button>
 
 
-  <button style='margin-left:20px;background-color: black;color: white;border-radius: 8px 8px 8px 8px;height: 40px; width: 50px;'class="btn-default btn" ng-click="ac.clickThreeFour()" type="button" name="threeAndFour">3 - 4</button>
-  <button style='margin-left:20px;background-color: black;color: white;border-radius: 8px 8px 8px 8px; height: 40px; width: 125px;'class="btn-default btn" ng-click="ac.groupRandomWinnerThreeFour()" type="button" name="winnerButton">Random Winner</button>
+  <button style='margin-left:20px;background-color: black;color: white;border-radius: 8px 8px 8px 8px;height: 40px; width: 50px;'class="adminB" ng-click="ac.clickThreeFour()" type="button" name="threeAndFour">3 - 4</button>
+  <button style='margin-left:20px;background-color: black;color: white;border-radius: 8px 8px 8px 8px; height: 40px; width: 125px;'class="adminB" ng-click="ac.groupRandomWinnerThreeFour()" type="button" name="winnerButton">Random Winner</button>
 
 
 
@@ -42,14 +42,17 @@
 
   <!-- results -->
   <br />
-  <h4 style="color: white;">Winners:</h4>
+  <div class="row" style='background: whitesmoke; width:400px; height: 150px; margin: 0;margin-top: 20px;box-shadow:2px 2px black;border-radius: 4px 4px 4px 4px;'>
+  <h4 style="color: black;">Winners:</h4>
   <div ng-repeat="thing in ac.getRanKTwo track by $index">{{thing.identifier}} {{thing.name}} - {{thing.grade}}</div>
   <div ng-repeat="thing in ac.getRanThreeFour track by $index">{{thing.identifier}} - {{thing.name}} - {{thing.grade}}</div>
+</div>
   <br />
-  <h4 style="color: white;">Students:</h4>
+  <div class="row" style='background: whitesmoke; width:400px; height: 150px; margin: 0;margin-top: 20px; border-radius: 4px 4px 4px 4px;box-shadow:2px 2px black;'>
+  <h4 style="color: black;">Students:</h4>
   <div ng-repeat="thing in ac.kThroughTwo track by $index">{{thing.identifier}} {{thing.name}} </div>
   <div ng-repeat="thing in ac.threeAndFour track by $index">{{thing.identifier}} - {{thing.name}}</div>
-
+</div>
 </div>
 </div>
 

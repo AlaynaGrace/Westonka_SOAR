@@ -1,9 +1,15 @@
-<h1>Permissions</h1>
+<div style= 'width: 150px; text-align: center;height: 40px; background: black; color: white; border-radius: 8px 8px 8px 8px; padding-top:10px; margin-left:20px;'>
 <a href="#!admins">Back to admin page</a>
+</div>
+
+<div class="row" style='background: whitesmoke; width:100%; margin: 0;margin-top: 20px;box-shadow:2px 2px black;'>
+<div class="col-md-auto"style='text-align: center;'>
+<h1>Permissions</h1>
+
 <br>
-<label>Search:</label>
+<label><h1>Search:</h1></label>
 <input placeholder="Email" ng-model="ac.searchedEmail">
-<button ng-click="ac.searchForEmail()">Search</button>
+<button ng-click="ac.searchForEmail()" class="btn btn-success">Search</button>
 <hr>
 <div ng-repeat="user in ac.emailResults">
   {{user.email}}
@@ -14,4 +20,6 @@
     <button ng-click="ac.makeUserTeacher(user)" ng-disable="ac.madeTeacher">Make Teacher</button>
   </span>
   <hr>
+</div>
+</div>
 </div>
