@@ -87,8 +87,9 @@ console.log('this is the studentController');
             swal({
               title: "Nice job!",
               text: "You have successfully entered a SOAR slip! Keep up the good work!",
-              type: "success"
+              imageUrl: "https://s-media-cache-ak0.pinimg.com/736x/25/b9/24/25b924f1d18fea2c7dfcb26a9905c1e8--funny-emoji-emoji-png.jpg"
             });
+            vm.getStudentSlips();
             console.log(response);
             vm.slipKey = '';
             vm.s = false;
@@ -105,8 +106,8 @@ console.log('this is the studentController');
           console.log('Try again! Slip was already used!');
           swal({
             title: "Oops..",
-            text: "Looks like this slip number is unavailable!",
-            type: "error"
+            text: "Looks like this slip number has already been used!",
+            imageUrl: "http://pix.iemoji.com/images/emoji/apple/ios-9/256/crying-face.png"
           });
           // vm.modalValue = false;
 
@@ -114,14 +115,14 @@ console.log('this is the studentController');
       }, function failure(response){
         swal({
           title: "Oops..",
-          text: "Looks like this slip number is unavailable!",
-          type: "error"
+          text: "Looks like this slip number does not exist!",
+          imageUrl: "http://pix.iemoji.com/images/emoji/apple/ios-9/256/crying-face.png"
         });
         // vm.modalValue = false;
 
         console.log(response);
       });
-
+        vm.getStudentSlips();
 
     };//end of postStudentSlips
 

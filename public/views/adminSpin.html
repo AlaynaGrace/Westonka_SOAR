@@ -1,0 +1,25 @@
+<a href="#!admins">Back to admin page</a>
+
+  <button style='margin-left:20px;background-color: black;color: white;border-radius: 8px 8px 8px 8px;height: 40px; width: 125px;' class="btn-default btn" ng-click="$timeout(ac.groupRandomWinnerKTwo(), 500)" type="button" name="winnerButton">Spin To Win K - 2!</button>
+  <button style='margin-left:20px;background-color: black;color: white;border-radius: 8px 8px 8px 8px; height: 40px; width: 125px;'class="btn-default btn" ng-click="$timeout(ac.groupRandomWinnerThreeFour(), 500)" type="button" name="winnerButton">Spin To Win 3 - 4!</button>
+
+
+  <h2 style="color: white;"> Admin Spin To Win Page</h2>
+  <h3 style="color: white;">Year To Date Slip Count: {{ac.allSlips}}</h3>
+
+  <!-- buttons -->
+
+  <br />
+
+
+  <!-- results -->
+  <br />
+  <h4 style="color: white;">Winners:</h4>
+  <h4>K - 2</h4>
+  <div ng-repeat="thing in ac.getRanKTwo track by $index">{{thing.identifier}} {{thing.name}} {{thing.grade}}</div>
+  <h4>3 - 4</h4>
+
+  <div ng-repeat="thing in ac.getRanThreeFour track by $index">{{thing.identifier}} {{thing.name}} {{thing.grade}}</div>
+
+</div>
+</div>

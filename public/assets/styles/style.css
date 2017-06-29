@@ -874,6 +874,33 @@ body {
     background-color: #3e8e41;
 }
 
+/*link colors and details*/
+/* unvisited link */
+a:link {
+    color: #3e3838;
+    text-decoration: underline;
+}
+
+/* visited link */
+a:visited {
+    color: #3e3838;
+    text-decoration: underline;
+
+}
+
+/* mouse over link */
+a:hover {
+    color: #3e3838;
+    text-decoration: underline;
+
+}
+
+/* selected link */
+a:active {
+    color: #3e3838;
+    text-decoration: underline;
+
+=======
 @media only screen
 and (min-device-width : 320px)
 and (max-device-width : 480px) {
@@ -932,6 +959,7 @@ and (min-width : 1824px) {
 only screen and (-webkit-min-device-pixel-ratio : 1.5),
 only screen and (min-device-pixel-ratio : 1.5) {
 /* Styles */
+>>>>>>> master
 }
 .frame {
   position: absolute;

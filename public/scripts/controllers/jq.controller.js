@@ -1,4 +1,3 @@
-
 $(function() {
   $('.ngview').on('click', '.toggle',function(){
     console.log('toggle has been clicked');

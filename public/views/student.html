@@ -3,7 +3,7 @@
 
 
 <div class="form-group" style= ' text-align: center;'>
-  <label style = 'color: white; font-size:40;' for="usr">Slip Key</label>
+  <label style = 'color: white; font-size:40;' for="usr">What is your slip number?</label>
   <input style="border-radius: 5px 5px 5px 5px;"type="text" class="center-block" id="usr" ng-model="sc.slipKey" placeholder="Enter your key here.....">
   <label style = 'color: white;'>S</label>
   <input type="checkbox" name="" ng-model="sc.s" value="">
@@ -877,3 +877,4 @@
   <div class="pixel"><input type="checkbox" id="pixel-400"/><label class="tab" for="pixel-400"></label>
   </div>
 </div>
+<div style ='color: white; text-align: center; font-size: 33px;'>You have {{sc.studentSlips}} slip<span ng-if="sc.studentSlips>1 || sc.studentSlips === 0">s</span>!</div>
