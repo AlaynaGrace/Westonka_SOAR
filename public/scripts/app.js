@@ -18,8 +18,16 @@ $routeProvider
       templateUrl: '/public/views/teacher.html',
       controller: "teacherController as tc"
     })
+    .when('/teacherSpins',{
+      templateUrl: '/public/views/teacherSpin.html',
+      controller: "teacherController as tc"
+    })
     .when('/admins', {
       templateUrl: '/public/views/admin.html',
+      controller: "adminController as ac"
+    })
+    .when('/adminSpins',{
+      templateUrl: '/public/views/adminSpin.html',
       controller: "adminController as ac"
     })
     .when('/permissions',{
