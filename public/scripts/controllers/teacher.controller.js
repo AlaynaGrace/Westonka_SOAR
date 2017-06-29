@@ -1,5 +1,5 @@
 
-googleAuthApp.controller('teacherController', ['$http','AuthFactory', '$location', 'DrawingService', function($http, AuthFactory, $location, DrawingService){
+googleAuthApp.controller('teacherController', ['$http','AuthFactory', '$location', 'DrawingService', '$timeout', function($http, AuthFactory, $location, DrawingService, $timeout){
 console.log('teacher');
 var vm = this;
 var authFactory = AuthFactory;
@@ -57,17 +57,18 @@ vm.getStudentList = function() {
       });
     });//end of getStudentList
 
-    vm.getWinners = function(homeroom){
+    vm.getWinners = function(){
       vm.winner = '';
       console.log('hit getWinners');
       console.log('this is HR number', vm.homeroom);
-      DrawingService.grabRandomSlipsHomeroom(homeroom).then(function(data){
+      DrawingService.grabRandomSlipsHomeroom(vm.homeroom).then(function(data){
+        $timeout(
         var slipsArray = data.data;
         console.log('ARRAY of slips', data.data);
         var random = Math.floor((Math.random() * slipsArray.length) );
         vm.winner = slipsArray[random].name;
         console.log('WINNER IS', vm.winner);
-
+      )
       });
     };
 

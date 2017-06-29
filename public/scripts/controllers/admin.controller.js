@@ -107,20 +107,14 @@ vm.getRandom = function() {
 
   vm.clickKTwo = function() {
     vm.gradesKThroughTwo().then(function(response) {
-      //need if statement to make sure it shows the correct grade group
-      // for (var i = 0; i < vm.kThroughTwo.length; i++) {
-      //   console.log('inside loop click k two');
-      // }
+
       vm.getRanKTwo=[vm.kThroughTwo[Math.floor(Math.random()*items.length)]];
     });
   };
 
   vm.clickThreeFour = function() {
     vm.gradesThreeAndFour().then(function(response){
-      //need if statement to make sure it shows the correct grade group
-      // for (var i = 0; i<vm.threeAndFour.length; i++){
-      //   console.log('inside loop click three four');
-      // }
+
     });
   };
 
@@ -182,31 +176,5 @@ vm.getRandom = function() {
       }
     });
   };
-
-
-
-// testing if else for winner button based on grade group previously clicked
-//
-// vm.groupRandomWinner = function(){
-//   console.log('inside group random winner');
-//   if(vm.clickKTwo){
-//     console.log('indside if');
-//     vm.gradesKThroughTwo().then(function(response){
-//       console.log('vm.kthrough: ', vm.kThroughTwo.length);
-//       vm.getRan = (Math.floor(Math.random() * vm.kThroughTwo.length)+1);
-//       console.log('get ran: ', vm.getRan);
-//     });
-//   } else if (vm.clickThreeFour === true) {
-//     console.log('inside else if');
-//     vm.gradesThreeAndFour().then(function(response){
-//       vm.getRan = (Math.floor(Math.random() * vm.threeAndFour.length)+1);
-//     });
-//   } else {
-//     console.log('Please select a grade group.');
-//   }
-// };
-//
-
-
 
 }]);
