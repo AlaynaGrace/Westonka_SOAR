@@ -27,10 +27,6 @@ googleAuthApp.service('PDFService',['$http',function($http){
       }
       doc.save('SOARSlips.pdf');
 
-
-
-
-
     }, function failure(response){
       console.log(response);
     });
