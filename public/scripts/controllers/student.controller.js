@@ -100,7 +100,7 @@ console.log('this is the studentController');
       }, function failure(response){
         console.log(response);
       });
-
+        vm.getStudentSlips();
 
     };//end of postStudentSlips
 
