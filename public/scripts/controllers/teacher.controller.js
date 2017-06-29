@@ -44,6 +44,7 @@ vm.getStudentList = function() {
     email: vm.email,
     homeroom: vm.homeroom
   };
+  vm.classSlipCount = 0;
   console.log(objectToSend);
   $http({
         method: 'POST',
@@ -53,6 +54,9 @@ vm.getStudentList = function() {
         console.log('this is response.data', response.data);
         vm.studentArray = [];
         vm.studentArray = response.data;
+        for(var i=0; i<vm.studentArray.length;i++){
+          vm.classSlipCount += parseInt(vm.studentArray[i].count);
+        }
         console.log('this is studentArray',vm.studentArray);
       });
     });//end of getStudentList
