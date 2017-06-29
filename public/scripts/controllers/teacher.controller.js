@@ -62,13 +62,13 @@ vm.getStudentList = function() {
       console.log('hit getWinners');
       console.log('this is HR number', vm.homeroom);
       DrawingService.grabRandomSlipsHomeroom(vm.homeroom).then(function(data){
-        $timeout(
+        $timeout(function(){
         var slipsArray = data.data;
         console.log('ARRAY of slips', data.data);
         var random = Math.floor((Math.random() * slipsArray.length) );
         vm.winner = slipsArray[random].name;
         console.log('WINNER IS', vm.winner);
-      )
+      },5000);
       });
     };
 
