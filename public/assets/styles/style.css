@@ -584,6 +584,10 @@ a:active {
   color: white;
 }
 
+.slip-count{
+  font-size: 5em;
+}
+
 /*.admin-buttons{
   margin-left: 25vw;
 }*/
