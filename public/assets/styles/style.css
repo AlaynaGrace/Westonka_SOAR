@@ -555,3 +555,35 @@ a:active {
   }
 
 /*admin page buttons*/
+
+
+/*admin bar*/
+
+.admin-bar {
+  background-color: whitesmoke;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  /*width: 1000vw;*/
+  padding: 5px; /* make % */
+  text-align: center;
+}
+
+.permissions{
+  color: black;
+  background-color: whitesmoke;
+  margin-top: 10px; /* make % */
+  /*margin-left: 5px;*/
+  padding: 10px; /* make % */
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+}
+
+.logout-link{
+  float: right;
+  margin-right: 1%;
+  color: white;
+}
+
+/*.admin-buttons{
+  margin-left: 25vw;
+}*/
