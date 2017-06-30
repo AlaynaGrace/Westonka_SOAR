@@ -1,34 +1,55 @@
-<div class="contian">
-  <div style= 'width: 150px; text-align: center;height: 40px; background: black; color: white; border-radius: 8px 8px 8px 8px; padding-top:10px; margin-left:25px;'>
-  <a href="#!admins">Back to admin page</a>
-  </div>
+<div class="admin-bar">
+  <!-- <div style= 'width: 150px; text-align: center;height: 40px; background: black; color: white; border-radius: 8px 8px 8px 8px; padding-top:10px; margin-left:20px;'> -->
+  <div class="admin-buttons">
+    <a href="#!admins" style="text-decoration:none; margin-left:20px; background-color:black; color:white; border-radius: 8px 8px 8px 8px; height:35px!important; width: 170px;" class="btn adminB" role="button">Home</a>
+    <!-- </div> -->
+    <a href="#!adminSpins" style='text-decoration:none; margin-left:20px; background-color:black; color:white; border-radius: 8px 8px 8px 8px; height:35px!important; width: 170px;' class="btn adminB" role="button">Random Winner Page</a>
 
-  <div class="row">
+    <div class="dropdown">
+      <button style='margin-left:20px;background-color: black;color: white; height: 35px!important; width: 170px; text-align: center; border-radius: 8px 8px 8px 8px' class="dropbtn btn adminB">Admin Controls</button>
+      <div class="dropdown-content">
+        <button style='border-radius:100%; padding: 0; border: none;background: none; margin-top: 10px;text-decoration:underline;'ng-click="ac.makePDF()">Make Slips</button>
+        <a style='margin-top:12px;'href="#!permissions">Permissions</a>
+        <a href="#!upload">Upload CSV</a>
+        <span ng-if="ac.both">
+        <a href="#!admins">Admin Page</a>
+        <a href="#!teachers">Teacher Page</a>
+      </span>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="permissions">
+  <!-- <div style= 'width: 150px; text-align: center;height: 40px; background: black; color: white; border-radius: 8px 8px 8px 8px; padding-top:10px; margin-left:25px;'>
+  <a href="#!admins" style="color: white;">Back to admin page</a>
+  </div> -->
+
+  <!-- <div class="row">
 
 <div class="col-md-auto">
 <div style='font-size: 25px; width:auto; text-align: center; display: table; margin: 0 auto; background-color: whitesmoke; margin-bottom:20px;margin-top: 20px;'>WARNING: BY FOLLOWING THESE INSTRUCTIONS, <br>YOU WILL BE ALTERING YOUR
   CURRENT SCHOOL DATA ALONG WITH USER, SLIP, AND HOMEROOM DATA!</div>
   </div>
-  </div>
-  <div class="row">
-<div class="col-md-auto">
+  </div> -->
+  <!-- <div class="row"> -->
+<!-- <div class="col-md-auto"> -->
 
-<div style="color:white;">
-  <p style='text-align: center;font-size:30px;width: auto;'>  Make sure to follow these steps to replace old class and homeroom
+<!-- <div style="color:white;"> -->
+  <p style='font-size:30px;width: auto;color:black;'>  Make sure to follow these steps to replace old class and homeroom
     lists with new class and homeroom lists.</p>
-</div>
-</div>
-</div>
-<div class="row" style='background: whitesmoke;width: auto;display: table; margin: 0 auto;border-radius: 8px 8px 8px 8px;'>
-<div class="col-md-auto">
+<!-- </div> -->
+<!-- </div> -->
+<!-- </div> -->
+<!-- <div class="row" style='background: whitesmoke;width: auto;display: table; margin: 0 auto;border-radius: 8px 8px 8px 8px;'> -->
+<!-- <div class="col-md-auto"> -->
   <ol>
-    <li>Drop all current tables</li>
+    <li style='padding-left: 20px;font-size:24px;'><b>Drop all current tables</b></li>
     <p>Only drop current tables if this is NOT the first time you are using
       this application. The first time this application is used, the tables
        will not exist.</p>
     <button class = 'btn-danger'ng-click="uc.dropTables()">Drop Tables</button>
-  </div>
-</div>
+  <!-- </div> -->
+<!-- </div> -->
     <!-- <p>If this is the first time that you have ever used this application and
     you need to create the tables, press the 'Create Tables' button below.
     </p>
@@ -36,9 +57,9 @@
     <br> -->
     <br>
     <br>
-    <div class="row" style='background: whitesmoke; width: auto;display: table; margin: 0 auto;border-radius: 8px 8px 8px 8px;'>
-    <div class="col-md-auto">
-    <li style='padding-left: 20px;'>Upload the homeroom data</li>
+    <!-- <div class="row" style='background: whitesmoke; width: auto;display: table; margin: 0 auto;border-radius: 8px 8px 8px 8px;'> -->
+    <!-- <div class="col-md-auto"> -->
+    <li style='padding-left: 20px; font-size:24px;'><b>Upload the homeroom data</b></li>
     <p style='padding-left: 20px;'>In this CSV file, there should be the following columns with these
       headers: <br><br>
       identifier, grade
@@ -53,7 +74,9 @@
         <li>03</li>
         <li>04</li>
       </ol>
+      <br>
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Below are examples of how certain rows should look in the CSV file:
+      <br>
       <br>
       <ol>
         <li>123, KD</li>
@@ -63,17 +86,21 @@
         <li>111, 04</li>
       </ol>
   </p>
-
-</div>
-</div>
-<br>
-<br>
-<div class="row" style='background: whitesmoke; width: auto;display: table; margin: 0 auto;border-radius: 8px 8px 8px 8px;'>
-<div class="col-md-auto">
-  <label style='padding-left: 20px;'>Upload Homeroom Data:</label>
+  <br>
+  <label style='padding-left: 20px; height: 10px;'>Upload Homeroom Data:</label>
   <input style='padding-left: 20px;' type="file" id="homeroomFiles" name="homeroomFiles" accept=".csv">
-    <li style='padding-left: 20px;'>Upload the CSV file that has all of the user data, including students,
-      teachers, and admins</li>
+  <br>
+
+<!-- </div> -->
+<!-- </div> -->
+<br>
+<br>
+<!-- <div class="row" style='background: whitesmoke; width: auto;display: table; margin: 0 auto;border-radius: 8px 8px 8px 8px;'> -->
+<!-- <div class="col-md-auto"> -->
+  <li style='padding-left: 20px;font-size:24px;'><b>Upload User Data:</b></li>
+
+    <p style='padding-left: 20px;'>Upload the CSV file that has all of the user data, including students,
+      teachers, and admins</p>
     <p style='padding-left: 20px;'>In this CSV file, there should be the following columns with these
       headers: <br><br>
       <p style='padding-left: 20px;'>name, email, admin, teacher, homeroom_id</p>
@@ -88,16 +115,16 @@
         <li>Admin</li>
         <p>Full Name, admin@277apps.com, true, false,</p>
       </ol>
-    </div>
-  </div>
+    <!-- </div> -->
+  <!-- </div> -->
       <br>
       <br>
-      <div class="row" style='background: whitesmoke; width: auto;display: table; margin: 0 auto;border-radius: 8px 8px 8px 8px;'>
-      <div class="col-md-auto">
+      <!-- <div class="row" style='background: whitesmoke; width: auto;display: table; margin: 0 auto;border-radius: 8px 8px 8px 8px;'> -->
+      <!-- <div class="col-md-auto"> -->
       <label style='padding-left: 20px;'>Upload User Data:</label>
       <input style='padding-left: 20px;' type="file" id="files" name="file" accept=".csv">
     </p>
   </ol>
-</div>
-</div>
+<!-- </div> -->
+<!-- </div> -->
 </div>
