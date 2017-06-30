@@ -1,18 +1,13 @@
 <h1 style= 'text-align: center; color: white;'class="shimmer">Welcome To The Student Page</h1>
 
 
-
 <div class="form-group" style= ' text-align: center;'>
   <label style = 'color: white; font-size:40;' for="usr">What is your slip number?</label>
   <input style="border-radius: 5px 5px 5px 5px;"type="text" class="center-block" id="usr" ng-model="sc.slipKey" placeholder="Enter your key here.....">
-  <label style = 'color: white;'>S</label>
-  <input type="checkbox" name="" ng-model="sc.s" value="">
-  <label style = 'color: white;'>O</label>
-  <input type="checkbox" name="" ng-model="sc.o" value="">
-  <label style = 'color: white;'>A</label>
-  <input type="checkbox" name="" ng-model="sc.a" value="">
-  <label style = 'color: white;'>R</label>
-  <input type="checkbox" name="" ng-model="sc.r" value="">
+  <label style = 'color: white;'>S</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" name="" ng-model="sc.s" value="">
+  <label style = 'color: white;'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;O</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" name="" ng-model="sc.o" value="">
+  <label style = 'color: white;'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" name="" ng-model="sc.a" value="">
+  <label style = 'color: white;'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;R</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" name="" ng-model="sc.r" value="">
   <br>
 <div id="modal-container">
   <div class="modal-background">
@@ -25,21 +20,21 @@
     </div>
   </div>
 </div>
-<div style ='background-color: none;' class="content">
-  <div class="buttons">
-    <div id="one" class="studentB btn-success"style = 'text-align: center; width: 150px; height: 150px; margin-top: 20px; background-color: green; color: white;padding-top: 45px; box-shadow:2px 1px 3px; border-radius: 8px 8px 8px 8px; font-size:40px; text-shadow: 3px 4px 8px black; display: inline-block;' type="button" ng-click="sc.postStudentSlip()">GO!!!</div>
-  </div>
+<!-- <div style ='background-color: none;' class="content"> -->
+  <!-- <div class="buttons"> -->
+    <div id="one" class="studentB"style = 'text-align: center; width: 150px; height: 150px; margin-top: 2px; background-color: green; color: white;padding-top: 45px; box-shadow:2px 1px 3px; border-radius: 8px 8px 8px 8px; font-size:40px; text-shadow: 3px 4px 8px black; display: inline-block;' type="button" ng-click="sc.postStudentSlip()">GO!!!</div>
+  <!-- </div> -->
+<!-- </div> -->
 </div>
+
+
+
+
+
+
+<div style ='color: white; text-align: center; font-size: 33px;padding-top:20px'>All Student Slips: {{sc.studentSlips}}</div>
 </div>
-
-
-
-
-
-
-<div style ='color: white; text-align: center; font-size: 33px;'>All Student Slips: {{sc.studentSlips}}</div>
-
-<div class="frame" style=''>
+<div class="frame">
   <div class="pixel"><input type="checkbox" id="pixel-1"/><label class="tab" for="pixel-1"></label>
   </div>
   <div class="pixel"><input type="checkbox" id="pixel-2"/><label class="tab" for="pixel-2"></label>
@@ -877,4 +872,5 @@
   <div class="pixel"><input type="checkbox" id="pixel-400"/><label class="tab" for="pixel-400"></label>
   </div>
 </div>
+
 <div style ='color: white; text-align: center; font-size: 33px;'>You have {{sc.studentSlips}} slip<span ng-if="sc.studentSlips>1 || sc.studentSlips === 0">s</span>!</div>
