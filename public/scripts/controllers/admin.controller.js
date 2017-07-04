@@ -142,7 +142,7 @@ vm.getRandom = function() {
     vm.gradesThreeAndFour().then(function(response){
       $timeout(function(){
         vm.getRanThreeFour=[vm.threeAndFour[Math.floor(Math.random()*(vm.threeAndFour.length-1))]];
-        
+
       }, 5000);
       // vm.getRanThreeFour = (Math.floor(Math.random() * vm.threeAndFour.length) + 1);
 
@@ -180,6 +180,36 @@ vm.getRandom = function() {
       else{
         vm.madeTeacher = false;
       }
+    });
+  };
+
+  vm.addStudent = function(){
+    var newStudent = {
+      name: vm.newName,
+      email: vm.newEmail,
+      homeroom: vm.newHomeroom
+    };
+
+    $http({
+      url: '/private/admin/addStudent',
+      method: 'POST',
+      data: newStudent
+    }).then(function success(response){
+      swal({
+        type: 'success',
+        title: 'Success',
+        text: 'Successfully added a new student!'
+      });
+      vm.newName = '';
+      vm.newEmail = '';
+      vm.newHomeroom = '';
+    }, function failure(response){
+      console.log(response);
+      swal({
+        type: 'error',
+        title: 'Oops...',
+        text: 'Something went wrong. Please try again!'
+      });
     });
   };
 

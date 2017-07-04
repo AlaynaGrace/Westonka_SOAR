@@ -379,5 +379,34 @@ function deleteJSONTable() {
   });
 }
 
+router.post('/addStudent', function(req,res){
+  pool.connect(function(err,connection,done){
+    if(err){
+      console.log(err);
+      res.sendStatus(500);
+    }
+    else{
+      connection.query('SELECT id FROM homerooms WHERE identifier=$1',[req.body.homeroom], function(err,result){
+        if(err){
+          console.log(err);
+          res.sendStatus(500);
+        }
+        else{
+          var homeroomId = result.rows[0].id;
+          connection.query('INSERT INTO users (name,email,homeroom_id,admin,teacher) VALUES ($1,$2,$3,$4,$5)',[req.body.name, req.body.email, homeroomId, false, false], function(err){
+            if(err){
+              console.log(err);
+              res.sendStatus(500);
+            }
+            else{
+              res.sendStatus(201);
+            }
+          });
+        }
+      });
+    }
+  });
+});
+
 
 module.exports = router;
