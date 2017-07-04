@@ -172,54 +172,25 @@ router.delete('/dropTables',function(req,res){
               res.sendStatus(500);
             }
             else{
-              //Next four queries makes sure that there are at least 4 slips in the db to start out
-                connection.query("INSERT INTO slips (slip_number) VALUES ('3ndkgid6')", function(err){
-
-                  done();
-                  if(err){
-                    console.log(err);
-                    res.sendStatus(500);
-                  }
-                  else{
-
-                    connection.query("INSERT INTO slips (slip_number) VALUES ('47ufndks')", function(err){
-
-                      done();
-                      if(err){
-                        console.log(err);
-                        res.sendStatus(500);
-                      }
-                      else{
-
-                        connection.query("INSERT INTO slips (slip_number) VALUES ('pld96nw2')", function(err){
-
-                          done();
-                          if(err){
-                            console.log(err);
-                            res.sendStatus(500);
-                          }
-                          else{
-
-                            connection.query("INSERT INTO slips (slip_number) VALUES ('0k4mxive')", function(err){
-
-                              done();
-                              if(err){
-                                console.log(err);
-                                res.sendStatus(500);
-                              }
-                              else{
-
-                                res.sendStatus(200);
-
-                              }
-                            });
-                          }
-                        });
-                      }
-                    });
-                  }
-                });
-              }
+              connection.query('DELETE FROM homerooms', function(err){
+                done();
+                if(err){
+                  console.log(err);
+                  res.sendStatus(500);
+                }
+                else{
+                  connection.query('ALTER SEQUENCE homerooms_id_seq RESTART WITH 1', function(err){
+                    if(err){
+                      console.log(err);
+                      res.sendStatus(500);
+                    }
+                    else{
+                      res.sendStatus(200);
+                    }
+                  });
+                }
+              });
+            }
             });
           }
         });

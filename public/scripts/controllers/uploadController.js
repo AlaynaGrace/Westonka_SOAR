@@ -9,10 +9,18 @@ googleAuthApp.controller('uploadController', ['$http', 'CSVUploadService', funct
           method: 'DELETE'
         }).then(function success(response){
           console.log('You have successfully dropped all tables');
-          alert('You have successfully dropped all tables');
+          swal({
+            type: 'success',
+            title: 'Tables Dropped',
+            text:'You have successfully dropped all tables'
+          });
         }, function failure(response){
           console.log(response);
-          alert('There was an error dropping the tables');
+          swal({
+            type: 'error',
+            title: 'Error',
+            text: 'Tables were not dropped successfully'
+          });
         });
       }
   };
