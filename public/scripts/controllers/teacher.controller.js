@@ -63,6 +63,9 @@ vm.getStudentList = function() {
 
     vm.getWinners = function(){
       vm.winner = '';
+      //add random time array
+      var times = [1000,2000,3000,4000,5000];
+      var timeoutTime = times[Math.floor((Math.random() * times.length))];
       console.log('hit getWinners');
       console.log('this is HR number', vm.homeroom);
       DrawingService.grabRandomSlipsHomeroom(vm.homeroom).then(function(data){
@@ -72,7 +75,7 @@ vm.getStudentList = function() {
         var random = Math.floor((Math.random() * slipsArray.length) );
         vm.winner = slipsArray[random].name;
         console.log('WINNER IS', vm.winner);
-      },5000);
+      },timeoutTime);
       });
     };
 
