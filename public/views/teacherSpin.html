@@ -1,17 +1,22 @@
-<a href="#!teacher">Back to Teacher page</a>
-
-  <h2 style="color: white;"> Teacher Spin To Win Page</h2>
+<div class="changeMe" style= 'width: 200px; height: 30px; background: silver; border-radius:20px 20px 20px 20px; text-align: center;text-decoration: none;box-shadow:1px 1px 1px black;'>
+<a class="hoverme" style='position: relative;top: 20%;transform: translateY(-50%); color: black; text-decoration: none;' href="#!teacher">Back to Teacher page</a>
+</div>
+  <h2 style="color: white;font-family:iceland;text-align:center;font-size:50px;"> Teacher Spin To Win Page</h2>
 
   <!-- buttons -->
-  <button ng-click='$timeout(tc.getWinners(tc.homeroom), 500)' style='border: none; height:50px;width: 150px; font-size: 15px; margin-top: 20px; text-shadow:1px 1px 2px rgba(0, 0, 0, 0.2);;'class= 'btn btn-success'>SPIN TO WIN</button>
+  <div style='text-align: center;'class="">
+  <button id = 'wheelSpin' ng-click='$timeout(tc.getWinners(tc.homeroom), 500)' style='border: none; height:50px;width: 150px; font-size: 15px; margin-top: 20px; text-shadow:1px 1px 2px rgba(0, 0, 0, 0.2);;'class= 'btn btn-success'>SPIN TO WIN</button>
 
-  <br />
+  <br>
 
 
   <!-- results -->
-  <br />
-  <h4 style="color: white;">Winners:</h4>
-  <dd><a style= 'color: black'>{{tc.winner}}</a></dd>
+  <br>
+  <h4 style="font-size: 40px;font-family:iceland;color: white;">Winners:</h4>
+  <dd><a style= 'font-family:iceland;color: black'>{{tc.winner}}</a></dd>
 
 </div>
+
+
+<div class='element'>
 </div>

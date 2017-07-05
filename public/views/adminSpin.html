@@ -1,6 +1,6 @@
 <div class="admin-bar">
   <!-- <div style= 'width: 150px; text-align: center;height: 40px; background: black; color: white; border-radius: 8px 8px 8px 8px; padding-top:10px; margin-left:20px;'> -->
-  <div class="admin-buttons">
+  <div style='text-align:center;'class="admin-buttons">
     <a href="#!admins" style="text-decoration:none; margin-left:20px; background-color:black; color:white; border-radius: 8px 8px 8px 8px; height:35px!important; width: 170px;" class="btn adminB" role="button">Home</a>
     <!-- </div> -->
     <a href="#!adminSpins" style='text-decoration:none; margin-left:20px; background-color:black; color:white; border-radius: 8px 8px 8px 8px; height:35px!important; width: 170px;' class="btn adminB" role="button">Random Winner Page</a>
@@ -19,9 +19,9 @@
     </div>
   </div>
 </div>
-
-  <button style='margin-left:20px;background-color: black;color: white;border-radius: 8px 8px 8px 8px;height: 40px; width: 125px;' class="btn-default btn" ng-click="ac.groupRandomWinnerKTwo()" type="button" name="winnerButton">Spin To Win K - 2!</button>
-  <button style='margin-left:20px;background-color: black;color: white;border-radius: 8px 8px 8px 8px; height: 40px; width: 125px;'class="btn-default btn" ng-click="ac.groupRandomWinnerThreeFour()" type="button" name="winnerButton">Spin To Win 3 - 4!</button>
+<div style='text-align:center; margin-top:20px;' class="">
+  <button id="wheelSpin" style='margin-left:20px;background-color: black;color: white;border-radius: 8px 8px 8px 8px;width:140px!important;height: 40px; width: 125px;' class="btn-default btn" ng-click="ac.groupRandomWinnerKTwo()" type="button" name="winnerButton">Spin To Win K - 2!</button>
+  <button id="wheelSpinn" style='margin-left:20px;background-color: black;color: white;border-radius: 8px 8px 8px 8px; height: 40px; width: 125px;'class="btn-default btn" ng-click="ac.groupRandomWinnerThreeFour()" type="button" name="winnerButton">Spin To Win 3 - 4!</button>
 
 
   <h2 style="color: white;"> Admin Spin To Win Page</h2>
@@ -40,6 +40,11 @@
   <h4>3 - 4</h4>
 
   <div ng-repeat="thing in ac.getRanThreeFour track by $index">{{thing.identifier}} {{thing.name}} {{thing.grade}}</div>
-
 </div>
+</div>
+</div>
+
+
+<div class="element">
+
 </div>

@@ -1,19 +1,19 @@
-<h1 style= 'text-align: center; color: white;'class="shimmer">Welcome To The Student Page</h1>
+<h1 style= 'font-family:iceland;text-align: center; color: white;'class="shimmer">Welcome To The Student Page</h1>
 
 
 <div class="form-group" style= ' text-align: center;'>
-  <label style = 'color: white; font-size:40;' for="usr">What is your slip number?</label>
+  <label style = 'font-family:iceland;color: white;' for="usr">What is your slip number?</label>
   <input style="border-radius: 5px 5px 5px 5px;"type="text" class="center-block" id="usr" ng-model="sc.slipKey" placeholder="Enter your key here.....">
-  <label style = 'color: white;'>S</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" name="" ng-model="sc.s" value="">
-  <label style = 'color: white;'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;O</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" name="" ng-model="sc.o" value="">
-  <label style = 'color: white;'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" name="" ng-model="sc.a" value="">
-  <label style = 'color: white;'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;R</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" name="" ng-model="sc.r" value="">
+  <label class = 'pulse-button' style = 'font-size:100px;color: white;'>S</label>&nbsp;<input type="checkbox" name="" ng-model="sc.s" value="">
+  <label class = 'pulse-button' style = 'font-size:100px;color: white;'>&nbsp;O</label>&nbsp;<input type="checkbox" name="" ng-model="sc.o" value="">
+  <label class = 'pulse-button' style = 'font-size:100px;color: white;'>&nbsp;A</label>&nbsp;<input type="checkbox" name="" ng-model="sc.a" value="">
+  <label class = 'pulse-button' style = 'font-size:100px;color: white;'>&nbsp;R</label>&nbsp;<input type="checkbox" name="" ng-model="sc.r" value="">
   <br>
 <div id="modal-container">
   <div class="modal-background">
     <div class="modal">
       <h2 style='color: green; font-size: 40px;'>Great Job!! </h2><br>
-      <p>Nice job getting a SOAR slip! Keep up the good work! </p>
+      <p style= 'font-family:iceland;'> Nice job getting a SOAR slip! Keep up the good work! </p>
       <svg class="modal-svg" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" preserveAspectRatio="none">
 								<rect x="0" y="0" fill="none" width="226" height="162" rx="3" ry="3"></rect>
 							</svg>
@@ -28,11 +28,7 @@
 </div>
 
 
-
-
-
-
-<div style ='color: white; text-align: center; font-size: 33px;padding-top:20px'>All Student Slips: {{sc.studentSlips}}</div>
+<!-- <div style ='color: white; text-align: center; font-size: 33px;padding-top:20px'>All Student Slips: {{sc.studentSlips}}</div>
 </div>
 <div class="frame">
   <div class="pixel"><input type="checkbox" id="pixel-1"/><label class="tab" for="pixel-1"></label>
@@ -871,6 +867,33 @@
   </div>
   <div class="pixel"><input type="checkbox" id="pixel-400"/><label class="tab" for="pixel-400"></label>
   </div>
-</div>
+</div> -->
 
 <div style ='color: white; text-align: center; font-size: 33px;'>You have {{sc.studentSlips}} slip<span ng-if="sc.studentSlips>1 || sc.studentSlips === 0">s</span>!</div>
+
+
+
+
+<div style='margin-top:150px; margin-left:19%; display:inline-block;'id="container">
+
+  <p style= 'font-size: 7em;position: relative;top: 50%;transform: translateY(-50%); transform: rotate(5deg); margin-left:30%;'><a>
+    Saftey
+  </a></p>
+
+  <p style= 'font-size: 7em;position: relative;top: 50%;transform: translateY(-50%); transform: rotate(30deg);'><a>
+    Own It
+  </a></p>
+
+  <p style= 'font-size: 7em;position: relative;top: 50%;transform: translateY(-50%); transform: rotate(-10deg);'><a>
+    Acheive
+  </a></p>
+
+  <p style= 'font-size: 7em;position: relative;top: 50%;transform: translatex(-50%); padding-left: 250px; transform: rotate(-30deg); float: right;'><a>
+    Respect
+  </a></p>
+
+  <p  style= 'font-size: 7em;position: relative;top: 50%;transform: translatex(-50%); padding-left: 850px; transform: rotate(-10deg); float: right;'><a>
+    S.O.A.R.
+  </a></p>
+
+</div>
