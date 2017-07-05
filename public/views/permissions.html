@@ -1,5 +1,23 @@
-<div style= 'width: 150px; text-align: center;height: 40px; background: black; color: white; border-radius: 8px 8px 8px 8px; padding-top:10px; margin-left:20px;'>
-<a href="#!admins">Back to admin page</a>
+<div class="admin-bar">
+  <!-- <div style= 'width: 150px; text-align: center;height: 40px; background: black; color: white; border-radius: 8px 8px 8px 8px; padding-top:10px; margin-left:20px;'> -->
+  <div class="admin-buttons">
+    <a href="#!admins" style="text-decoration:none; margin-left:20px; background-color:black; color:white; border-radius: 8px 8px 8px 8px; height:35px!important; width: 170px;" class="btn adminB" role="button">Home</a>
+    <!-- </div> -->
+    <a href="#!adminSpins" style='text-decoration:none; margin-left:20px; background-color:black; color:white; border-radius: 8px 8px 8px 8px; height:35px!important; width: 170px;' class="btn adminB" role="button">Random Winner Page</a>
+
+    <div class="dropdown">
+      <button style='margin-left:20px;background-color: black;color: white; height: 35px!important; width: 170px; text-align: center; border-radius: 8px 8px 8px 8px' class="dropbtn btn adminB">Admin Controls</button>
+      <div class="dropdown-content">
+        <button style='border-radius:100%; padding: 0; border: none;background: none; margin-top: 10px;text-decoration:underline;'ng-click="ac.makePDF()">Make Slips</button>
+        <a style='font-family:iceland;margin-top:12px;'href="#!permissions">Permissions</a>
+        <a href="#!upload">Upload CSV</a>
+        <span ng-if="ac.both">
+        <a href="#!admins">Admin Page</a>
+        <a href="#!teachers">Teacher Page</a>
+      </span>
+      </div>
+    </div>
+  </div>
 </div>
 
 <div class="row" style='background: whitesmoke; width:100%; margin: 0;margin-top: 20px;box-shadow:2px 2px black;'>

@@ -20,6 +20,8 @@ googleAuthApp.service('DrawingService', ['$http',function($http){
     }).then(function success(response){
       console.log('random slips by homeroom',response.data);
       return response;
+    }, function failure(response){
+      console.log(response);
     });
   };
   //   function failure(response){

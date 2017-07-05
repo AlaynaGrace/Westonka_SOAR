@@ -1,5 +1,5 @@
 
-googleAuthApp.controller('teacherController', ['$http','AuthFactory', '$location', 'DrawingService', '$timeout', function($http, AuthFactory, $location, DrawingService, $timeout){
+googleAuthApp.controller('teacherController', ['$http','AuthFactory', '$location', 'DrawingService', '$interval', '$timeout', function($http, AuthFactory, $location, DrawingService, $interval, $timeout){
 console.log('teacher');
 var vm = this;
 var authFactory = AuthFactory;
@@ -53,7 +53,7 @@ vm.getStudentList = function() {
       }).then(function(response){
         console.log('this is response.data', response.data);
         vm.studentArray = [];
-        vm.studentArray = response.data;
+        vm.studentArray = response.data.sort(compare);
         for(var i=0; i<vm.studentArray.length;i++){
           vm.classSlipCount += parseInt(vm.studentArray[i].count);
         }
@@ -66,15 +66,31 @@ vm.getStudentList = function() {
       console.log('hit getWinners');
       console.log('this is HR number', vm.homeroom);
       DrawingService.grabRandomSlipsHomeroom(vm.homeroom).then(function(data){
-        $timeout(function(){
-        var slipsArray = data.data;
-        console.log('ARRAY of slips', data.data);
-        var random = Math.floor((Math.random() * slipsArray.length) );
-        vm.winner = slipsArray[random].name;
-        console.log('WINNER IS', vm.winner);
+        console.log('This is the data gotten from grabRandomSlipsHomeroom', data.data);
+        $interval(function(){
+          var slipsArray = data.data;
+          console.log('ARRAY of slips', data.data);
+          var random = Math.floor((Math.random() * slipsArray.length) );
+          vm.winner = slipsArray[random].name;
+          console.log('WINNER IS', vm.winner);
+      },100,50);
+      $timeout(function(){
+        swal({
+          imageUrl: 'http://clipartix.com/wp-content/uploads/2016/04/Free-clip-art-congratulations-clipart-clipartbold.jpeg',
+          text: vm.winner,
+          title: 'Congratulations!'
+        });
       },5000);
       });
     };
+
+function compare(a,b) {
+  if (a.name < b.name)
+    return -1;
+  if (a.name > b.name)
+    return 1;
+  return 0;
+}
 
 
 }]);

@@ -35,43 +35,31 @@
   <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
 
   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Iceland|Monoton|Pacifico|PressStart|Audiowide" rel="stylesheet">
   <script type="text/javascript" src="public/scripts/controllers/student.controller.js"></script>
   <script type="text/javascript" src="public/scripts/controllers/teacher.controller.js"></script>
   <script type="text/javascript" src="public/scripts/controllers/admin.controller.js"></script>
   <script type="text/javascript" src="public/scripts/controllers/jq.controller.js"></script>
-  <script type="text/javascript" src="public/scripts/controllers/jqStudent.controller.js"></script>
+  <script type="text/javascript" src="public/scripts/controllers/jq.js"></script>
 </head>
 
 
 <!-- body start -->
 <body ng-app="theGoogles">
-  <div class="navbarr">
+  <div class="jumbotron">
 
-    <div class="col col-md-auto">
-      <a href="#!login">Login</a>
-    </div>
 
-    <div class="col col-md-auto">
-      <a href="#!teachers">Teacher Page</a>
-    </div>
-
-    <div class="col col-md-auto">
-      <a href="#!admins">Admin Page</a>
-    </div>
-
-    <div class="col col-md-auto">
-      <a href="#!students">Student Page</a>
-    </div>
-  </div>
-
+  <nav ng-controller="NavController as nav">
+      <span class="logout-link" ng-show="nav.displayLogout"><a id="logoutpage"href="#" style=" color:white;font-family:iceland;" ng-click="nav.logout()">Logout</a></span><br>
+  </nav>
   <div class="contain">
     <div class="row">
       <div class="col-5 col-md-auto">
-
         <div class="original">
           <div class="spin">
-            <img class="text-center" id= 'whiteHawk' style = 'width: 200px; height: 200px; text-align: center; margin: 2%;' src='public/assets/styles/wHawk.png'></img>
+            <img class="text-center" id= 'whiteHawk' style = 'width: 120px; height: 120px; text-align: center;' src='public/assets/styles/wHawk.png'></img>
           </div>
+        </div>
         </div>
 
       </div>
@@ -84,10 +72,6 @@
     <ng-view></ng-view>
   </div>
 
-  <nav ng-controller="NavController as nav">
-    <ul class="row">
-      <li class="six columns" ng-show="nav.displayLogout">Hi {{nav.username}}! | <a href="#" ng-click="nav.logout()">Logout</a></li>
-    </ul>
-  </nav>
+
 </body>
 </html>
