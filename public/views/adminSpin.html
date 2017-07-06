@@ -19,15 +19,15 @@
     </div>
   </div>
 </div>
-<div style='text-align:center; margin-top:20px;' class="">
+<div style='margin-top:20px;' class="">
 
 
 
-  <h2 style="color: white;">Spin To Win Page</h2>
+  <!-- <h2 style="color: white;">Spin To Win Page</h2> -->
   <h3 style="color: white; font-size: 30px;">Year To Date Slip Count: {{ac.allSlips}}</h3>
 
-  <button id="wheelSpinn" style='margin-left:20px;background-color: black;color: white;border-radius: 8px 8px 8px 8px;width:140px!important;height: 40px; width: 125px;' class="btn-default btn" ng-click="ac.groupRandomWinnerKTwo()" type="button" name="winnerButton">Spin To Win K - 2!</button>
-  <button id="wheelSpinn" style='margin-left:20px;background-color: black;color: white;border-radius: 8px 8px 8px 8px; height: 40px; width: 140px!important;'class="btn-default btn" ng-click="ac.groupRandomWinnerThreeFour()" type="button" name="winnerButton">Spin To Win 3 - 4!</button>
+  <button id="wheelSpinn" style='margin-left:20px;background-color: #2e64b0;color: white;border-radius: 8px 8px 8px 8px;width:140px!important;height: 40px; width: 125px;' class="btn-default btn" ng-click="ac.groupRandomWinnerKTwo()" type="button" name="winnerButton">Spin To Win K - 2!</button>
+  <button id="wheelSpinn" style='margin-left:20px;background-color: #2e64b0;color: white;border-radius: 8px 8px 8px 8px; height: 40px; width: 140px!important;'class="btn-default btn" ng-click="ac.groupRandomWinnerThreeFour()" type="button" name="winnerButton">Spin To Win 3 - 4!</button>
 
   <!-- buttons -->
 
@@ -37,17 +37,16 @@
   <!-- results -->
   <br />
   <h4 style="color: white; font-size: 20px;">Winners:</h4>
-  <h4 style="color: white; font-size: 20px;">K - 2</h4>
-  <div style="color: white; font-size: 25px;" ng-repeat="thing in ac.getRanKTwo track by $index">{{thing.identifier}} {{thing.name}} {{thing.grade}}</div>
-  <h4 style="color: white; font-size: 20px;">3 - 4</h4>
+  <h4 style="color: white; font-size: 20px;">K - 2: <span style="color: white; font-size: 20px;" ng-repeat="thing in ac.getRanKTwo track by $index">Name: {{thing.name}} | Homeroom: {{thing.identifier}} | Grade: {{thing.grade}}</span></h4>
 
-  <div style="color: white; font-size: 25px;" ng-repeat="thing in ac.getRanThreeFour track by $index">{{thing.identifier}} {{thing.name}} {{thing.grade}}</div>
+  <h4 style="color: white; font-size: 20px;">3 - 4: <span style="color: white; font-size: 20px;" ng-repeat="thing in ac.getRanThreeFour track by $index"> Name: {{thing.name}} | Homeroom: {{thing.identifier}} | Grade: {{thing.grade}}</span></h4>
+
+
 </div>
 </div>
 </div>
 
-<div id='whiteHawk'style= 'z-index:5000;width:0;margin:0 auto;text-align:center;'class="triangle">
+<div style="margin-left:41%" class="triangle">
   </div>
-<div class="element">
-
-</div>
+  <div style='width:600px;height:600px;margin-right:4%;margin-top:-25.5%;' class='element'>
+  </div>

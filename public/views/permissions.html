@@ -9,7 +9,7 @@
       <button style='margin-left:20px;background-color: black;color: white; height: 35px!important; width: 170px; text-align: center; border-radius: 8px 8px 8px 8px' class="dropbtn btn adminB">Admin Controls</button>
       <div class="dropdown-content">
         <button style='border-radius:100%; padding: 0; border: none;background: none; margin-top: 10px;text-decoration:underline;'ng-click="ac.makePDF()">Make Slips</button>
-        <a style='font-family:iceland;margin-top:12px;'href="#!permissions">Permissions</a>
+        <a style='margin-top:12px;'href="#!permissions">Permissions</a>
         <a href="#!upload">Upload CSV</a>
         <span ng-if="ac.both">
         <a href="#!admins">Admin Page</a>
@@ -27,7 +27,7 @@
 <br>
 <label><h1>Search:</h1></label>
 <input placeholder="Email" ng-model="ac.searchedEmail">
-<button ng-click="ac.searchForEmail()" class="btn btn-success">Search</button>
+<button ng-click="ac.searchForEmail()" style="background-color:#2e64b0;" class="btn btn-success">Search</button>
 <hr>
 <div ng-repeat="user in ac.emailResults">
   {{user.email}}
