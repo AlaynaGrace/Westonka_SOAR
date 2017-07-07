@@ -52,8 +52,9 @@ app.use('/private', isLoggedIn, private);
 app.use('/slipnumbers',slipnumbers);
 app.use('/*', index);
 
+var port = process.env.PORT || 3000;
 
 /** ---------- SERVER START ---------- **/
-app.listen(3000, function () {
+app.listen(port, function () {
   console.log('Now running on port ', 3000);
 });
