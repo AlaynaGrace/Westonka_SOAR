@@ -10,6 +10,8 @@ These instructions will get you a copy of the project up and running on your loc
 
 To run this code, you will first need to install [Node.js](https://nodejs.org/en/)
 
+You will also need to install Postico, or another Ui for postgreSQL.
+
 
 ### Installing
 
@@ -30,12 +32,18 @@ $ cd westonka_soar
 $ npm install
 ```
 
-5. To get the code running, in terminal type 'node app.js'
+5. Copy queries from the data.sql file and execute queries.
+note: you must create tables in this order
+  1. homerooms
+  2. users
+  3. slips
+
+6. To get the code running, in terminal type 'node app.js'
 ```
 $ node app.js
 ```
 
-6. In your preferred browser, go to
+7. In your preferred browser, go to
 ```
 localhost:3000
 ```
