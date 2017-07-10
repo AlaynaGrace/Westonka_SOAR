@@ -22,7 +22,10 @@
 
 <div class="row" style='background: whitesmoke; width:100%; margin: 0;margin-top: 20px;box-shadow:2px 2px black;'>
 <div class="col-md-auto"style='text-align: center;'>
-  <h1>Add a Student</h1>
+  <h1>Add a User</h1>
+  <p>This will automatically a new student users. To make a new teacher or new
+  admin, add them here and then search for their email below in the Permissions
+  section.</p>
   <b>Full Name:</b>
   <input type="text" name="" value="" ng-model="ac.newName">
   <b>Email:</b>
@@ -36,7 +39,7 @@
 <br>
 <label><h1>Search:</h1></label>
 <input placeholder="Email" ng-model="ac.searchedEmail">
-<button ng-click="ac.searchForEmail()" class="btn btn-success">Search</button>
+<button ng-click="ac.searchForEmail()" style="background-color:#2e64b0;" class="btn btn-success">Search</button>
 <hr>
 <div ng-repeat="user in ac.emailResults">
   {{user.email}}

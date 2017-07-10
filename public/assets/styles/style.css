@@ -1,11 +1,215 @@
 @use cssnext;
+.hoverme:hover{
+  background-color:white;
+}
+/*student page*/
+.element {
+  background: black;
+  cursor: pointer;
+  box-shadow: 0 0 0 rgba(204,169,44, 0.4);
+  animation: pulse 2s infinite;
+}
+.pulse:hover {
+  animation: none;
+}
 
-/* config.css */
+@-webkit-keyframes pulse {
+  0% {
+    -webkit-box-shadow: 0 0 0 0 rgba(204,169,44, 0.4);
+  }
+  70% {
+      -webkit-box-shadow: 0 0 0 10px rgba(204,169,44, 0);
+  }
+  100% {
+      -webkit-box-shadow: 0 0 0 0 rgba(204,169,44, 0);
+  }
+}
+@keyframes pulse {
+  0% {
+    -moz-box-shadow: 0 0 0 0 rgba(204,169,44, 0.4);
+    box-shadow: 0 0 0 0 rgba(204,169,44, 0.4);
+  }
+  70% {
+      -moz-box-shadow: 0 0 0 10px rgba(204,169,44, 0);
+      box-shadow: 0 0 0 10px rgba(204,169,44, 0);
+  }
+  100% {
+      -moz-box-shadow: 0 0 0 0 rgba(204,169,44, 0);
+      box-shadow: 0 0 0 0 rgba(204,169,44, 0);
+  }
+}
+#container {
+  width: 500px;
 
-/*:root {
---baseColor: #606468;
-}*/
+}
+.changeMe:hover{
+  background-color:white;
+}
+/*Neon*/
+.triangle {
+  width: 0;
+	height: 0;
+	border-top: 50px solid transparent;
+	border-left: 100px solid black;
+	border-bottom: 50px solid transparent;
+}
 
+a {
+  text-decoration: none;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+p:nth-child(1) a {
+  color: #fff;
+  font-family: Monoton;
+  -webkit-animation: neon1 1.5s ease-in-out infinite alternate;
+  animation: neon1 1.5s ease-in-out infinite alternate;
+}
+
+p:nth-child(1) a:hover {
+  color: #FF1177;
+  -webkit-animation: none;
+  animation: none;
+}
+
+p:nth-child(2) a {
+  font-size: 1.5em;
+  color: #228DFF;
+  font-family: Iceland;
+}
+
+p:nth-child(2) a:hover {
+  -webkit-animation: neon2 1.5s ease-in-out infinite alternate;
+  animation: neon2 1.5s ease-in-out infinite alternate;
+}
+
+p:nth-child(3) a {
+  color: #FFDD1B;
+  font-family: Pacifico;
+}
+
+p:nth-child(3) a:hover {
+  -webkit-animation: neon3 1.5s ease-in-out infinite alternate;
+  animation: neon3 1.5s ease-in-out infinite alternate;
+}
+
+p:nth-child(4) a {
+  color: #B6FF00;
+  font-family: PressStart;
+  font-size: 0.8em;
+}
+
+p:nth-child(4) a:hover {
+  -webkit-animation: neon4 1.5s ease-in-out infinite alternate;
+  animation: neon4 1.5s ease-in-out infinite alternate;
+}
+
+p:nth-child(5) a {
+  color: #FF9900;
+  font-family: Audiowide;
+}
+
+p:nth-child(5) a:hover {
+  -webkit-animation: neon5 1.5s ease-in-out infinite alternate;
+  animation: neon5 1.5s ease-in-out infinite alternate;
+}
+
+
+p:nth-child(6) a:hover {
+  -webkit-animation: neon6 1.5s ease-in-out infinite alternate;
+  animation: neon6 1.5s ease-in-out infinite alternate;
+}
+
+p a:hover {
+  color: #ffffff;
+}
+/*glow for webkit*/
+
+@-webkit-keyframes neon2 {
+  from {
+    text-shadow: 0 0 10px white, 0 0 20px white, 0 0 30px white, 0 0 40px #228DFF, 0 0 70px #228DFF, 0 0 80px #228DFF, 0 0 100px #228DFF, 0 0 150px #228DFF;
+  }
+  to {
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #228DFF, 0 0 35px #228DFF, 0 0 40px #228DFF, 0 0 50px #228DFF, 0 0 75px #228DFF;
+  }
+}
+
+@-webkit-keyframes neon3 {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #FFDD1B, 0 0 70px #FFDD1B, 0 0 80px #FFDD1B, 0 0 100px #FFDD1B, 0 0 150px #FFDD1B;
+  }
+  to {
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #FFDD1B, 0 0 35px #FFDD1B, 0 0 40px #FFDD1B, 0 0 50px #FFDD1B, 0 0 75px #FFDD1B;
+  }
+}
+
+@-webkit-keyframes neon4 {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #B6FF00, 0 0 70px #B6FF00, 0 0 80px #B6FF00, 0 0 100px #B6FF00, 0 0 150px #B6FF00;
+  }
+  to {
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #B6FF00, 0 0 35px #B6FF00, 0 0 40px #B6FF00, 0 0 50px #B6FF00, 0 0 75px #B6FF00;
+  }
+}
+
+@-webkit-keyframes neon5 {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #FF9900, 0 0 70px #FF9900, 0 0 80px #FF9900, 0 0 100px #FF9900, 0 0 150px #FF9900;
+  }
+  to {
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #FF9900, 0 0 35px #FF9900, 0 0 40px #FF9900, 0 0 50px #FF9900, 0 0 75px #FF9900;
+  }
+}
+
+@-webkit-keyframes neon6 {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #ff00de, 0 0 70px #ff00de, 0 0 80px #ff00de, 0 0 100px #ff00de, 0 0 150px #ff00de;
+  }
+  to {
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #ff00de, 0 0 35px #ff00de, 0 0 40px #ff00de, 0 0 50px #ff00de, 0 0 75px #ff00de;
+  }
+}
+/*glow for mozilla*/
+/*glow*/
+
+@-webkit-keyframes neon1 {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #FF1177, 0 0 70px #FF1177, 0 0 80px #FF1177, 0 0 100px #FF1177, 0 0 150px #FF1177;
+  }
+  to {
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #FF1177, 0 0 35px #FF1177, 0 0 40px #FF1177, 0 0 50px #FF1177, 0 0 75px #FF1177;
+  }
+}
+
+@keyframes neon1 {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #FF1177, 0 0 70px #FF1177, 0 0 80px #FF1177, 0 0 100px #FF1177, 0 0 150px #FF1177;
+  }
+  to {
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #FF1177, 0 0 35px #FF1177, 0 0 40px #FF1177, 0 0 50px #FF1177, 0 0 75px #FF1177;
+  }
+}
+
+@keyframes neon2 {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #228DFF, 0 0 70px #228DFF, 0 0 80px #228DFF, 0 0 100px #228DFF, 0 0 150px #228DFF;
+  }
+  to {
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #228DFF, 0 0 35px #228DFF, 0 0 40px #228DFF, 0 0 50px #228DFF, 0 0 75px #228DFF;
+  }
+}
+
+/*student Page end*/
+.jumbotron{
+  background-image: url('tetris.jpg');
+  background-size:auto;
+  padding-top:0px!important;
+  padding-bottom:0px!important;
+  margin-top:-10px!important;
+  margin-bottom:0px!important;
+  box-shadow: 2px 2px 2px silver;
+}
 #whiteHawk {
   position: relative;
   -webkit-animation: myfirst 5s; /* Safari 4.0 - 8.0 */
@@ -19,10 +223,7 @@
 .box {
   border-radius: 6px;
 }
-.original {
-  /*float: left;
-  margin: 12px 15px;*/
-}
+
 .box {
   height: 95px;
   line-height: 95px;
@@ -49,17 +250,49 @@
 }
 
 body{
-  background: #c0020f!important;
-  background-size: 400% 400%!important;
+background-image: url('redd.png');
+background-size: cover;
 }
 
 
 /*Student page h1*/
-
 input[type="checkbox"]{
-  width: 25px; /*Desired width*/
-  height: 25px;
+  font-size: 30px;
+  transform: rotate(0deg);
+  transition: transform .3s;
+  /*border-radius: 40px 40px 40px 40px;*/
+  animation-direction: forwards;
+  animation-duration: .5s forwards;
+  width:40px!important;
+  height:40px!important;
+  zoom:2;
 }
+input[type="checkbox"] {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  border: none;
+  box-shadow: 0 0 0 0 rgba(02, 76, 61, 0.7);rgb(102, 0, 0);
+  cursor: pointer;
+  -webkit-animation: pulse 3s infinite cubic-bezier(0.66, 0, 0, 1);
+  -moz-animation: pulse 3s infinite cubic-bezier(0.66, 0, 0, 1);
+  -ms-animation: pulse 3s infinite cubic-bezier(0.66, 0, 0, 1);
+  animation: pulse 3s infinite cubic-bezier(0.66, 0, 0, 1);
+}
+input[type="checkbox"]:hover{
+  transform: rotate(360deg);
+  transition: transform .3s;
+}
+
+@-webkit-keyframes pulse {to {box-shadow: 0 0 0 45px rgba(232, 76, 61, 0);}}
+@-moz-keyframes pulse {to {box-shadow: 0 0 0 45px rgba(232, 76, 61, 0);}}
+@-ms-keyframes pulse {to {box-shadow: 0 0 0 45px rgba(232, 76, 61, 0);}}
+@keyframes pulse {to {box-shadow: 0 0 0 45px rgba(232, 76, 61, 0);}}
+
+/*input[type="checkbox"]{
+  width: 25px;
+  height: 25px;
+}*/
 input[type='file']{
   color:blue;
   font-size:20px;
@@ -67,6 +300,8 @@ input[type='file']{
 }
 
 input[type="file" i] {
+  width:100px;
+  height:100px;
 }
 
 .studentHone{
@@ -91,7 +326,7 @@ input[type="file" i] {
   100% { left: 500px; top: 0px;}
 }
 label{
-  font-size: 33px!important;
+  font-size: 60px;
 }
 
 /*student page start css*/
@@ -509,26 +744,29 @@ a:active {
     #43a1cd linear-gradient(#9bf442, #ba3e2e) 50% 100%;
     background-repeat: no-repeat;
     background-size: 50% 50%;
+    -moz-box-shadow: 0 0 500px black;
+-webkit-box-shadow: 0 0 500px black;
+    box-shadow: 0 0 500px black;
   }
-  .element {
-    -webkit-animation: spinnerRotate  1s infinite alternate 1s infinite linear alternate;
-    -moz-animation: spinnerRotate  1s infinite  infinite linear ;
-    -ms-animation: spinnerRotate  1s infinite ;
-    -o-animation: spinnerRotate  1s infinite  infinite linear alternate;
-    animation: spinnerRotate 1s infinite linear ;
+  .element-active{
+    -webkit-animation: spinnerRotate  5s forwards 5s forwards;
+    -moz-animation: spinnerRotate  5s forwards ;
+    -ms-animation: spinnerRotate  5s ;
+    -o-animation: spinnerRotate  5s forwards;
+    animation: spinnerRotate 5s forwards;
   }
 
   @keyframes spinnerRotate {
     from{-webkit-transform:rotate(0deg);}
-    to{-webkit-transform:rotate(360deg);}
+    to{-webkit-transform:rotate(1180deg);}
   }
   @-moz-keyframes spinnerRotate{
     from{-moz-transform:rotate(0deg);}
-    to{-moz-transform:rotate(360deg);}
+    to{-moz-transform:rotate(1180deg);}
   }
   @-ms-keyframes spinnerRotate{
     from{-ms-transform:rotate(0deg);}
-    to{-ms-transform:rotate(360deg);}
+    to{-ms-transform:rotate(1180deg);}
   }
   /*html { overflow: hidden }*/
 
@@ -577,17 +815,18 @@ a:active {
   border-top: 1px solid black;
   border-bottom: 1px solid black;
 }
+#logoutpage{
+  font-family: iceland;
+}
 
 .logout-link{
+  font-family: iceland!important;
   float: right;
   margin-right: 1%;
   color: white;
+  margin-top: 1%;
 }
 
 .slip-count{
   font-size: 5em;
 }
-
-/*.admin-buttons{
-  margin-left: 25vw;
-}*/

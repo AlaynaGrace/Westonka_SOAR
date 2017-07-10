@@ -1,4 +1,4 @@
-googleAuthApp.controller('adminController', ['$http', '$scope', '$timeout', 'PDFService', 'EmailSearchService', 'UpdateUserService', 'AuthFactory', '$location', function($http, $scope, $timeout, PDFService, EmailSearchService, UpdateUserService, AuthFactory, $location) {
+googleAuthApp.controller('adminController', ['$interval','$http', '$scope', '$timeout', 'PDFService', 'EmailSearchService', 'UpdateUserService', 'AuthFactory', '$location', function($interval, $http, $scope, $timeout, PDFService, EmailSearchService, UpdateUserService, AuthFactory, $location) {
   console.log('inside admin controller');
   var vm = this;
 
@@ -128,10 +128,20 @@ vm.getRandom = function() {
     var times = [1000,2000,3000,4000,5000];
     var timeoutTime = times[Math.floor((Math.random() * times.length))];
     vm.gradesKThroughTwo().then(function(response){
-      $timeout(function(){
+      $interval(function(){
         vm.getRanKTwo=[vm.kThroughTwo[Math.floor(Math.random()*(vm.kThroughTwo.length-1))]];
 
-      }, timeoutTime);
+      }, 100,50);
+      $timeout(function(){
+        // vm.getRanKTwo=[vm.kThroughTwo[Math.floor(Math.random()*(vm.kThroughTwo.length-1))]];
+        // console.log('this is vm.getRanKTwo:', vm.getRanKTwo);
+        swal({
+          imageUrl: 'http://clipartix.com/wp-content/uploads/2016/04/Free-clip-art-congratulations-clipart-clipartbold.jpeg',
+          text: vm.getRanKTwo[0].name,
+          title: 'Congratulations!'
+        });
+      },5000);
+
 
       // vm.getRanKTwo = (Math.floor(Math.random() * vm.kThroughTwo.length) + 1);
       console.log('get ran: ', vm.getRanKTwo);
@@ -144,10 +154,21 @@ vm.getRandom = function() {
     var times = [1000,2000,3000,4000,5000];
     var timeoutTime = times[Math.floor((Math.random() * times.length))];
     vm.gradesThreeAndFour().then(function(response){
-      $timeout(function(){
+      $interval(function(){
         vm.getRanThreeFour=[vm.threeAndFour[Math.floor(Math.random()*(vm.threeAndFour.length-1))]];
 
-      }, timeoutTime);
+
+      }, 100,50);
+      $timeout(function(){
+        // vm.getRanThreeFour=[vm.threeAndFour[Math.floor(Math.random()*(vm.threeAndFour.length-1))]];
+
+        swal({
+          imageUrl: 'http://clipartix.com/wp-content/uploads/2016/04/Free-clip-art-congratulations-clipart-clipartbold.jpeg',
+          text: vm.getRanThreeFour[0].name,
+          title: 'Congratulations!'
+        });
+      },5000);
+
       // vm.getRanThreeFour = (Math.floor(Math.random() * vm.threeAndFour.length) + 1);
 
       console.log('get ran: ', vm.getRanThreeFour);
