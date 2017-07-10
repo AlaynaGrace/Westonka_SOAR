@@ -14,7 +14,8 @@
 
               doc.setFontSize(20);
 
-              for (var i = 0; i < response.data.length; i += 4) {
+              // for (var i = 0; i < response.data.length; i += 4) {
+              var i =10;
                 console.log('we in this for loop');
                 doc.addImage(imgData, 'JPEG', 0, 0, 210, 200);
                 doc.text(5, 90, "slip number: " + response.data[i]);
@@ -23,11 +24,11 @@
                 doc.text(5, 195, "slip number: " + response.data[i+2]);
                 doc.text(110, 195, "slip number: " + response.data[i+3]);
 
-                if (i !== 36) {
-                  doc.addPage();
+                // if (i !== 36) {
+                  // doc.addPage();
 
-                }
-              }
+                // }
+              // }
               doc.save('SOARSlips.pdf');
 
             }, function failure(response) {
