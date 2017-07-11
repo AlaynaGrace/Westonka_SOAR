@@ -125,6 +125,8 @@ vm.getRandom = function() {
   //random winner k-2
   vm.groupRandomWinnerKTwo = function() {
     console.log('inside group random winner button');
+    var times = [1000,2000,3000,4000,5000];
+    var timeoutTime = times[Math.floor((Math.random() * times.length))];
     vm.gradesKThroughTwo().then(function(response){
       $interval(function(){
         vm.getRanKTwo=[vm.kThroughTwo[Math.floor(Math.random()*(vm.kThroughTwo.length-1))]];
@@ -140,6 +142,7 @@ vm.getRandom = function() {
         });
       },5000);
 
+
       // vm.getRanKTwo = (Math.floor(Math.random() * vm.kThroughTwo.length) + 1);
       console.log('get ran: ', vm.getRanKTwo);
     });
@@ -148,9 +151,12 @@ vm.getRandom = function() {
   //random winner 3-4
   vm.groupRandomWinnerThreeFour = function() {
     console.log('inside group random winner button');
+    var times = [1000,2000,3000,4000,5000];
+    var timeoutTime = times[Math.floor((Math.random() * times.length))];
     vm.gradesThreeAndFour().then(function(response){
       $interval(function(){
         vm.getRanThreeFour=[vm.threeAndFour[Math.floor(Math.random()*(vm.threeAndFour.length-1))]];
+
 
       }, 100,50);
       $timeout(function(){
@@ -162,6 +168,7 @@ vm.getRandom = function() {
           title: 'Congratulations!'
         });
       },5000);
+
       // vm.getRanThreeFour = (Math.floor(Math.random() * vm.threeAndFour.length) + 1);
 
       console.log('get ran: ', vm.getRanThreeFour);
@@ -198,6 +205,36 @@ vm.getRandom = function() {
       else{
         vm.madeTeacher = false;
       }
+    });
+  };
+
+  vm.addStudent = function(){
+    var newStudent = {
+      name: vm.newName,
+      email: vm.newEmail,
+      homeroom: vm.newHomeroom
+    };
+
+    $http({
+      url: '/private/admin/addStudent',
+      method: 'POST',
+      data: newStudent
+    }).then(function success(response){
+      swal({
+        type: 'success',
+        title: 'Success',
+        text: 'Successfully added a new student!'
+      });
+      vm.newName = '';
+      vm.newEmail = '';
+      vm.newHomeroom = '';
+    }, function failure(response){
+      console.log(response);
+      swal({
+        type: 'error',
+        title: 'Oops...',
+        text: 'Something went wrong. Please try again!'
+      });
     });
   };
 
